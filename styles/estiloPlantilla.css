@@ -1,0 +1,104 @@
+/*Grid 1*/
+#ficha {
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "titulo fecha"
+      "nombre nombre"
+      "apellido apellido"
+      "estudios estudios"
+      "ciudad edad"
+      "telf telf"
+      "email email";
+  }
+
+
+#titulo { 
+    grid-area: titulo; 
+}
+#fecha { 
+    grid-area: fecha; }
+#nombre { grid-area: nombre; 
+}
+#apellido { 
+    grid-area: apellido; 
+}
+#estudios { 
+    grid-area: estudios; 
+}
+#ciudad { 
+    grid-area: ciudad; 
+}
+#edad { 
+    grid-area: edad; 
+}
+#telf { 
+    grid-area: telf; 
+}
+#email { 
+    grid-area: email; 
+}
+
+    /*Grid 2*/
+#datos {
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 0.2fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        "imgPrincipal nomDispositivo"
+        "imgPrincipal parteReemplazada"
+        "resumen resumen"; 
+    margin-top: 150px;
+    border: 2px solid red;
+}
+#nomDispositivo { 
+    grid-area: nomDispositivo; 
+}
+#parteReemplazada { 
+    grid-area: parteReemplazada; 
+}
+#imgPrincipal { 
+    grid-area: imgPrincipal; 
+}
+#resumen { 
+    grid-area: resumen; 
+}
+
+/*Grid 3*/
+#estimacion {
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "tiempo"
+      "dificultad"
+      "herramientas";
+    margin-top: 150px;
+    border: 2px solid red;
+  }
+  #tiempo { grid-area: tiempo; }
+  #dificultad { grid-area: dificultad; }
+  #herramientas { grid-area: herramientas; }
+/*Grid 4*/
+#pasos {
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "introduccion introduccion"
+      "foto texto"; 
+margin-top: 150px;
+border: 2px solid red;
+  }
+  #introduccion { grid-area: introduccion; }
+  #foto { grid-area: foto; }
+  #texto { grid-area: texto; }

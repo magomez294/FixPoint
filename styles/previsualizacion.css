@@ -1,0 +1,44 @@
+table {
+    border-collapse: collapse;
+    border: 2px solid black;
+}
+tr, td {
+    border: 2px solid black;
+}
+
+#imgPrincipal {
+    margin-top: 5px;
+    border:2px solid black;
+    width: 100px;
+    height: 100px;
+}
+#contenedor {
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "titulo titulo"
+      "fecCreacion fecCreacion"
+      "tablaDatos tablaDatos"
+      "txtIntro txtIntro"
+      "imgPrincipal dificultad"
+      "imgPrincipal tiempo"
+      "herramientas herramientas"
+      "pasos pasos"; 
+  }
+  #titulo { 
+      grid-area: titulo; 
+    }
+  #fecCreacion { 
+      grid-area: fecCreacion; 
+    }
+  #tablaDatos { 
+      grid-area: tablaDatos; }
+  #txtIntro { grid-area: txtIntro; }
+  #imgPrincipal { grid-area: imgPrincipal; }
+  #dificultad { grid-area: dificultad; }
+  #tiempo { grid-area: tiempo; }
+  #herramientas { grid-area: herramientas; }
+  #pasos { grid-area: pasos; }
