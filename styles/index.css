@@ -1,0 +1,299 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* background-color: red; */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+header img {
+  height: auto;
+}
+
+header #logo {
+  width: 150px;
+  margin-left: 5px;
+}
+
+header #logoMenu {
+  width: 50px;
+  margin-left: auto;
+  margin-right: 5px;
+}
+
+main {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+main > div:first-child {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  /* background-color: blue; */
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  row-gap: 0px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+main > div:first-child > div {
+  margin-top: 10px;
+  /* background-color: green; */
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: auto auto auto;
+      grid-template-rows: auto auto auto;
+  -webkit-column-gap: 0px;
+          column-gap: 0px;
+  row-gap: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+main > div:first-child > div:nth-child(2) {
+  row-gap: 0px;
+}
+
+main > div:first-child > div article {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+main > div:first-child > div article:first-child {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+}
+
+main > div:first-child > div h1 {
+  margin: 0px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+main > div:first-child > div:nth-child(2) > div {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+  row-gap: 0px;
+}
+
+main > div:first-child > div:nth-child(2) > div h2 {
+  margin: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #eec51f;
+  border-radius: 5px 5px 0px 0px;
+}
+
+main > div:first-child > div:nth-child(2) > div aside {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+main > div:first-child > div:nth-child(2) > div aside > div {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+main > div:first-child > div:nth-child(2) > div aside > div span {
+  margin-left: 10px;
+  font-size: 10px;
+  display: inline-block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+main > div:first-child > div:nth-child(2) > div aside > div span:first-child {
+  margin-top: 5px;
+}
+
+main > div:first-child > div:nth-child(2) > div aside > div span:last-child {
+  margin-bottom: 5px;
+}
+
+main > div:first-child > div:nth-child(2) > div:nth-child(2) > aside {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+main > div:nth-child(2) {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  /* background-color: blue; */
+  margin-top: 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  row-gap: 0px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+main > div:nth-child(2) > div {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+main > div:nth-child(2) > div:first-child {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+}
+
+main > div:nth-child(2) > div h2 {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0px;
+  color: white;
+  background-color: black;
+  border-radius: 5px 5px 0px 0px;
+}
+
+main > div:nth-child(2) > div article {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+main > div:nth-child(2) > div img {
+  margin-top: 20px;
+  width: 180px;
+  height: auto;
+}
+
+main > div:nth-child(3) {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: #e4e4e4;
+  margin-top: 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  row-gap: 0px;
+}
+
+main > div:nth-child(3) h1 {
+  margin: 0px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+main > div:nth-child(3) article {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+main > div:nth-child(4) {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-top: 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  margin-right: 5px;
+  margin-left: 5px;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+}
+
+main > div:nth-child(4) > div:first-child {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+main > div:nth-child(4) > div:first-child h2 {
+  margin: 0px;
+}
+
+main > div:nth-child(4) > div:last-child {
+  background-color: #eec51f;
+  border-radius: 5px;
+}
+
+main > div:nth-child(4) > div:last-child article {
+  margin: 20px;
+}
+/*# sourceMappingURL=index.css.map */

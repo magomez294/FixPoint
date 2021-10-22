@@ -1,0 +1,196 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0px;
+}
+header{
+    display: flex;
+    /* background-color: red; */
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid black;
+    img{
+        height: auto;
+    }
+    #logo{
+        width: 150px;
+        margin-left: 5px;
+    }
+    #logoMenu{
+        width: 50px;
+        margin-left: auto;
+        margin-right: 5px;
+    }
+}
+main{
+    height: fit-content;
+    >div{
+        &:first-child{
+            height: fit-content;
+            /* background-color: blue; */
+            display: grid;
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 10px;
+            row-gap: 0px;
+            margin-right: 5px;
+            margin-left: 5px;
+            >div{
+                margin-top: 10px;
+                /* background-color: green; */
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto;
+                column-gap: 0px;
+                row-gap: 10px;
+                height: fit-content;
+                &:nth-child(2){
+                    row-gap: 0px;
+                }
+                article{
+                    height: fit-content;
+                    &:first-child{
+                        font-family: 'Times New Roman', Times, serif;
+                        font-size: 20px;
+                    }
+                }
+                h1{
+                    margin: 0px;
+                    height: fit-content;
+                }
+                &:nth-child(2){
+                    >div{
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        grid-template-rows: auto auto;
+                        row-gap: 0px;
+                        h2{
+                            margin: 0px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            background-color: rgb(238, 197, 31);
+                            border-radius: 5px 5px 0px 0px;
+                        }
+                        aside{
+                           
+                            height: fit-content;
+                            >div{
+                                
+                                width: fit-content;
+                                span{
+                                    margin-left: 10px;
+                                    font-size: 10px;
+                                    display: inline-block;
+                                    width: fit-content;
+                                    &:first-child{
+                                        margin-top: 5px;
+                                    }
+                                    &:last-child{
+                                        margin-bottom: 5px;
+                                    }
+                                }
+                            }
+                           
+                        }
+                        &:nth-child(2){
+                            >aside{
+                                 display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                margin-top: 5px;
+                                margin-bottom: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &:nth-child(2){
+            height: fit-content;
+            /* background-color: blue; */
+            margin-top: 10px;
+            display: grid;
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 10px;
+            row-gap: 0px;
+            margin-right: 5px;
+            margin-left: 5px;
+            >div{
+                height: fit-content;
+                &:first-child{
+                    
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: auto auto;
+                }
+                h2{
+                    height: fit-content;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0px;
+                    color: white;
+                    background-color: black;
+                    border-radius: 5px 5px 0px 0px;
+                }
+                article{
+                    margin-left: 5px;
+                    margin-right: 5px;
+                }
+                img{
+                    margin-top: 20px;
+                    width: 180px;
+                    height: auto;
+                }
+            }
+        }
+        &:nth-child(3){
+            height: fit-content;
+            background-color: rgb(228, 228, 228);
+            margin-top: 10px;
+            display: grid;
+            grid-template-rows: auto auto;
+            grid-template-columns: 1fr;
+            row-gap: 0px;
+            h1{
+                margin: 0px;
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+            article{
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+        &:nth-child(4){
+            height: fit-content;
+            margin-top: 10px;
+            display: grid;
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr 1fr;
+            margin-right: 5px;
+            margin-left: 5px;
+            column-gap: 10px;
+            >div:first-child{
+                height: fit-content;
+                display: grid;
+                grid-template-rows: auto auto;
+                grid-template-columns: 1fr;
+                h2{
+                    margin: 0px;
+                }
+            }
+            >div:last-child{
+                background-color: rgb(238, 197, 31);
+                border-radius: 5px;
+                article{
+                    margin: 20px;
+                }
+            }
+
+        }
+    }
+}
