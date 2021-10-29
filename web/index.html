@@ -10,8 +10,23 @@
 <body>
     <header>
         <img id="logo" src="../Imagenes/Logo.png" alt="">
-        <img id="logoMenu" src="../Imagenes/menu.png" alt="">
+        <img id="logoMenu" src="../Imagenes/menu.png" alt="" onclick="showHideMenu('menu')">
+        <nav id="menu" class="hide">
+            <img src="../Imagenes/hideMenu.png" alt="" id="hideMenu" onclick="showHideMenu('menu')">
+            <ul>
+                <li> <a href="">Iniciar Sesión</a> </li>
+                <li> <a href="">Manuales</a> </li>
+                <li><a href="">Herramientas</a></li>
+                <li><a href="">Crear Cuenta</a></li>
+            </ul>
+        </nav>
     </header>
+    <nav id="menuWeb">
+        <ul>
+            <li> <a href="">Manuales</a> </li>
+            <li><a href="">Herramientas</a></li>
+        </ul>
+    </nav>
     <main>
         <div>
             <div>
@@ -22,6 +37,22 @@
                     profesionales del C.I.F.P Pico Frentes de Soria .
                 </article>
                 <h1>FixPoint es una iniciativa circular sostenible.</h1>
+                <div>
+                    <div>
+                        <h2>Misión</h2>
+                        <article>
+                            Como una comunidad de ávidos manitas, deportistas al aire libre y personas con conciencia ambiental, la Biblioteca de herramientas FixPoint, quiere provocar un cambio en el sistema de sobreproducción e ineficiencia resultante, la contaminación ambiental y la desigualdad (social). La misión de FixPoint es transformar la mentalidad en la sociedad, en la que la propiedad se elige sobre el acceso. Queremos hacer esto inspirando a la población y organizaciones a abrir una Biblioteca FixPoint en su vecindario para que la gente tenga acceso a cosas que solo necesitan de vez en cuando,en lugar de posesión. 
+                        </article>
+                    </div>
+                    <div>
+                        <h2>Visión</h2>
+                        <article>
+                            FixPoint es un proyecto que lucha por una economía circular. Esto significa que creemos en un sistema cerrado de materias primas, en el que los productores seguirán siendo los propietarios de las materias primas contenidas en los productos en el futuro. Para lograr esto, sin embargo, debemos facilitar que 'acceder a' sea más fácil, más barato y más divertido que 'poseer'. 
+                        </article>
+                        <img src="../Imagenes/taller.jpg" alt="">
+                    </div>
+                </div>
+                
             </div>
             <div>
                 <div id="direccion">
@@ -84,7 +115,7 @@
                 <h2>Los objetivos son simples:</h2>
                 <ul>
                     <li>
-                        Promover las habilidades de   bricolaje, fabricación y reparación mediante el intercambio de herramientas
+                        Promover las habilidades de bricolaje, fabricación y reparación mediante el intercambio de herramientas
                     </li>
                     <li>
                         Hacer de Soria una ciudad más sostenible
@@ -93,6 +124,9 @@
                         Crear oportunidades de aprendizaje y desarrollo
                     </li>
                 </ul>
+                <div>
+                    <img src="../Imagenes/settings.png" alt="">
+                </div>
             </div>
             <div>
                 <article>
@@ -103,7 +137,19 @@
                 </article>
             </div>
         </div>
+        <div>
+            <div>
+                <img src="../Imagenes/logoFP.png" alt="">
+            </div>
+            <div>
+                <img src="../Imagenes/LogoPicoFuentes.png" alt="">
+            </div>
+        </div>
     </main>
-    <footer></footer>
+    <footer>
+        <div>Powered by G2</div>
+        <img src="../Imagenes/up-arrow.png" alt="">
+    </footer>
+    <script src="../scripts/index.js"></script>
 </body>
 </html>
