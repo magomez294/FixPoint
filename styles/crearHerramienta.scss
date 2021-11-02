@@ -1,0 +1,42 @@
+@import '_var.scss';
+main{
+    form{
+        background-color: $grey;
+        margin: 10px;
+        border-radius: 10px;
+        >div:first-of-type{
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto auto auto;
+            label, input, textarea{
+                margin-left: 20px;
+            }
+            label{
+                margin-top: 20px;
+            }
+            input, textarea{
+                margin-top: 10px;
+                width: 80%;
+                border-radius: 5px;
+                border: 1px solid white;
+                &:focus{
+                    
+                    outline: none;
+                    border: 1px solid $yellow;
+                    box-shadow: 0 0 10px $yellow;
+                }
+            }
+            input{
+                height: 30px;
+            }
+            textarea{
+                resize: none;
+            }
+        }
+        >input{
+            margin-top: 20px;
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+    }
+}

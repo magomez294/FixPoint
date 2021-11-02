@@ -1,0 +1,51 @@
+main form {
+  background-color: #e4e4e4;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+main form > div:first-of-type {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  -ms-grid-rows: auto auto auto auto;
+      grid-template-rows: auto auto auto auto;
+}
+
+main form > div:first-of-type label, main form > div:first-of-type input, main form > div:first-of-type textarea {
+  margin-left: 20px;
+}
+
+main form > div:first-of-type label {
+  margin-top: 20px;
+}
+
+main form > div:first-of-type input, main form > div:first-of-type textarea {
+  margin-top: 10px;
+  width: 80%;
+  border-radius: 5px;
+  border: 1px solid white;
+}
+
+main form > div:first-of-type input:focus, main form > div:first-of-type textarea:focus {
+  outline: none;
+  border: 1px solid #eec51f;
+  -webkit-box-shadow: 0 0 10px #eec51f;
+          box-shadow: 0 0 10px #eec51f;
+}
+
+main form > div:first-of-type input {
+  height: 30px;
+}
+
+main form > div:first-of-type textarea {
+  resize: none;
+}
+
+main form > input {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+/*# sourceMappingURL=crearHerramienta.css.map */
