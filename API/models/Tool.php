@@ -4,7 +4,7 @@ class Tool extends DB{
     private $name;
     private $description;
 
-    public function _construct($name, $description){
+    public function __construct($name, $description){
         parent::__construct(); 
         $this->name = $name;
         $this->description = $description;

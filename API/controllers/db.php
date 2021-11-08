@@ -5,22 +5,21 @@ class DB{
     private $user;
     private $password;
     private $db;
-    private $result;
-    private $mysqli;
+    private $connection;
 
-    public sql;
-
-    public function _construct(){
+    public function __construct(){
         $this->host = 'localhost';
         $this->user = 'root';
         $this->password = '';
         $this->db = 'fixpoint';
-        $this->result = array();
-        $this->$mysqli = null;
+        $this->connection = null;
 
-        $this->mysqli = new mysqli($this->host,$this->user,$this->password,$this->db);
+       
+        $this->connection = new mysqli($this->host,$this->user,$this->password,$this->db);
 
-        if (isset($this->mysqli)) {
+        if ($this->connection->connect_error) {
+            die("Connection failed: ".$this->connection->connect_error);
+        }else{
             echo '
             <script type="text/JavaScript">
                 console.log("DB is connected");
@@ -29,7 +28,7 @@ class DB{
         }
     }
 
-    public function insert($table,$para=array()){
+    /* public function insert($table,$para=array()){
 
         $table_columns = implode(',', array_keys($para));
         $table_value = implode("','", $para);
@@ -38,7 +37,7 @@ class DB{
 
         $result = $this->mysqli->query($sql);
 
-        return result;
+        return $result;
     }
 
     public function update($table,$para=array(),$id){
@@ -55,6 +54,8 @@ class DB{
 
         $result = $this->mysqli->query($sql);
 
+        return $result;
+
     }
 
 
@@ -64,9 +65,11 @@ class DB{
 
         $sql .=" WHERE $id ";
 
-        /* $sql; */
+        $sql;
 
         $result = $this->mysqli->query($sql);
+
+        return $result;
 
     }
 
@@ -78,9 +81,11 @@ class DB{
             $sql="SELECT $rows FROM $table";
         }
 
-        $this->sql = $result = $this->mysqli->query($sql);
+        $result = $this->mysqli->query($sql);
 
-    }
+        return $result;
+
+    } */
 
 }
 
