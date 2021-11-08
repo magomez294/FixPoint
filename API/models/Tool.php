@@ -1,5 +1,5 @@
 <?php
-require_once('../../database/db.php');
+require_once('../database/db.php');
 class Tool extends DB{
     private $name;
     private $description;

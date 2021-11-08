@@ -1,4 +1,4 @@
-<?php include("../../database/db.php"); ?>
+<?php include("../database/db.php"); ?>
 <?php
 
 class Users extends DB{
@@ -6,31 +6,24 @@ class Users extends DB{
         parent::__construct(); 
     }
 
-    public function auth($username, $password){
+    public function login($username, $password){
+        session_start();
         $json = [];
-        $query = $this->mysqli->prepare("SELECT ID_Usuario, Nombre, Contraseña FROM usuario WHERE Nombre=?");
-        $query->execute([$username]);
-        while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
-            if (password_verify($password, $row['Contraseña'])) {
-                $json['id'] = $row['ID_Usuario'];
-                $json['username'] = $row['Nombre'];
-
-                return json_encode($json);
+        $result = $this->connection->query("SELECT ID_Usuario, Nombre, Contrasena FROM usuario WHERE Nombre='$username'");
+        if ($result) {
+            while ($row = mysqli_fetch_array($result)) {
+                if ($password == $row['Contrasena']) {
+                    /* $this->setCurrentUser($row['ID_Usuario']); */
+                    $json['id'] = $row['ID_Usuario'];
+                    $json['username'] = $row['Nombre'];
+    
+                    return json_encode($json);
+                }
             }
         }
+        
         return false;
     }
 }
-
-    
-
-   /*  $query = sprintf("SELECT * FROM users WHERE username = '$username' AND password = '$md5password'");
-    $result = mysqli_query($connection, $query); */
-
-   /*  if($result){
-
-    }else{
-        
-    } */
 
 ?>

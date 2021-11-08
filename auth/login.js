@@ -19,25 +19,30 @@ class Login {
             })
             if (error == 0) {
                 var data = {
+                    // @ts-ignore
                     username: document.getElementById('username').value,
+                    // @ts-ignore
                     password: document.getElementById('password').value
                 }
-
-                fetch("//API/auth/auth.php", {
-                    method: "POST",
+                console.log(data);
+                console.log(JSON.stringify(data));
+                fetch("./API/auth/login.php", {
+                    method: 'POST',
                     body: JSON.stringify(data),
                     headers: {
-                        "Content-type": "application/json; charset=UTF-8"
+                        'Content-type': 'application/json; charset=UTF-8'
                     }
                 })
                 .then((response)=>response.json())
                 .then((data)=>{
+                    console.log(data);
                     if(data.error){
                         console.error("Error:", data.message);
                         document.getElementById('error-message-all').innerText = 'usuario o contraseña incorrecta'
                         document.getElementById('error-message-all').style.display = 'block';
                     }else{
                         document.getElementById('error-message-all').style.display = 'none';
+                        // @ts-ignore
                         localStorage.setItem('auth', 1);
                         localStorage.setItem('user', JSON.stringify(data));
                         this.form.submit();
@@ -45,6 +50,7 @@ class Login {
                 })
                 .catch((data)=>{
                     console.error("Error: ", data.message)
+                    console.log(data);
                 })
                 
             }

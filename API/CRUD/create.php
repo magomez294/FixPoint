@@ -1,6 +1,6 @@
 <?php
 
-require_once('../classes/Tool.php');
+require_once('../models/Tool.php');
 
     if (isset($_POST['save_tool'])) {
         $name = $_POST['name'];
@@ -19,7 +19,7 @@ require_once('../classes/Tool.php');
             $_SESSION['message'] = 'Herramienta guardada';
             $_SESSION['color'] = 'green';
 
-            header("Location: ../web/herramientas/CrearHerramienta.php");
+            header("Location: ../pages/herramientas/CrearHerramienta.php");
         }
     }
 ?>

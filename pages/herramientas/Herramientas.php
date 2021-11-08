@@ -1,4 +1,3 @@
-<?php include("../../database/db.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,10 +18,11 @@
     </aside>
     <div id=contenedor>
         <?php
-            $query = "SELECT * FROM herramienta";
-            $result = mysqli_query($connection, $query);
+            include("../../API/database/db.php");
+            $db = new DB();
+            $result = $db->select("herramienta","*");
+            $direction="../../images";
             if ($result) {
-                $direction="local/";
                 while ($row = mysqli_fetch_array($result)) {
                     ?>
                     <div class=a1>

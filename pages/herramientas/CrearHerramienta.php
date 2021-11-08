@@ -1,4 +1,4 @@
-<?php include("../../database/db.php"); ?>
+<?php include("../../API/database/db.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,14 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../styles/menu.css">
     <link rel="stylesheet" href="../../styles/crearHerramienta.css">
+    <script defer src="../../auth/auth.js"></script>
+    <script defer src="../../scripts/menu.js"></script>
     <title>Añadir Herramienta</title>
 </head>
 <body>
     <header>
-        <img id="logo" src="../../Imagenes/Logo.png" alt="">
-        <img id="logoMenu" src="../../Imagenes/menu.png" alt="" onclick="showHideMenu('menu')">
+        <img id="logo" src="../../images/Logo.png" alt="">
+        <img id="logoMenu" src="../../images/menu.png" alt="" onclick="showHideMenu('menu')">
         <nav id="menu" class="hide">
-            <img src="../../Imagenes/hideMenu.png" alt="" id="hideMenu" onclick="showHideMenu('menu')">
+            <img src="../../images/hideMenu.png" alt="" id="hideMenu" onclick="showHideMenu('menu')">
             <ul>
                 <li> <a href="">Iniciar Sesión</a> </li>
                 <li> <a href="">Manuales</a> </li>
@@ -31,7 +33,7 @@
         </nav>
     </header>
     <main>
-        <form action="../../CRUD/create_tool.php" method="POST">
+        <form action="../../API/CRUD/create.php" method="POST">
             <div>
                 <label for="types">Nombre:</label>
                 <input type="text" name="name" placeholder="nombre" autofocus>
@@ -48,8 +50,6 @@
             </div>
         <?php session_unset();} ?>
     </main>
-
-    <script src="../../scripts/menu.js"></script>
 </body>
 </html>
 

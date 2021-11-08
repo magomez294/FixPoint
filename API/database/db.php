@@ -1,41 +1,35 @@
 <?php
-/* session_start(); */
+
 class DB{
     private $host;
     private $user;
     private $password;
     private $db;
-    private $connection;
+    public $connection;
 
     public function __construct(){
         $this->host = 'localhost';
         $this->user = 'root';
         $this->password = '';
         $this->db = 'fixpoint';
-        $this->connection = null;
 
-       
         $this->connection = new mysqli($this->host,$this->user,$this->password,$this->db);
 
         if ($this->connection->connect_error) {
             die("Connection failed: ".$this->connection->connect_error);
         }else{
-            echo '
-            <script type="text/JavaScript">
-                console.log("DB is connected");
-            </script>
-            ';
+            
         }
     }
 
-    /* public function insert($table,$para=array()){
+    public function insert($table,$para=array()){
 
         $table_columns = implode(',', array_keys($para));
         $table_value = implode("','", $para);
 
         $sql="INSERT INTO $table($table_columns) VALUES('$table_value')";
 
-        $result = $this->mysqli->query($sql);
+        $result = $this->connection->query($sql);
 
         return $result;
     }
@@ -52,7 +46,7 @@ class DB{
         $sql="UPDATE  $table SET " . implode(',', $args);
         $sql .=" WHERE $id";
 
-        $result = $this->mysqli->query($sql);
+        $result = $this->connection->query($sql);
 
         return $result;
 
@@ -67,7 +61,7 @@ class DB{
 
         $sql;
 
-        $result = $this->mysqli->query($sql);
+        $result = $this->connection->query($sql);
 
         return $result;
 
@@ -81,11 +75,11 @@ class DB{
             $sql="SELECT $rows FROM $table";
         }
 
-        $result = $this->mysqli->query($sql);
+        $result = $this->connection->query($sql);
 
         return $result;
 
-    } */
+    }
 
 }
 
