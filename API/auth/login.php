@@ -1,4 +1,4 @@
-<?php require_once('./users.php') ?>
+<?php require_once('./user.php') ?>
 <?php
 
 
@@ -25,7 +25,7 @@ if(isset($data)){
 
 http_response_code(200);
 if($username && $password){
-    $user = new Users();
+    $user = new User();
     $json = $user->login($username, $password);
 
     if($json){

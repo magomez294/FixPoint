@@ -1,19 +1,16 @@
 <?php
 
 class DB{
-    private $host;
-    private $user;
-    private $password;
-    private $db;
+    private const host='localhost';
+    private const user='root';
+    private const password='';
+    private const db='fixpoint';
+    
     public $connection;
-
+    
     public function __construct(){
-        $this->host = 'localhost';
-        $this->user = 'root';
-        $this->password = '';
-        $this->db = 'fixpoint';
 
-        $this->connection = new mysqli($this->host,$this->user,$this->password,$this->db);
+        $this->connection = new mysqli(DB::host,DB::user,DB::password,DB::db);
 
         if ($this->connection->connect_error) {
             die("Connection failed: ".$this->connection->connect_error);

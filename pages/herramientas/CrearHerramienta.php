@@ -35,10 +35,12 @@
     <main>
         <form action="../../API/CRUD/create.php" method="POST">
             <div>
-                <label for="types">Nombre:</label>
+                <label for="name">Nombre:</label>
                 <input type="text" name="name" placeholder="nombre" autofocus>
-                <label for="types">Descripción:</label>
+                <label for="description">Descripción:</label>
                 <textarea name="description" placeholder="descripción" autofocus rows="4" cols="50"></textarea>
+                <label for="imagen">Imagen:</label>
+                <input type="file" name="imagen">
             </div>
             
             
