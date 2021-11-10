@@ -14,7 +14,7 @@ class User extends DB{
     public function login($username, $password){
         session_start();
         $json = [];
-        $result = $this->connection->query("SELECT ".User::ID.", ".User::NAME.", ".User::PASSWORD." FROM usuario WHERE Nombre='Nadir'");
+        $result = $this->connection->query("SELECT ".User::ID.", ".User::NAME.", ".User::PASSWORD." FROM usuario WHERE Nombre='$username'");
         if ($result) {
             while ($row = mysqli_fetch_array($result)) {
                 if ($password == $row[User::PASSWORD]) {

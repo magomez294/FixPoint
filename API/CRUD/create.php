@@ -2,11 +2,12 @@
 
 require_once('../models/Tool.php');
 
-    if (isset($_POST['save_tool'])) {
+    if (isset($_POST['save_tool']) && isset($_FILES['imagen'])) {
         $name = $_POST['name'];
         $description = $_POST['description'];
+        $image = $_FILES['imagen'];
 
-        $tool = new Tool($name, $description);
+        $tool = new Tool($name, $description, $image);
         $result = $tool->insert('herramientas', ['NomHer'=>$name, 'Descripcion'=>$description]);
 
         /* $query = "INSERT INTO herramienta(NomHer, Descripcion) VALUES ('$name', '$description')";

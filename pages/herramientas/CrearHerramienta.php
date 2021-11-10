@@ -36,11 +36,11 @@
         <form action="../../API/CRUD/create.php" method="POST">
             <div>
                 <label for="name">Nombre:</label>
-                <input type="text" name="name" placeholder="nombre" autofocus>
+                <input type="text" name="name" placeholder="nombre" autofocus required >
                 <label for="description">Descripción:</label>
                 <textarea name="description" placeholder="descripción" autofocus rows="4" cols="50"></textarea>
                 <label for="imagen">Imagen:</label>
-                <input type="file" name="imagen">
+                <input type="file" name="imagen" required >
             </div>
             
             
