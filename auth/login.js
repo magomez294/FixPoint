@@ -6,12 +6,6 @@ class Login {
         this.validateOnSubmit();
     }
 
-    setLocalStorage_WithExpiry = (key, value, ml) => {
-        const now = new Date();
-        value.expery = now.getTime() + ml;
-        localStorage.setItem(key, JSON.stringify(value));
-    };
-
     validateOnSubmit(){
         let self = this;
         this.form.addEventListener("submit", (e) => {
@@ -48,8 +42,10 @@ class Login {
                         document.getElementById('error-message-all').style.display = 'block';
                     }else{
                         document.getElementById('error-message-all').style.display = 'none';
-                        localStorage.setItem('auth', JSON.stringify({value: 1, expery:36000000}));
-                        data.expery = 36000000;
+                        const now = new Date()
+                        const actualTime = now.getTime();
+                        localStorage.setItem('auth', JSON.stringify({value: 1, expiry: actualTime + 36000000}));
+                        data.expiry = actualTime + 36000000;
                         localStorage.setItem('user', JSON.stringify(data));
                         this.form.submit();
                     }

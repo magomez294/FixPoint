@@ -47,9 +47,122 @@
 }
 
 #tools {
-  background-color: red;
-  /* >li{
-        
-    } */
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (auto)[auto-fit];
+      grid-template-rows: repeat(auto-fit, auto);
+  margin: 0px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 0px;
+}
+
+@media screen and (min-width: 800px) {
+  #tools {
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #tools {
+    -ms-grid-columns: auto auto auto;
+        grid-template-columns: auto auto auto;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  #tools {
+    -ms-grid-columns: auto auto auto auto;
+        grid-template-columns: auto auto auto auto;
+  }
+}
+
+#tools > li {
+  list-style: none;
+  background-color: white;
+  border: 1px solid black;
+  -webkit-box-shadow: 0px 0px 10px;
+          box-shadow: 0px 0px 10px;
+  border-radius: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 20px;
+  padding-bottom: 10px;
+}
+
+#tools > li > h2 {
+  margin: 0px;
+  margin-top: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#tools > li > p {
+  margin: 0px;
+  margin-top: 5px;
+  padding-left: 10px;
+}
+
+#tools > li > div:first-of-type {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 300px;
+}
+
+#tools > li > div:first-of-type > img {
+  border-radius: 10px;
+  width: 300px;
+  height: auto;
+  max-height: 300px;
+}
+
+#tools > li > div:nth-of-type(2) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 25px;
+  margin-left: 10px;
+}
+
+#tools > li > div:nth-of-type(2) > p {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0px;
+  font-size: 20px;
+}
+
+#tools > li > div:nth-of-type(2) > p.available {
+  color: green;
+}
+
+#tools > li > div:nth-of-type(2) > p.unavailable {
+  color: red;
+}
+
+#tools > li > div:nth-of-type(2) > button {
+  margin-left: 10px;
+  color: #eec51f;
+  background-color: black;
+  border-radius: 5px;
+  padding: 2px 6px 2px 6px;
+  cursor: pointer;
 }
 /*# sourceMappingURL=indexHerramientas.css.map */

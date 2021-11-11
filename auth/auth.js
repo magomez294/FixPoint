@@ -8,7 +8,9 @@ class Auth{
     validateAuth(auth) {
         if (auth) {
             auth = JSON.parse(auth);
-            if(auth.value != 1){
+            const now = new Date()
+            const actualTime = now.getTime();
+            if(auth.value != 1 || actualTime > auth.expiry){
                 console.log('Entra');
                 window.location.replace("/login.html");
                 console.log(auth);

@@ -64,7 +64,29 @@
                         <p><?php 
                             if($row['Descripcion']) echo $row['Descripcion'] 
                         ?></p>
-                        <img src="<?php echo $direction.$row['Imagen'] ?>" width="100" height="100" >
+                        <div>
+                            <img src="<?php echo $direction.$row['Imagen'] ?>" width="100" height="100" >
+                        </div>
+                        <div>
+                            <p 
+                                class="<?php 
+                                    if($row['Disponible'] == 1){
+                                        echo 'available';
+                                    }else{
+                                        echo 'unavailable';
+                                    } ?>">
+                                    <?php 
+                                    if($row['Disponible'] == 1){
+                                        echo 'Disponible';
+                                    }else{
+                                        echo 'No disponible';
+                                    } ?>
+                            </p>
+                            <?php if ($row['Disponible'] == 1) { ?>
+                                <button>Solicitar</button>
+                            <?php } ?>
+                        </div>
+                        
                     </li>
                     <?php
                 }
