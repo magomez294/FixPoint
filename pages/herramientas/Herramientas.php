@@ -55,7 +55,7 @@
             include("../../API/database/db.php");
             $db = new DB();
             $result = $db->select("herramienta","*");
-            $direction = $_SERVER['DOCUMENT_ROOT'].'/Images/Tools/';
+            $direction = '../../Images/Tools/';
             if ($result) {
                 while ($row = mysqli_fetch_array($result)) {
                     ?>
