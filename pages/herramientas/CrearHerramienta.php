@@ -1,4 +1,9 @@
-<?php include("../../API/database/db.php"); ?>
+<?php 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,18 +37,22 @@
             </ul>
         </nav>
     </header>
+    <nav id="menuWeb">
+        <ul>
+            <li> <a href="">Manuales</a> </li>
+            <li><a href="./pages/herramientas/Herramientas.php">Herramientas</a></li>
+        </ul>
+    </nav>
     <main>
-        <form action="../../API/CRUD/create.php" method="POST">
+        <form action="../../API/CRUD/create.php" method="post" enctype="multipart/form-data">
             <div>
                 <label for="name">Nombre:</label>
                 <input type="text" name="name" placeholder="nombre" autofocus required >
                 <label for="description">Descripción:</label>
                 <textarea name="description" placeholder="descripción" autofocus rows="4" cols="50"></textarea>
                 <label for="imagen">Imagen:</label>
-                <input type="file" name="imagen" required >
+                <input type="file" name="image" required >
             </div>
-            
-            
             <input type="submit" name="save_tool" value="Guardar">
         </form>
         <?php if(isset($_SESSION['message'])){ ?>

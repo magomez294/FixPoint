@@ -12,7 +12,6 @@ class User extends DB{
     }
 
     public function login($username, $password){
-        session_start();
         $json = [];
         $result = $this->connection->query("SELECT ".User::ID.", ".User::NAME.", ".User::PASSWORD." FROM usuario WHERE Nombre='$username'");
         if ($result) {

@@ -48,4 +48,9 @@ main form > input {
   margin-left: 20px;
   margin-bottom: 20px;
 }
+
+main > div {
+  height: 20px;
+  background-color: blue;
+}
 /*# sourceMappingURL=crearHerramienta.css.map */

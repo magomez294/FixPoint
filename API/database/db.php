@@ -9,13 +9,13 @@ class DB{
     public $connection;
     
     public function __construct(){
-
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
         $this->connection = new mysqli(DB::host,DB::user,DB::password,DB::db);
 
         if ($this->connection->connect_error) {
             die("Connection failed: ".$this->connection->connect_error);
-        }else{
-            
         }
     }
 

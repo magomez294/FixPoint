@@ -6,19 +6,25 @@ class Auth{
         this.validateAuth(auth);
     }
     validateAuth(auth) {
-        console.log('Entra');
-        if(auth != 1){
-            console.log('Entra');
-            window.location.replace("/FixPoint/login.html");
+        if (auth) {
+            auth = JSON.parse(auth);
+            if(auth.value != 1){
+                console.log('Entra');
+                window.location.replace("/login.html");
+                console.log(auth);
+            }else{
+                document.querySelector('body').style.display = this.display;
+            }
         }else{
-            document.querySelector('body').style.display = this.display;
+            window.location.replace("/login.html");
         }
+        
     }
 
     logOut(){
         localStorage.removeItem('auth');
         localStorage.removeItem('user');
-        window.location.replace("/FixPoint");
+        window.location.replace("/");
     }
 }
 

@@ -5,33 +5,74 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../styles/Herramientas.css">
+    <link rel="stylesheet" href="../../styles/menu.css">
+    <link rel="stylesheet" href="../../styles/indexHerramientas.css">
+    
+    <script defer src="../../scripts/menu.js"></script>
     <script defer src="../../auth/auth.js"></script>
+    <script defer src="../../scripts/tools.js"></script>
     <title>Document</title>
 </head>
 
 <body>
-    <header><h2>KSJDVHBKJDHBVKJBDKJHBKJ</h2></header>
-    <nav>Inicio ........................................................................................................................................................................................................</nav>
-    <aside>buscador</br>
-        tipo
-    </aside>
-    <div id=contenedor>
-        <?php
+    <header>
+        <img id="logo" src="../../images/Logo.png" alt="">
+        <img id="logoMenu" src="../../images/menu.png" alt="" onclick="showHideMenu('menu')">
+        <nav id="menu" class="hide">
+            <img src="../../images/hideMenu.png" alt="" id="hideMenu" onclick="showHideMenu('menu')">
+            <ul>
+                <li> <a href="">Iniciar Sesión</a> </li>
+                <li> <a href="">Manuales</a> </li>
+                <li><a href="">Herramientas</a></li>
+                <li><a href="">Crear Cuenta</a></li>
+            </ul>
+        </nav>
+        <nav id="menuWeb2">
+            <ul>
+                <li><a href="">Crear Cuenta</a></li>
+                <li><a href="">Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+    <nav id="menuWeb">
+        <ul>
+            <li> <a href="">Manuales</a> </li>
+            <li><a href="./pages/herramientas/Herramientas.php">Herramientas</a></li>
+        </ul>
+    </nav>
+    <nav id="toolsNab">
+        <ul>
+            <li><a href="">Herramientas</a></li>
+            <li><a href="./CrearHerramienta.php">Donar</a></li>
+        </ul>
+    </nav>
+    
+    <nav id="toolSearch">
+        <input type="text" id="toolSearchInput" onkeyup="searchTool()" placeholder="Buscar herramienta..">
+    </nav>
+    <ul id="tools">
+    <?php
             include("../../API/database/db.php");
             $db = new DB();
             $result = $db->select("herramienta","*");
-            $direction="../../images";
+            $direction = $_SERVER['DOCUMENT_ROOT'].'/Images/Tools/';
             if ($result) {
                 while ($row = mysqli_fetch_array($result)) {
                     ?>
-                    <div class=a1>
+                    <li>
+                        <h2><?php echo $row['NomHer'] ?></h2>
+                        <p><?php 
+                            if($row['Descripcion']) echo $row['Descripcion'] 
+                        ?></p>
                         <img src="<?php echo $direction.$row['Imagen'] ?>" width="100" height="100" >
-                    </div>
+                    </li>
                     <?php
                 }
             }
         ?>
+        
+    </ul>
+    <div id=contenedor>
         
          
     </div> 

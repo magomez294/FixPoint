@@ -13,9 +13,9 @@ class Tool extends DB{
     private $imageName;
     private $validExtensions = array('jpg','png','gif');
     private const MaxImageSize = '10485760';
-    private const imageDirectory = $_SERVER['DOCUMENT_ROOT'].'/Images/';
+    private $imageDirectory;
 
-    private $errors = array();
+    private $error;
     private const ErrorInvalidExtension = 'La extensión del archivo no es válida o no se ha subido ningún archivo';
     private const ErrorInvalidSize = 'La imagen debe de tener un tamaño inferior a 10 mb';
 
@@ -24,20 +24,24 @@ class Tool extends DB{
         $this->name = $name;
         $this->description = $description;
         $this->image = $image;
+        /* echo 'entra'; */
+        $this->imageDirectory = $_SERVER['DOCUMENT_ROOT'].'/Images/Tools/';
     }
 
     private function validateImage(){
         $imagePath = pathinfo($this->image['name']);
 
+        /* echo $imagePath; */
+
         $this->imageExtension =  $imagePath['extension'];
         if(!in_array($this->imageExtension, $this->validExtensions)){
-            array_push($this->errors, Tool::ErrorInvalidExtension);
+            $this->error = Tool::ErrorInvalidExtension;
             return false;
         }
 
         $imageSize = $this->image['size'];
         if ($imageSize > Tool::MaxImageSize) {
-            array_push($this->errors, Tool::ErrorInvalidSize);
+            $this->error = Tool::ErrorInvalidSize;
             return false;
         }
         return true;
@@ -45,23 +49,27 @@ class Tool extends DB{
 
     function uploadImage(){
         if ($this->validateImage()) {
-            $result = $this->insert('herramientas', [Tool::NAME=>$this->name, Tool::DESCRIPTION=>$this->description]);
+            $result = $this->insert('herramienta', [Tool::NAME=>$this->name, Tool::DESCRIPTION=>$this->description]);
             $this->imageId = $this->connection->insert_id;
             if (!$result) {
                 $_SESSION['message'] = 'Error al intentar guardar la herramienta';
                 $_SESSION['color'] = 'red';
                 return false;
             }
-            $result = $this->update('herramientas',[Tool::IMAGE=>$this->imageId], "".Tool::ID."='$this->imageId'");
+            $result = $this->update('herramienta',[Tool::IMAGE=>$this->imageId.".".$this->imageExtension], "".Tool::ID."='$this->imageId'");
             if (!$result) {
                 $_SESSION['message'] = 'Error al intentar guardar la herramienta';
                 $_SESSION['color'] = 'red';
                 return false;
             }
-            $this->imageName = $this->imageId.$this->imageExtension;
-            move_uploaded_file($this->image['tmp_name'], Tool::imageDirectory.$this->imageName);
+            $this->imageName = $this->imageId.".".$this->imageExtension;
+            move_uploaded_file($this->image['tmp_name'], $this->imageDirectory.$this->imageName);
+            $_SESSION['message'] = 'Herramienta añadida';
+            $_SESSION['color'] = 'green';
             return true;
         }else{
+            $_SESSION['message'] = $this->error;
+            $_SESSION['color'] = 'red';
             return false;
         }
         
