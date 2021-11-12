@@ -1,71 +1,143 @@
-#menu { 
-    margin:40px 0 0 150px; 
+/*IMPORTS*/
+@font-face {
+    font-family:'textos';
+    src: url(../tipografia/tipografia_Patua.ttf);
 }
-#menu ul { 
-    list-style:none; 
-}
-#menu ul li { 
+
+ #menu ul {
+     list-style: none;
+ }
+ #menu ul li { 
     display:inline; 
     float:left; 
-    margin-bottom:20px; }
-/* background color set to RGBA, with opacity on 0.3 and also using text-shadow */
+    margin-bottom:20px; 
+}
 #menu ul li a { 
     padding:20px; 
-    background: rgba(255,138,30,0.3); 
+    background: #000000; 
     text-decoration: none; 
-    font: bold 14px Helvetica, Sans-Serif; 
-    letter-spacing: -1px; color: #402e16;
+    font-family:'textos';
+    font-size: 1.5em;
+    color: rgb(255, 255, 255);
     text-shadow: #eee 0px 0px 2px; 
 }
-/* :first-child pseudo selector with rounded top left corner */
 #menu ul li:first-child a { 
     -moz-border-radius-topleft: 12px; 
     border-top-left-radius:12px; 
 }
- 
-/* :last-child pseudo selector with rounded top right corner */
 #menu ul li:last-child a { 
     -moz-border-radius-topright: 12px; 
     border-top-right-radius:12px; 
 }
-
-/* hover state shows a linear gradient and opacity it brought down to 0.9 and also shows a very slight grey shadow on top */
 #menu ul li a:hover { 
     -moz-box-shadow: 0 -5px 10px #777; 
     box-shadow: 0 -5px 10px #777;
+    color: black;
     background: -moz-linear-gradient(
-       right bottom, rgb(237,227,112) 0%, rgb(255,173,10) 72%) !important;
-    background-color:rgb(255,173,10) !important;
+       right bottom, rgb(237,227,112) 0%, #EEC51F 72%) !important;
+    background-color:#EEC51F !important;
     -moz-opacity:.90; 
     filter:alpha(opacity=90); 
     opacity:.90; 
 }
-  
- /* another RGBA background, now with an opacity of 0.8 */
- #menu ul li a.active { 
-     background: rgba(255,138,30,0.8) !important; 
+#main {
+    clear: left;
+    background-color: #EEC51F;
+    font-family:'textos';
+    margin-left: 40px;
+    width: 549px;
+    margin-top: 250px;
+
 }
-/* main contents with RGBA background (same colour as active tab) and three rounded corners */
-#main { 
-    clear:both; 
-    background: rgba(255,138,30,0.8); 
-    width:500px; 
-    margin-left:150px;
-    -moz-border-radius-topright: 12px; 
-    -moz-border-radius-bottomright: 12px; 
-    -moz-border-radius-bottomleft: 12px;
-    border-top-right-radius:12px; 
-    border-bottom-right-radius:12px; 
-    border-bottom-left-radius:12px;
-}
+label {
+    font-size: 1.5em;
+    margin-left: 15px;
     
- /* header with a text-shadow */
- #main h3 { 
-     text-transform:uppercase; 
-     padding:20px 0 0 20px; color:#eee; 
-     text-shadow: #000 0px 0px 2px; 
 }
- #main p { 
-     padding-bottom:20px; 
-     color:#ddd; 
+input {
+    height: 20px;
+    margin-bottom: 10px;
 }
+
+/*Inputs*/
+#nomPersona {
+    width: 400px;
+}
+#estudioActual {
+    width: 272px;
+}
+#lugar {
+    width: 410px;   
+}
+#numTelf {
+    width: 390px;
+}
+#ages{
+    width: 430px;
+}
+#corElectronico {
+    width: 290px;
+}
+
+#preview {
+    border: 4px dashed #000000;
+    border-radius: 30px;
+    margin-right: 20px;
+}
+
+#fecha, #introduccion, #tiempoEstimado {
+    padding-top: 15px;
+}
+
+#tiempoEstimado, #dificultadEstimada {
+    margin-bottom: 10px;
+}
+
+select {
+    margin-left: 10px;
+}
+
+
+textarea, #imgIntro {
+    margin: 15px 0 20px 15px;
+}
+
+textarea {
+    padding: 10px;
+    font-family: 'textos';
+    resize: none;
+}
+
+#imgPrincipal {
+    font-family: 'textos';
+    font-size: 0.9em;
+}
+
+#myButton {
+    float: right;
+}
+
+/*Boton*/
+/* .btnSiguiente {
+    float: right;
+    cursor: pointer;
+    width: 80px;
+    height: 40px;
+    margin-right: 15px;
+}
+.btnAnterior {
+    cursor: pointer;
+    width: 80px;
+    height: 40px;
+    margin-left: 15px;
+}
+.btnSiguienteFicha {
+    cursor: pointer;
+    width: 80px;
+    height: 40px;
+    margin-left: 78%;
+} */
+
+/* #botones {
+    display: inline-flex;
+} */

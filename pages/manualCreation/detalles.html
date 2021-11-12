@@ -10,33 +10,42 @@
 <body>
 <div id="menu">
     <ul>
-        <li><a href="ficha.html">Ficha</a></li>
-        <li><a href="introduccion.html">Introducción</a></li>
+        <li><a href="#">Ficha</a></li>
+        <li><a href="#">Introducción</a></li>
         <li><a href="#">Detalles</a></li>
         <li><a href="#">Pasos guía</a></li>
     </ul>
 </div>
 <div id="main">
- <form action="../manualCreation/pasos.html" onsubmit="guardar()">
-    <div id="tiempo">
+ <form action="../manualCreation/pasos.html" onsubmit="guardarDetalles()">
+    <div id="tiempoEstimado">
         <label>Tiempo estimado</label>
-        <input type="range" min="0" max="3.14" step="any">
-        </div>
-        <div id="dificultad">
-        <label>Dificultad estimada</label>
-        <select name="" id="">
-            <option value="">Muy fácil</option>
-            <option value="">Fácil</option>
-            <option value="">Moderado</option>
-            <option value="">Difícil</option>
-            <option value="">Muy difícil</option>
+        <input type="text" id="numOption" required>
+        <select id="tiempOption" required>
+            <option></option>
+            <option>min.</option>
+            <option>h.</option>
+            <option>d.</option>
+            
         </select>
+    </div>
+        <div id="dificultadEstimada">
+            <label>Dificultad estimada</label>
+            <select id="dificultad" required>
+                <option></option>
+                <option>Muy fácil</option>
+                <option>Fácil</option>
+                <option>Moderado</option>
+                <option>Difícil</option>
+                <option>Muy difícil</option>
+            </select>
         </div>
-        <div id="herramientas">
-        <label>Herramientas</label>
-        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <div>
+        <label>Herramientas</label><br>
+        <textarea name="" id="herramientas" cols="65" rows="2" placeholder="Herramienta1&#10;Herramienta2&#10;Herramienta3" required></textarea>
         </div>
-   <input type="submit" id="myButton" value="Siguiente">
+            <input type="submit" id="myButton" value="Siguiente">
+            <input type="button" value="Atras" onclick="history.back()">
     </form>
  </div>
  <script src="../../scripts/plantillas.js"></script>

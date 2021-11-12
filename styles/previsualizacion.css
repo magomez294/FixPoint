@@ -1,44 +1,132 @@
+/*IMPORTS*/
+@font-face {
+    font-family:'fecha';
+    src: url(../tipografia/tipografia_Fecha.ttf);
+}
+@font-face {
+    font-family:'titulo';
+    src: url(../tipografia/tipografia_Titulo.ttf);
+}
+@font-face {
+    font-family:'textos';
+    src: url(../tipografia/tipografia_Patua.ttf);
+}
+body {
+    /* background-color: #EEC51F; */
+    border: 18px solid #000000;
+    border-radius: 6px;
+    margin: 0;
+}
+#contenedor {
+    font-family:'titulo';
+    font-weight: bold;
+    padding: 2%;
+    background-color: #EEC51F;
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr; 
+    grid-template-areas: 
+    "titfec"
+    "datosPersonales"
+    "introduccion"
+    "pasos"; 
+}
+
+#titFec {
+    display: grid; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: 0.1fr 0.1fr;
+    grid-template-areas: 
+        "titulo"
+        "fecha"; 
+    grid-area: titfec;
+    margin: 0;
+    text-align: center;
+}
+
+#titulo {
+    font-family:'titulo';
+    margin: 0;
+    font-size: 3.8em;
+    grid-area: titulo;
+}
+
+#fecCreacion {
+    font-family:'fecha';
+    margin: 0;
+    grid-area: fecha;
+    font-size: 1.5em;
+}
+
+#contPersonales {
+    grid-area: datosPersonales;
+    margin: 0;
+}
+#contPersonales>p {
+    font-size: 2em;
+}
 table {
     border-collapse: collapse;
     border: 2px solid black;
+    margin-left: 3%;
 }
 tr, td {
+    padding: 3px;
+	width: 300px;
+	height: 25px;
     border: 2px solid black;
 }
 
-#imgPrincipal {
-    margin-top: 5px;
-    border:2px solid black;
-    width: 100px;
-    height: 100px;
-}
-#contenedor {
+#contIntro {
     display: grid; 
-    grid-auto-columns: 1fr; 
-    grid-template-columns: 1fr 1fr; 
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
-    gap: 0px 0px; 
+    grid-template-columns: 0.3fr 0.1fr 1fr; 
+    grid-template-rows: 0.1fr 0.5fr 1fr 1fr;  
     grid-template-areas: 
-      "titulo titulo"
-      "fecCreacion fecCreacion"
-      "tablaDatos tablaDatos"
-      "txtIntro txtIntro"
-      "imgPrincipal dificultad"
-      "imgPrincipal tiempo"
-      "herramientas herramientas"
-      "pasos pasos"; 
-  }
-  #titulo { 
-      grid-area: titulo; 
-    }
-  #fecCreacion { 
-      grid-area: fecCreacion; 
-    }
-  #tablaDatos { 
-      grid-area: tablaDatos; }
-  #txtIntro { grid-area: txtIntro; }
-  #imgPrincipal { grid-area: imgPrincipal; }
-  #dificultad { grid-area: dificultad; }
-  #tiempo { grid-area: tiempo; }
-  #herramientas { grid-area: herramientas; }
-  #pasos { grid-area: pasos; }
+        "txtIntro txtIntro txtIntro"
+        "foto foto dificultad"
+        "foto foto tiempo"
+        "herramientas herramientas herramientas"; 
+    grid-area: introduccion; 
+}
+
+ #resumenIntro {
+    grid-area: txtIntro;
+    font-size: 1.8em;
+ }
+#imgTitulo {
+    width: 90%;
+    height: auto;
+    grid-area: foto; 
+    margin-left: 10%;
+}
+#dificultad {
+    margin-top: 13%;
+    margin-left: 8%;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 70%;
+    height: 30%;
+    grid-area: dificultad;
+}
+#tempo {
+    margin-top: 4%;
+    margin-left: 8%;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 70%;
+    height: 30%;
+    display: inline-flex;
+    grid-area: tiempo;
+}
+#herramientas {
+    grid-area: herramientas;
+}
+#pasos {
+    grid-area: pasos;
+}
+
+
+
+
+

@@ -9,50 +9,77 @@
 </head>
 <body>
 <div id="contenedor">
-<p id="titulo">Nombre reparacion</p>
-<p id="fecCreacion">Fecha creacion</p>
-<table id="tablaDatos">
-<tr>
-    <td colspan="4">Nombre</td>
-    <td colspan="4"><label id="datosPersona">Datos Nombre</label></td>
-</tr>
-<tr>
-    <td colspan="4">Estudios realizados</td>
-    <td colspan="4"><label id="datosEstudios">Datos Estudios</label></td>
-</tr>
-<tr>
-    <td colspan="4">Ciudad</td>
-    <td colspan="4"><label id="datosLugar">Datos Ciudad</label></td>
-</tr>
-<tr>
-    <td colspan="4">Teléfono</td>
-    <td colspan="2"><label id="datosTelf">Datos telefono</label></td>
-    <td colspan="1">Edad</td>
-    <td colspan="1"><label id="datosEdad">Datos edad</label></td>
-</tr>
-<tr>
-    <td colspan="4">Email</td>
-    <td colspan="4"><label id="datosEmail">Datos email</label></td>
-</tr>
-</table>
-<p id="txtIntro">Introduccion</p>
- <div id="imgPrincipal">Imagen</div>
- <div id="dificultad">
-     <p>Dificultad</p>
- </div>
- <div id="tiempo">
-    <p>Tiempo estimado</p>
- </div>
- <div id="herramientas">
-Herramientas
- </div>
-<div id="pasos">
-    <p>Pasos a seguir</p>
-    <div>
-    <img src="" alt="">
+
+    <div id="titFec">
+        <p id="titulo">Nombre reparacion</p>
+        <p id="fecCreacion">Fecha creacion</p>
     </div>
-    <p>Texto</p>
-</div>
+
+
+    <div id="contPersonales">
+        <p>Datos personales</p>
+        <table id="tablaDatos">
+            <tbody>
+                <tr>
+                    <td>Nombre</td>
+                    <td colspan="3"><label id="datosPersona">Datos Nombre</label></td>
+                </tr>
+                <tr>
+                    <td>Estudios realizados</td>
+                    <td colspan="3"><label id="datosEstudios">Datos Estudios</label></td>
+                </tr>
+                <tr>
+                    <td>Ciudad</td>
+                    <td colspan="3"><label id="datosLugar">Datos Ciudad</label></td>
+                </tr>
+                <tr>
+                    <td>Teléfono</td>
+                    <td><label id="datosTelf">Datos telefono</label></td>
+                    <td>Edad</td>
+                    <td><label id="datosEdad">Datos edad</label></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td colspan="3"><label id="datosEmail">Datos email</label></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="contIntro">
+        <p id="resumenIntro">Introduccion</p>
+        <img src="" width="150px" height="120px" id="imgTitulo">
+    <div>
+        <p id="dificultad">Dificultad</p>
+    </div>
+       
+        <div id="tempo">
+            <p id="numHoras">Numero</p>
+            <p id="detalleTiempo">Dias,Semanas</p>
+        </div>
+
+        <div>
+            <p>Herramientas</p>
+            <p id="herramientas">Texto a modificar</p>
+        </div>
+
+    </div>
+
+
+    
+    <div id="pasos">
+        <p>Pasos a seguir</p>
+        <div>
+        <img src="" alt="">
+        </div>
+        <p>Texto</p>
+    </div>
+    <div>
+        <p>Si está todo correcto pulse el botón <i>Generar PDF</i>, por el contrario pulse <i>Volver atrás</i> si desea cambiar algún dato.</p>
+        <button>Generar pdf</button>
+        <button onclick="history.back()">Volver atrás</button>
+    </div>
+    
 </div>
 <script src="../../scripts/previsualizacion.js"></script>
 </body>
