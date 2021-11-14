@@ -1,6 +1,7 @@
 <?php
 require_once('../database/db.php');
 class Tool extends DB{
+    private const TOOLS = 'herramienta';
     private const NAME = 'NomHer';
     private const ID = 'ID_Herramienta';
     private const DESCRIPTION= 'Descripcion';
@@ -49,14 +50,14 @@ class Tool extends DB{
 
     function uploadImage(){
         if ($this->validateImage()) {
-            $result = $this->insert('herramienta', [Tool::NAME=>$this->name, Tool::DESCRIPTION=>$this->description]);
+            $result = $this->insert(Tool::TOOLS, [Tool::NAME=>$this->name, Tool::DESCRIPTION=>$this->description]);
             $this->imageId = $this->connection->insert_id;
             if (!$result) {
                 $_SESSION['message'] = 'Error al intentar guardar la herramienta';
                 $_SESSION['color'] = 'red';
                 return false;
             }
-            $result = $this->update('herramienta',[Tool::IMAGE=>$this->imageId.".".$this->imageExtension], "".Tool::ID."='$this->imageId'");
+            $result = $this->update(Tool::TOOLS,[Tool::IMAGE=>$this->imageId.".".$this->imageExtension], "".Tool::ID."='$this->imageId'");
             if (!$result) {
                 $_SESSION['message'] = 'Error al intentar guardar la herramienta';
                 $_SESSION['color'] = 'red';

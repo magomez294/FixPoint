@@ -16,23 +16,6 @@ require_once('../models/Tool.php');
         if ($success) {
             header("Location: ../../pages/herramientas/CrearHerramienta.php");
         }
-        /* if (!$success) {
-            header("Location: ../../pages/herramientas/CrearHerramienta.php");
-        } */
         
-        
-
-        /* $query = "INSERT INTO herramienta(NomHer, Descripcion) VALUES ('$name', '$description')";
-        $result = mysqli_query($connection, $query); */
-        /* if (!$result) {
-            $_SESSION['message'] = 'Error al intentar guardar la herramienta';
-            $_SESSION['color'] = 'red';
-        }else{
-
-            $_SESSION['message'] = 'Herramienta guardada';
-            $_SESSION['color'] = 'green';
-
-            header("Location: ../pages/herramientas/CrearHerramienta.php");
-        } */
     }
 ?>

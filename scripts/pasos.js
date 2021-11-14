@@ -17,7 +17,10 @@ function obtenerIndicePaso(paso){
 };
 
 function desplegar(paso){
-    paso.children[2].onclick = function(){
+    console.log(paso)
+    console.log(paso.children[1].children[0].children[0])
+    /* paso.children[1].children[0].children[0].onclick = function(){
+        console.log(this.parentNode);
         this.parentNode.children[1].classList.toggle("ocultar");
         if (this.getAttribute('value')=="-") {
             this.setAttribute('value', "+");
@@ -25,11 +28,11 @@ function desplegar(paso){
         else{
             this.setAttribute('value', "-");
         };
-    };
+    }; */
 };
 
 function eliminar(paso){
-    paso.children[1].children[3].onclick = function(){
+    paso.children[1].children[2].onclick = function(){
         var indice = obtenerIndicePaso(paso);
         imagenes.splice(indice, 1);
         console.log(indice);
@@ -38,9 +41,10 @@ function eliminar(paso){
         var k;
         for (k = 0; k < listaPasos.length; k++) {
             listaPasos[k].children[0].textContent="Paso "+(k+1);
-            listaPasos[k].children[1].children[0].setAttribute('id', "image"+(k+1));
-            listaPasos[k].children[1].children[1].setAttribute('id', "preview"+(k+1));
-            $("#image"+(k+1)).change(function() {readURL(this);});
+            listaPasos[k].children[1].children[0].children[0].setAttribute('id', "image"+(k+1));
+            listaPasos[k].children[1].children[0].children[1].setAttribute('id', "preview"+(k+1));
+            document.getElementById(`image${k+1}`).onchange = function() {readURL(this);};
+            /* $("#image"+(k+1)).change(function() {readURL(this);}); */
         };
     };
 };
@@ -50,7 +54,7 @@ var crear = document.getElementById('nuevo');
 crear.onclick = function(){
     var todosPasos =document.getElementsByClassName("paso");
     var newDiv = document.createElement("div");
-    newDiv.setAttribute('Class', "paso");
+    newDiv.setAttribute('class', "paso");
     var titulo = document.createElement("p");
     var numero=todosPasos.length+1;
     titulo.textContent="Paso "+numero;
@@ -67,21 +71,24 @@ crear.onclick = function(){
     newImage.setAttribute('width', "150px");
     newImage.setAttribute('height', "120px");
     newImage.setAttribute('id', "preview"+numero);
+    var imageDiv = document.createElement("div");
+    imageDiv.setAttribute('class', "image");
+    imageDiv.appendChild(newInput);
+    imageDiv.appendChild(newImage);
     var newText = document.createElement("textarea");
     newText.setAttribute('cols', "30");
     newText.setAttribute('rows', "10");
     var newButton = document.createElement("input");
     newButton.setAttribute('type', "button");
-    newButton.setAttribute('Value', "Eliminar paso");
-    newButton.setAttribute('Class', "eliminar");
-    contenido.appendChild(newInput);
-    contenido.appendChild(newImage);
+    newButton.setAttribute('value', "Eliminar paso");
+    newButton.setAttribute('class', "eliminar");
+    contenido.appendChild(imageDiv);
     contenido.appendChild(newText);
     contenido.appendChild(newButton);
     var desplegable=document.createElement("input");
     desplegable.setAttribute('type', "button");
-    desplegable.setAttribute('Class', "desplegar");
-    desplegable.setAttribute('Value', "-");
+    desplegable.setAttribute('class', "desplegar");
+    desplegable.setAttribute('value', "-");
     newDiv.appendChild(titulo);
     newDiv.appendChild(contenido);
     newDiv.appendChild(desplegable);
@@ -89,7 +96,8 @@ crear.onclick = function(){
     listaPasos.appendChild(newDiv);
     desplegar(newDiv);
     eliminar(newDiv);
-    $("#image"+(numero)).click(function() {readURL(this);});
+    document.getElementById(`image${numero}`).onclick = function() {readURL(this);};
+   /*  $("#image"+(numero)).click(function() {readURL(this);}); */
     console.log(imagenes);
 };
 
@@ -97,10 +105,11 @@ crear.onclick = function(){
 function readURL(input) {
     //var input = document.getElementById(id);
     //console.log(id);
+    console.log('entra');
     input.onchange = function () {
         var reader = new FileReader();
         if (input.files && input.files[0]) {
-            
+            console.log('entra')
             if(input.files[0].size>1024000){
                 alert("La imagen no puede superar los 500Kb");
                 $("#preview").attr("src","blank");
@@ -118,7 +127,9 @@ function readURL(input) {
             }
             reader.onload = function (e) {
                 var pasos =document.getElementsByClassName("paso");
+                console.log('entra')
                 for (let index = 1; index <= pasos.length; index++) {
+                    console.log('entra')
                     if (input.getAttribute('id')=='image'+index) {
                         $('#preview'+index).attr('src', e.target.result);
                         //pasos[index-1].src = e.target.result;

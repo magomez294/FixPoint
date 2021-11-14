@@ -1,6 +1,9 @@
 var USERNAME = 'username';
+var EMAIL = 'email';
 var PASSWORD = 'password';
-class Login {
+var PASSWORDCOPY = 'passwordCopy';
+var EMAIL_REGEX = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+class createAccount {
     constructor(form, fields){
         this.form = form;
         this.fields = fields;
@@ -9,23 +12,26 @@ class Login {
 
     validateOnSubmit(){
         let self = this;
-        this.form.addEventListener("submit", (e) => {
+        this.form.addEventListener("submit", (e)=>{
             e.preventDefault();
             var error = 0;
-            self.fields.forEach((field)=>{
-                const input = document.querySelector(`#${field}`);
-                if (self.validateFields(input) == false) {
+            console.log(self.fields);
+            self.fields.forEach((field) => {
+                const input = document.getElementById(`${field}`);
+                if (self.validateFields(input) == false){
                     error ++;
                 }
-            })
-            if (error == 0) {
+            });
+            if (error == 0){
                 var data = {
                     // @ts-ignore
                     username: document.getElementById(USERNAME).value,
                     // @ts-ignore
+                    email: document.getElementById(EMAIL).value,
+                    // @ts-ignore
                     password: document.getElementById(PASSWORD).value
                 }
-                fetch("./API/auth/login.php", {
+                fetch("../API/auth/createAccount.php", {
                     method: 'POST',
                     body: JSON.stringify(data),
                     headers: {
@@ -34,7 +40,6 @@ class Login {
                 })
                 .then((response)=>response.json())
                 .then((data)=>{
-                    console.log(data);
                     if(data.error){
                         document.getElementById('error-message-all').innerText = data.message;
                         document.getElementById('error-message-all').style.display = 'block';
@@ -42,11 +47,7 @@ class Login {
                         document.getElementById('error-message-all').style.display = 'none';
                         const now = new Date()
                         const actualTime = now.getTime();
-                        if(data.admin){
-                            localStorage.setItem('auth', JSON.stringify({value: 2, expiry: actualTime + 36000000}));
-                        }else{
-                            localStorage.setItem('auth', JSON.stringify({value: 1, expiry: actualTime + 36000000}));
-                        }
+                        localStorage.setItem('auth', JSON.stringify({value: 1, expiry: actualTime + 36000000}));
                         data.expiry = actualTime + 36000000;
                         localStorage.setItem('user', JSON.stringify(data));
                         this.form.submit();
@@ -55,11 +56,10 @@ class Login {
                 .catch((data)=>{
                     console.error("Error: ", data.message);
                 });
-                
             }
         });
     }
-
+    
     validateFields(field){
         if(field.value.trim() == "") {
             this.setStatus(
@@ -68,10 +68,38 @@ class Login {
                 "error"
             );
             return false;
-        }else{
+        }else if(field.id == EMAIL){
+            var valid = EMAIL_REGEX.test(String(field.value).toLowerCase());
+            if(valid){
+                this.setStatus(field, null, "succes");
+                return true;
+            }else{
+                this.setStatus(
+                    field, 
+                    `formato del email incorrecto`,
+                    "error"
+                );
+                return false;
+            }
+        }else if (field.id == PASSWORDCOPY) {
+            const password = document.getElementById(PASSWORD);
+            // @ts-ignore
+            if(field.value != password.value){
+                this.setStatus(
+                    field, 
+                    `La contraseña no coincide`,
+                    "error"
+                );
+                return false;
+            }else{
+                this.setStatus(field, null, "succes");
+                return true;
+            }
+        } else {
             this.setStatus(field, null, "succes");
             return true;
         }
+
     }
 
     setStatus(field, message, status){
@@ -90,12 +118,11 @@ class Login {
         }
         
     }
-    
 }
 
-var form = document.querySelector(".loginForm");
+var form = document.querySelector(".createAccountForm");
 
 if (form) {
-    const fields = [USERNAME, PASSWORD];
-    const validator = new Login(form, fields);
+    const fields = [USERNAME, EMAIL, PASSWORD, PASSWORDCOPY];
+    const validator = new createAccount(form, fields);
 }

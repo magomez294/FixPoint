@@ -1,16 +1,22 @@
 class Auth{
-    constructor(){
+    constructor(admin){
         this.display = document.querySelector('body').style.display;
         document.querySelector('body').style.display = "none";
         const auth = localStorage.getItem('auth');
-        this.validateAuth(auth);
+        this.validateAuth(auth, admin);
     }
-    validateAuth(auth) {
+    validateAuth(auth, admin) {
         if (auth) {
             auth = JSON.parse(auth);
             const now = new Date()
             const actualTime = now.getTime();
-            if(auth.value != 1 || actualTime > auth.expiry){
+            var value;
+            if(admin){
+                value = 2;
+            }else{
+                value = 1;
+            }
+            if(auth.value != value || actualTime > auth.expiry){
                 console.log('Entra');
                 window.location.replace("/login.html");
                 console.log(auth);
@@ -30,7 +36,7 @@ class Auth{
     }
 }
 
-const auth = new Auth();
+const auth = new Auth(false);
 
 const logout = document.getElementById('logout');
 

@@ -1,0 +1,37 @@
+main > #main > form {
+  border: 1px solid black;
+  margin-left: 5px;
+  margin-right: 5px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding-top: 0.01px;
+  padding-bottom: 10px;
+}
+
+main > #main > form > div {
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main > #main > form input, main > #main > form select, main > #main > form textarea {
+  margin-left: 10px;
+}
+
+main > #main > form input[type=submit], main > #main > form input[type=button], main > #main > form select[type=submit], main > #main > form select[type=button], main > #main > form textarea[type=submit], main > #main > form textarea[type=button] {
+  margin-top: 10px;
+}
+
+main > #main > form textarea {
+  resize: none;
+  width: 100%;
+  height: 70px;
+}
+/*# sourceMappingURL=detalles.css.map */

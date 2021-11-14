@@ -1,6 +1,6 @@
 
 function guardar () {
-    /* window.history.forward(); */
+    window.history.forward();
     localStorage.setItem('fecManual', document.getElementById("fecManual").value);
     localStorage.setItem('nomPersona', document.getElementById("nomPersona").value);
     localStorage.setItem('estudioActual', document.getElementById("estudioActual").value);
@@ -13,13 +13,13 @@ function guardar () {
 }
 
 function guardarIntroduccion(){
-    /* window.history.forward(); */
+    window.history.forward();
     localStorage.setItem('cuadroIntro', document.getElementById("cuadroIntro").value);
     localStorage.setItem('dispReemplazado', document.getElementById("titManual").value);
 }
 
 function guardarDetalles () {
-    /* window.history.forward(); */
+    window.history.forward();
     localStorage.setItem('numTiempo', document.getElementById("numOption").value);
     localStorage.setItem('controlTiempo', document.getElementById("tiempOption").value);
     localStorage.setItem('dificultadRep', document.getElementById("dificultad").value);
@@ -27,13 +27,13 @@ function guardarDetalles () {
 }
 
 function guardarPasos() {
-    /* window.history.forward(); */
+    window.history.forward();
     var elementos =document.getElementsByClassName("contenido");
     
     localStorage.setItem('numeropasos', elementos.length);
     console.log(localStorage.getItem("numeropasos"));
     for (let index = 0; index < elementos.length; index++) {
-        localStorage.setItem('texto'+(index+1), elementos[index].children[2].value);
+        localStorage.setItem('texto'+(index+1), elementos[index].children[1].value);
         localStorage.setItem('imagen'+(index+1), imagenes[index]);
     }
 }
@@ -41,7 +41,7 @@ function guardarPasos() {
 function previsualizar() {
     document.getElementById("imgPrincipal").onchange = function () {
         var reader = new FileReader();
-        if(this.files[0].size>528385){
+        if(this.files[0].size>1024000){
             alert("Image Size should not be greater than 500Kb");
             $("#preview").attr("src","blank");
             $("#preview").hide();  

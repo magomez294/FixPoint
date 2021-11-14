@@ -41,3 +41,31 @@ for (let index = 1; index <= localStorage.getItem("numeropasos"); index++) {
     document.getElementById("imagen"+index).show; 
 
 }
+
+function saveManual(){
+    var userData = localStorage.getItem('user');
+    userData = JSON.parse(userData);
+    const pdf = html2pdf().from(document.getElementById('contenedor'));
+    var title = localStorage.getItem("dispReemplazado");
+    var autor = userData.username;
+    var data = {
+        title: title,
+        autor: autor,
+        pdf: pdf
+    }
+    fetch("../API/CRUD/createManual.php", {
+        method: 'POST',
+        body: JSON.stringify(data)
+    })
+    .then((response)=>response.json())
+    .then((data)=>{
+        if(data){
+            Swal.fire(
+                'Hecho!',
+                `El manual con id ${id} a sido creado, está pendiente de ser validado por un resposable`,
+                'success'
+            )
+        }
+    })
+
+}
