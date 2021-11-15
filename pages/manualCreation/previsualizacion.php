@@ -2,14 +2,20 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Crear una nueva guia</title>
   <link rel="stylesheet" href="../../styles/previsualizacion.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script defer src="sweetalert2.all.min.js"></script>
-  <script defer src="html2pdf.bundle.min.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js"></script>
+
+ 
+  
+ 
+  
+  <script defer src="../../scripts/previsualizacion.js"></script>
+  <title>Crear una nueva guia</title>
 </head>
 <body>
 <div id="contenedor">
@@ -22,7 +28,7 @@
 
     <div id="contPersonales">
         <p>Datos personales</p>
-        <table id="tablaDatos">
+        <!-- <table id="tablaDatos">
             <tbody>
                 <tr>
                     <td>Nombre</td>
@@ -47,7 +53,7 @@
                     <td colspan="3"><label id="datosEmail">Datos email</label></td>
                 </tr>
             </tbody>
-        </table>
+        </table> -->
     </div>
 
     <div id="contIntro">
@@ -78,13 +84,13 @@
         </div>
         <p>Texto</p>
     </div>
-    <div>
-        <p>Si está todo correcto pulse el botón <i>Generar PDF</i>, por el contrario pulse <i>Volver atrás</i> si desea cambiar algún dato.</p>
-        <button>Generar pdf</button>
-        <button onclick="history.back()">Volver atrás</button>
-    </div>
+    
     
 </div>
-<script src="../../scripts/previsualizacion.js"></script>
+<div id="getPDF">
+        <p>Si está todo correcto pulse el botón <i>Generar PDF</i>, por el contrario pulse <i>Volver atrás</i> si desea cambiar algún dato.</p>
+        <button onclick="saveManual()">Generar pdf</button>
+        <button onclick="history.back()">Volver atrás</button>
+</div>
 </body>
 </html>

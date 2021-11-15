@@ -1,6 +1,8 @@
-var fecha = localStorage.getItem("fecManual").split('-');
-document.getElementById("fecCreacion").innerHTML = `${fecha[2]}/${fecha[1]}/${fecha[0]}`;
-document.getElementById("datosPersona").innerHTML = localStorage.getItem("nomPersona");
+
+
+/* var fecha = localStorage.getItem("fecManual").split('-'); */
+/* document.getElementById("fecCreacion").innerHTML = `${fecha[2]}/${fecha[1]}/${fecha[0]}`; */
+/* document.getElementById("datosPersona").innerHTML = localStorage.getItem("nomPersona");
 document.getElementById("datosEstudios").innerHTML = localStorage.getItem("estudioActual");
 document.getElementById("datosLugar").innerHTML = localStorage.getItem("lugar");
 document.getElementById("datosTelf").innerHTML = localStorage.getItem("numTelf");
@@ -40,20 +42,38 @@ for (let index = 1; index <= localStorage.getItem("numeropasos"); index++) {
     listaPasos.appendChild(newDiv);
     document.getElementById("imagen"+index).show; 
 
-}
+} */
 
 function saveManual(){
+    
     var userData = localStorage.getItem('user');
-    userData = JSON.parse(userData);
-    const pdf = html2pdf().from(document.getElementById('contenedor'));
-    var title = localStorage.getItem("dispReemplazado");
-    var autor = userData.username;
+    userData = JSON.parse(userData);4
+
+    
+    https://www.youtube.com/watch?v=1nTT2IJ-gTg
+
+
+    /* var doc = new jsPDF('p', 'pt', 'a4'); */
+    console.log(doc)
+    /* var element = $('#contenedor').html(); */
+    /* var specialElementHandlers = {
+        '#getPDF': function(element, renderer){
+          return true;
+        },
+      };
+      doc.addHTML($('#contenedor'),function() {
+        doc.save();
+      }); */
+      
+    /* const pdf = doc; */
+    /* var title = localStorage.getItem("dispReemplazado"); */
+    /* var autor = userData.username;
     var data = {
         title: title,
         autor: autor,
         pdf: pdf
-    }
-    fetch("../API/CRUD/createManual.php", {
+    } */
+    /* fetch("../API/CRUD/createManual.php", {
         method: 'POST',
         body: JSON.stringify(data)
     })
@@ -66,6 +86,6 @@ function saveManual(){
                 'success'
             )
         }
-    })
+    }) */
 
 }
