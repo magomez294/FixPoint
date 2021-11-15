@@ -44,48 +44,81 @@ for (let index = 1; index <= localStorage.getItem("numeropasos"); index++) {
 
 } */
 
-function saveManual(){
+async function saveManual(){
     
     var userData = localStorage.getItem('user');
-    userData = JSON.parse(userData);4
-
-    
-    https://www.youtube.com/watch?v=1nTT2IJ-gTg
-
-
-    /* var doc = new jsPDF('p', 'pt', 'a4'); */
-    console.log(doc)
-    /* var element = $('#contenedor').html(); */
-    /* var specialElementHandlers = {
-        '#getPDF': function(element, renderer){
-          return true;
-        },
-      };
-      doc.addHTML($('#contenedor'),function() {
-        doc.save();
-      }); */
-      
-    /* const pdf = doc; */
-    /* var title = localStorage.getItem("dispReemplazado"); */
-    /* var autor = userData.username;
-    var data = {
-        title: title,
-        autor: autor,
-        pdf: pdf
-    } */
-    /* fetch("../API/CRUD/createManual.php", {
+    userData = JSON.parse(userData);
+    const element = document.getElementById('contenedor');
+    console.log(element);
+    console.log(html2pdf);
+    var pdf;
+    await html2pdf()
+        .set({
+            margin: 1,
+            filename: 'documento.pdf',
+            image: {
+                type: 'jpeg',
+                quality: 0.98
+            },
+            html2canvas: {
+                scale: 3,
+                letterRendering: true,
+            },
+            jsPDF: {
+                unit: "in",
+                format: "a3",
+                orientation: 'portrait'
+            }
+        })
+        .from(element)
+        .toPdf().output('datauristring').then(function (pdfBase64) {
+            // You have access to the jsPDF object and can use it as desired.
+            pdf = pdfBase64;
+            const file = new File(
+                [pdfBase64],
+                'mifile',
+                {type: 'application/pdf'}
+            );
+            const formData = new FormData();        
+            formData.append("file", file);
+            fetch('../../API/CRUD/createManual.php', {
+                method: 'PUT',
+                body: formData,
+              })
+              .then(response => response.text())
+              .then(result => {
+                console.log('Success:', result);
+              })
+              .catch(error => {
+                console.error('Error:', error);
+              });
+        });
+       /*  console.log(pdf)
+        var formData = new FormData();
+        formData.append('pdf', pdf)
+        var title = localStorage.getItem("dispReemplazado");
+        var autor = userData.username;
+        var autor = 3
+        var title = 'miTitulo'
+        var data = {
+            title: title,
+            autor: autor,
+            pdf: formData
+        }
+    fetch("../../API/CRUD/createManual.php", {
         method: 'POST',
         body: JSON.stringify(data)
     })
-    .then((response)=>response.json())
+    .then((response)=>response.text())
     .then((data)=>{
-        if(data){
+        console.log(data); */
+        /* if(data){
             Swal.fire(
                 'Hecho!',
-                `El manual con id ${id} a sido creado, está pendiente de ser validado por un resposable`,
+                `El manual con a sido creado, está pendiente de ser validado por un resposable`,
                 'success'
             )
-        }
-    }) */
+        } 
+    })*/
 
 }

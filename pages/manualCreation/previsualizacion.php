@@ -8,8 +8,7 @@
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
  
   
  
@@ -18,7 +17,14 @@
   <title>Crear una nueva guia</title>
 </head>
 <body>
+<div id="getPDF">
+        <p>Si está todo correcto pulse el botón <i>Generar PDF</i>, por el contrario pulse <i>Volver atrás</i> si desea cambiar algún dato.</p>
+        <button onclick="saveManual()">Generar pdf</button>
+        <button onclick="history.back()">Volver atrás</button>
+</div>
 <div id="contenedor">
+
+    <h1>Prueba</h1>
 
     <div id="titFec">
         <p id="titulo">Nombre reparacion</p>
@@ -28,7 +34,7 @@
 
     <div id="contPersonales">
         <p>Datos personales</p>
-        <!-- <table id="tablaDatos">
+        <table id="tablaDatos">
             <tbody>
                 <tr>
                     <td>Nombre</td>
@@ -53,7 +59,7 @@
                     <td colspan="3"><label id="datosEmail">Datos email</label></td>
                 </tr>
             </tbody>
-        </table> -->
+        </table>
     </div>
 
     <div id="contIntro">
@@ -83,14 +89,10 @@
         <img src="" alt="">
         </div>
         <p>Texto</p>
-    </div>
+    </div> -->
     
     
 </div>
-<div id="getPDF">
-        <p>Si está todo correcto pulse el botón <i>Generar PDF</i>, por el contrario pulse <i>Volver atrás</i> si desea cambiar algún dato.</p>
-        <button onclick="saveManual()">Generar pdf</button>
-        <button onclick="history.back()">Volver atrás</button>
-</div>
+
 </body>
 </html>
