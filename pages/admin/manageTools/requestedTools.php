@@ -8,7 +8,7 @@
     <!-- <script defer src="../../../auth/adminAuth.js"></script> -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script defer src="sweetalert2.all.min.js"></script>
-    <script defer src="../../../scripts/pendingRequest.js"></script>
+    <script defer src="../../../scripts/requestedTools.js"></script>
     <link rel="stylesheet" href="../../../styles/menu.css">
     <link rel="stylesheet" href="../../../styles/pendingManuals.css">
     <title>Manuales</title>
@@ -64,8 +64,8 @@
                     <?php
                     include("../../../API/database/db.php");
                     $db = new DB();
-                    $result = $db->select("herramienta", "*", "Solicitado = 1 AND Disponible = 1");
-                    $direction = '../../../manuals/';
+                    $result = $db->select("herramienta", "*", "Solicitado = 1 AND Disponible = 1 Validado = 1");
+                    
                     if ($result) {
                         while ($row = mysqli_fetch_array($result)) {
                     ?>
@@ -79,8 +79,8 @@
                             <td><?php echo $user['Nombre'] ?></td>
                             <td><?php echo $user['email'] ?></td>
                             <td><?php echo $rent['fechaSolicitud'] ?></td>
-                            <td class="validate" onclick="validate(<?php $toolid ?>)"><img src="../../../Images/cheque.png"></td>
-                            <td class="reject"onclick="reject()"><img src="../../../Images/cancelar.png"></td>
+                            <td class="validate" onclick="rent(<?php $toolid ?>)"><img src="../../../Images/cheque.png"></td>
+                            <td class="reject"onclick="notRent(<?php $toolid ?>)"><img src="../../../Images/cancelar.png"></td>
                         </tr>
                     <?php
                         }

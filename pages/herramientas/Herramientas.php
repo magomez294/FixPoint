@@ -54,7 +54,7 @@
     <?php
             include("../../API/database/db.php");
             $db = new DB();
-            $result = $db->select("herramienta","*");
+            $result = $db->select("herramienta","*", "Validado = 1");
             $direction = '../../Images/Tools/';
             if ($result) {
                 while ($row = mysqli_fetch_array($result)) {
@@ -70,19 +70,19 @@
                         <div>
                             <p 
                                 class="<?php 
-                                    if($row['Solicitado'] == 0){
+                                    if($row['Solicitado'] == 0 && $row['Disponible'] == 1 ){
                                         echo 'available';
                                     }else{
                                         echo 'unavailable';
                                     } ?>">
                                     <?php 
-                                    if($row['Solicitado'] == 0){
+                                    if($row['Solicitado'] == 0 && $row['Disponible'] == 1 ){
                                         echo 'Disponible';
                                     }else{
                                         echo 'No disponible';
                                     } ?>
                             </p>
-                            <?php if ($row['Solicitado'] == 0) { ?>
+                            <?php if ($row['Solicitado'] == 0 && $row['Disponible'] == 1 ) { ?>
                                 <button>Solicitar</button>
                             <?php } ?>
                         </div>

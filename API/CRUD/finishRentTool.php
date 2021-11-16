@@ -17,8 +17,8 @@ if(isset($data)){
 http_response_code(200);
 if($id){
     $tool = new Tool('','','');
-    $rejected = $tool->validate($id);
-    echo $rejected;
+    $unRented = $tool->undoRent($id);
+    echo $unRented;
 }
 
 ?>

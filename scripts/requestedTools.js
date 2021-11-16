@@ -1,8 +1,8 @@
-function validate(id) {
+function rent(id) {
     var data = {
         id: id
     }
-    fetch("../API/CRUD/validateTool.php",{
+    fetch("../API/CRUD/rentTool.php",{
         method: 'PUT',
         body: JSON.stringify(data),
         headers: {
@@ -14,12 +14,12 @@ function validate(id) {
         if(data){
             Swal.fire(
                 'Hecho!',
-                `El alquiler de la herramienta a sido validada`,
+                `El alquiler de la herramienta a sido validado`,
                 'success'
             )
         }else{
             Swal.fire(
-                'Hecho!',
+                'Error!',
                 `Ha habido un error al validar el alquiler de la herramienta`,
                 'error'
             )
@@ -27,7 +27,7 @@ function validate(id) {
     })
 }
 
-function reject(id) {
+function notRent(id) {
     var data = {
         id: id
     }
@@ -48,7 +48,7 @@ function reject(id) {
             )
         }else{
             Swal.fire(
-                'Hecho!',
+                'Error!',
                 `Ha habido un error al rechazar el alquiler de la herramienta`,
                 'error'
             )

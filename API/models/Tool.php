@@ -6,6 +6,9 @@ class Tool extends DB{
     private const ID = 'ID_Herramienta';
     private const DESCRIPTION= 'Descripcion';
     private const IMAGE = 'Imagen';
+    private const REQUESTED = 'Solicitado';
+    private const AVAILABLE = 'Disponible';
+    private const VALIDATED = 'Validado';
     private $name;
     private $description;
     private $image;
@@ -74,6 +77,36 @@ class Tool extends DB{
             return false;
         }
         
+    }
+
+    function rent($id){
+        $result = $this->update(Tool::TOOLS, [Tool::REQUESTED=>0, Tool::AVAILABLE=>0], "id='$id'");
+        if($result){
+            return true;
+        }
+        return false;
+    }
+    function undoRent($id){
+        $result = $this->update(Tool::TOOLS, [Tool::REQUESTED=>0, Tool::AVAILABLE=>1], "id='$id'");
+        if($result){
+            return true;
+        }
+        return false;
+    }
+
+    function reject($id){
+        $result = $this->delete(Tool::TOOLS, "id='$id'");
+        if($result){
+            return true;
+        }
+        return false;
+    }
+    function validate($id){
+        $result = $this->update(Tool::TOOLS, [Tool::VALIDATED=>1], "id='$id'");
+        if($result){
+            return true;
+        }
+        return false;
     }
 
     function set_name($name) {
