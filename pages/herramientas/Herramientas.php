@@ -70,19 +70,19 @@
                         <div>
                             <p 
                                 class="<?php 
-                                    if($row['Disponible'] == 1){
+                                    if($row['Solicitado'] == 0){
                                         echo 'available';
                                     }else{
                                         echo 'unavailable';
                                     } ?>">
                                     <?php 
-                                    if($row['Disponible'] == 1){
+                                    if($row['Solicitado'] == 0){
                                         echo 'Disponible';
                                     }else{
                                         echo 'No disponible';
                                     } ?>
                             </p>
-                            <?php if ($row['Disponible'] == 1) { ?>
+                            <?php if ($row['Solicitado'] == 0) { ?>
                                 <button>Solicitar</button>
                             <?php } ?>
                         </div>

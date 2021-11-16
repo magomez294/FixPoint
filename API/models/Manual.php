@@ -24,6 +24,13 @@ class Manual extends DB{
         }
         return false;
     }
+    public function reject($id){
+        $result = $this->update(Manual::MANUALS, [Manual::VALIDATED=>0], "id='$id'");
+        if($result){
+            return true;
+        }
+        return false;
+    }
     public function create($title, $autor, $pdf){
 
         

@@ -2,7 +2,7 @@ function validate(id) {
     var data = {
         id: id
     }
-    fetch("../API/CRUD/validateManual.php",{
+    fetch("../API/CRUD/validateTool.php",{
         method: 'PUT',
         body: JSON.stringify(data),
         headers: {
@@ -14,13 +14,13 @@ function validate(id) {
         if(data){
             Swal.fire(
                 'Hecho!',
-                `El manual con id ${id} a sido validado`,
+                `El alquiler de la herramienta a sido validada`,
                 'success'
             )
         }else{
             Swal.fire(
                 'Hecho!',
-                `Ha habido un error al intentar validar el manual con id ${id}`,
+                `Ha habido un error al validar el alquiler de la herramienta`,
                 'error'
             )
         }
@@ -31,7 +31,7 @@ function reject(id) {
     var data = {
         id: id
     }
-    fetch("../API/CRUD/rejectManual.php",{
+    fetch("../API/CRUD/rejectTool.php",{
         method: 'PUT',
         body: JSON.stringify(data),
         headers: {
@@ -43,13 +43,13 @@ function reject(id) {
         if(data){
             Swal.fire(
                 'Hecho!',
-                `El manual con id ${id} a sido rechazado`,
+                `El alquiler de la herramienta a sido rechazada`,
                 'success'
             )
         }else{
             Swal.fire(
                 'Hecho!',
-                `Ha habido un error al intentar rechazar el manual con id ${id}`,
+                `Ha habido un error al rechazar el alquiler de la herramienta`,
                 'error'
             )
         }
