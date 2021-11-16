@@ -12,7 +12,7 @@ require_once('../models/Tool.php');
         $image = $_FILES['image'];
 
         $tool = new Tool($name, $description, $image);
-        $success = $tool->uploadImage();
+        $success = $tool->createToolAdmin();
         if ($success) {
             header("Location: ../../pages/herramientas/CrearHerramienta.php");
         }

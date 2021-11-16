@@ -19,10 +19,10 @@ if (session_status() === PHP_SESSION_NONE) {
 </head>
 <body>
     <header>
-        <img id="logo" src="../../images/Logo.png" alt="">
-        <img id="logoMenu" src="../../images/menu.png" alt="" onclick="showHideMenu('menu')">
+        <img id="logo" src="../../../images/Logo.png" alt="">
+        <img id="logoMenu" src="../../../images/menu.png" alt="" onclick="showHideMenu('menu')">
         <nav id="menu" class="hide">
-            <img src="../../images/hideMenu.png" alt="" id="hideMenu" onclick="showHideMenu('menu')">
+            <img src="../../../images/hideMenu.png" alt="" id="hideMenu" onclick="showHideMenu('menu')">
             <ul>
                 <li> <a href="">Iniciar Sesión</a> </li>
                 <li> <a href="">Manuales</a> </li>
@@ -40,11 +40,11 @@ if (session_status() === PHP_SESSION_NONE) {
     <nav id="menuWeb">
         <ul>
             <li> <a href="">Manuales</a> </li>
-            <li><a href="./pages/herramientas/Herramientas.php">Herramientas</a></li>
+            <li><a href="../../herramientas/Herramientas.php">Herramientas</a></li>
         </ul>
     </nav>
     <main>
-        <form action="../../API/CRUD/createTool.php" method="post" enctype="multipart/form-data">
+        <form action="../../../API/CRUD/createToolAdmin.php" method="post" enctype="multipart/form-data">
             <div>
                 <label for="name">Nombre:</label>
                 <input type="text" name="name" placeholder="nombre" autofocus required >

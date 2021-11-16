@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../styles/menu.css">
     <link rel="stylesheet" href="../../styles/indexHerramientas.css">
-    
+    <script defer src="sweetalert2.all.min.js"></script>
     <script defer src="../../scripts/menu.js"></script>
     <script defer src="../../auth/auth.js"></script>
     <script defer src="../../scripts/tools.js"></script>
@@ -83,7 +83,7 @@
                                     } ?>
                             </p>
                             <?php if ($row['Solicitado'] == 0 && $row['Disponible'] == 1 ) { ?>
-                                <button>Solicitar</button>
+                                <button onclick="request(<?php echo $row['ID_Herramienta'] ?>)">Solicitar</button>
                             <?php } ?>
                         </div>
                         

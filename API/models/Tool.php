@@ -51,7 +51,7 @@ class Tool extends DB{
         return true;
     }
 
-    function uploadImage(){
+    function createTool(){
         if ($this->validateImage()) {
             $result = $this->insert(Tool::TOOLS, [Tool::NAME=>$this->name, Tool::DESCRIPTION=>$this->description]);
             $this->imageId = $this->connection->insert_id;
@@ -78,35 +78,82 @@ class Tool extends DB{
         }
         
     }
+    function createToolAdmin(){
+        if ($this->validateImage()) {
+            $result = $this->insert(Tool::TOOLS, [Tool::NAME=>$this->name, Tool::DESCRIPTION=>$this->description]);
+            $this->imageId = $this->connection->insert_id;
+            if (!$result) {
+                $_SESSION['message'] = 'Error al intentar guardar la herramienta';
+                $_SESSION['color'] = 'red';
+                return false;
+            }
+            $result = $this->update(Tool::TOOLS,[Tool::IMAGE=>$this->imageId.".".$this->imageExtension], "".Tool::ID."='$this->imageId'");
+            if (!$result) {
+                $_SESSION['message'] = 'Error al intentar guardar la herramienta';
+                $_SESSION['color'] = 'red';
+                return false;
+            }
+            $this->imageName = $this->imageId.".".$this->imageExtension;
+            move_uploaded_file($this->image['tmp_name'], $this->imageDirectory.$this->imageName);
+            $this->validate($this->imageId);
+            $_SESSION['message'] = 'Herramienta añadida';
+            $_SESSION['color'] = 'green';
+            return true;
+        }else{
+            $_SESSION['message'] = $this->error;
+            $_SESSION['color'] = 'red';
+            return false;
+        }
+        
+    }
 
     function rent($id){
-        $result = $this->update(Tool::TOOLS, [Tool::REQUESTED=>0, Tool::AVAILABLE=>0], "id='$id'");
-        if($result){
-            return true;
+        $result = $this->update(Tool::TOOLS, [Tool::REQUESTED=>0, Tool::AVAILABLE=>0], "".Tool::ID."='$id'");
+        if(!$result){
+            return false;
         }
-        return false;
+        $result = $this->update('alquila', ['Recogido'=>'true'], "".Tool::ID."='$id'");
+        if(!$result){
+            return false;
+        }
+        return true;
     }
     function undoRent($id){
-        $result = $this->update(Tool::TOOLS, [Tool::REQUESTED=>0, Tool::AVAILABLE=>1], "id='$id'");
-        if($result){
-            return true;
+        $result = $this->update(Tool::TOOLS, [Tool::REQUESTED=>0, Tool::AVAILABLE=>1], "".Tool::ID."='$id'");
+        if(!$result){
+            return false;
         }
-        return false;
+        $result = $this->delete('alquila', "".Tool::ID."='$id'");
+        if(!$result){
+            return false;
+        }
+        return true;
     }
 
     function reject($id){
-        $result = $this->delete(Tool::TOOLS, "id='$id'");
+        $result = $this->delete(Tool::TOOLS, "".Tool::ID."='$id'");
         if($result){
             return true;
         }
         return false;
     }
     function validate($id){
-        $result = $this->update(Tool::TOOLS, [Tool::VALIDATED=>1], "id='$id'");
+        $result = $this->update(Tool::TOOLS, [Tool::VALIDATED=>1], "".Tool::ID."='$id'");
         if($result){
             return true;
         }
         return false;
+    }
+    function request($idTool, $idUser){
+        $result = $this->update(Tool::TOOLS, [Tool::REQUESTED=>1], "".Tool::ID."='$idTool'");
+        if(!$result){
+            return false;
+        }
+        $result = $this->insert('alquila', ['ID_Usuario'=>$idUser, Tool::ID=>$idTool]);
+        if(!$result){
+            return false;
+        }
+        return true;
     }
 
     function set_name($name) {
