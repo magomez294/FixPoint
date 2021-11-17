@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/menu.css">
     <link rel="stylesheet" href="./styles/index.css">
+    <script src="./auth/logout.js"></script>
     <title>fixpoint</title>
 </head>
 <body>
@@ -15,25 +19,25 @@
         <nav id="menu" class="hide">
             <img src="./images/hideMenu.png" alt="" id="hideMenu" onclick="showHideMenu('menu')">
             <ul>
-                <?php if(isset($_SESSION['loged']) && $_SESSION['loged'] == true){ ?>
+                <?php if(!isset($_SESSION['loged'])){ ?>
                     <li><a href="">Iniciar Sesión</a></li>
                     <li><a href="">Crear Cuenta</a></li>
                 <?php } ?>
                     <li> <a href="">Manuales</a> </li>
                     <li><a href="./pages/herramientas/Herramientas.php">Herramientas</a></li>
-                <?php if(!isset($_SESSION['loged'])){ ?>
+                <?php if(isset($_SESSION['loged'])){ ?>
                     <li><button onclick="logOut()">Cerrar sesión</button></li>
                 <?php } ?>
             </ul>
         </nav>
         <nav id="menuWeb2">
-        <?php if(isset($_SESSION['loged']) && $_SESSION['loged'] == true){ ?>
+        <?php if(!isset($_SESSION['loged'])){ ?>
             <ul>
-                <li><a href="">Crear Cuenta</a></li>
-                <li><a href="">Iniciar Sesión</a></li>
+                <li><a href="./pages/createAccount.html">Crear Cuenta</a></li>
+                <li><a href="./login.html">Iniciar Sesión</a></li>
             </ul>
         <?php } ?>
-        <?php if(!isset($_SESSION['loged'])){ ?>
+        <?php if(isset($_SESSION['loged'])){ ?>
             <ul>
                 <li><button onclick="logOut()">Cerrar sesión</button></li>
             </ul>

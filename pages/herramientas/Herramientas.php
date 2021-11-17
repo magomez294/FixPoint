@@ -34,17 +34,9 @@
             </ul>
         </nav>
         <nav id="menuWeb2">
-        <?php if(isset($_SESSION['loged']) && $_SESSION['loged'] == true){ ?>
-            <ul>
-                <li><a href="">Crear Cuenta</a></li>
-                <li><a href="">Iniciar Sesión</a></li>
-            </ul>
-        <?php } ?>
-        <?php if(!isset($_SESSION['loged'])){ ?>
             <ul>
                 <li><button onclick="logOut()">Cerrar sesión</button></li>
             </ul>
-        <?php } ?>
         </nav>
     </header>
     <nav id="menuWeb">

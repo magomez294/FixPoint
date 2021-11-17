@@ -32,7 +32,7 @@ class Login {
                         'Content-type': 'application/json; charset=UTF-8'
                     }
                 })
-                .then((response)=>response.json())
+                .then((response)=>response.text())
                 .then((data)=>{
                     console.log(data);
                     if(data.error){
@@ -47,7 +47,7 @@ class Login {
                         }else{
                             localStorage.setItem('auth', JSON.stringify({value: 1, expiry: actualTime + 36000000}));
                         }
-                        data.expiry = actualTime + 36000000;
+                        /* data.expiry = actualTime + 36000000; */
                         localStorage.setItem('user', JSON.stringify(data));
                         this.form.submit();
                     }

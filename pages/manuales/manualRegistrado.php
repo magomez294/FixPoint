@@ -43,14 +43,42 @@
         <p id="txtSlider">Manuales</p>
     </section>
     <section id="botones">
-        <button onclick="window.location.href='../manualCreation/ficha.html'" id="btnNuevoManual">Nuevo manual</button>
+        <button onclick="window.location.href='../manualCreation/ficha.php'" id="btnNuevoManual">Crear manual</button>
         <button onclick="openForm()" id="btnSubirManual">Subir manual</button>
     </section>
     <section id="toolSearch">
         <input type="text" id="toolSearchInput" onkeyup="searchTool()" placeholder="Buscar herramienta..">
     </section>
     <section id="manuales">
+        <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Autor</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead> 
+                <tbody>
+                    <?php
+                    include("../../API/database/db.php");
+                    $db = new DB();
+                    $result = $db->select("manual", "*", "Aceptado = 1");
+                    $direction = '../../../manuals/';
+                    if ($result) {
+                        while ($row = mysqli_fetch_array($result)) {
+                    ?>
+                        <tr>
+                            <td><a href="../../../manuals/<?php echo $row['NomMan'] ?>.pdf"><?php echo $row['NomMan'] ?></a></td>
+                            <td><?php echo $row['Autor'] ?></td>
+                            <td><?php echo $row['Fecha'] ?></td>
+                        </tr>
+                    <?php
+                        }
+                    }
+                    ?>
 
+                </tbody>                  
+            </table>
     </section>
  
 

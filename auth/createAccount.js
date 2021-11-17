@@ -50,7 +50,7 @@ class createAccount {
                         const now = new Date()
                         const actualTime = now.getTime();
                         localStorage.setItem('auth', JSON.stringify({value: 1, expiry: actualTime + 36000000}));
-                        data.expiry = actualTime + 36000000;
+                        /* data.expiry = actualTime + 36000000; */
                         localStorage.setItem('user', JSON.stringify(data));
                         this.form.submit();
                     }

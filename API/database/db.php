@@ -1,9 +1,12 @@
 <?php
 
 class DB{
-    private const host='fixpointg2.cruetabggvum.us-east-1.rds.amazonaws.com';
-    private const user='admin';
-    private const password='contra123456';
+    /* private const host='fixpointg2.cruetabggvum.us-east-1.rds.amazonaws.com'; */
+    private const host = 'localhost';
+    /* private const user='admin'; */
+    private const user='root';
+    /* private const password='contra123456'; */
+    private const password='';
     private const db='fixpoint';
     
     public $connection;
