@@ -42,6 +42,7 @@ h6 {
 
 .login .container #error-message-all {
   display: none;
+  color: red;
 }
 
 .input {

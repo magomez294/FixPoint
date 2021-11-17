@@ -9,6 +9,7 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script defer src="sweetalert2.all.min.js"></script>
     <script defer src="../../../scripts/requestedTools.js"></script>
+    <script src="../../../auth/logout.js"></script>
     <link rel="stylesheet" href="../../../styles/menu.css">
     <link rel="stylesheet" href="../../../styles/pendingManuals.css">
     <title>Manuales</title>
@@ -22,17 +23,29 @@
         <nav id="menu" class="hide">
             <img src="../../../images/hideMenu.png" alt="" id="hideMenu" onclick="showHideMenu('menu')">
             <ul>
-                <li> <a href="">Iniciar Sesión</a> </li>
-                <li> <a href="">Manuales</a> </li>
-                <li><a href="">Herramientas</a></li>
-                <li><a href="">Crear Cuenta</a></li>
+                <?php if(isset($_SESSION['loged']) && $_SESSION['loged'] == true){ ?>
+                    <li><a href="">Iniciar Sesión</a></li>
+                    <li><a href="">Crear Cuenta</a></li>
+                <?php } ?>
+                    <li> <a href="">Manuales</a> </li>
+                    <li><a href="./pages/herramientas/Herramientas.php">Herramientas</a></li>
+                <?php if(!isset($_SESSION['loged'])){ ?>
+                    <li><button onclick="logOut()">Cerrar sesión</button></li>
+                <?php } ?>
             </ul>
         </nav>
         <nav id="menuWeb2">
+        <?php if(isset($_SESSION['loged']) && $_SESSION['loged'] == true){ ?>
             <ul>
                 <li><a href="">Crear Cuenta</a></li>
                 <li><a href="">Iniciar Sesión</a></li>
             </ul>
+        <?php } ?>
+        <?php if(!isset($_SESSION['loged'])){ ?>
+            <ul>
+                <li><button onclick="logOut()">Cerrar sesión</button></li>
+            </ul>
+        <?php } ?>
         </nav>
     </header>
     <nav id="menuWeb">

@@ -42,6 +42,7 @@ h6 {
 
 .createAccount .container #error-message-all {
   display: none;
+  color: red;
 }
 
 .input {

@@ -29,6 +29,10 @@ if($username && $password){
     $json = $user->login($username, $password);
 
     if($json){
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        $_SESSION['loged'] = true;
         echo $json;
     }else{
         http_response_code(400);

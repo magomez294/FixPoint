@@ -21,7 +21,7 @@
       </div>
       <div id="main">
         <form
-          action="../manualCreation/pasos.html"
+          action="../manualCreation/pasos.php"
           onsubmit="guardarDetalles()"
         >
             <div id="tiempoEstimado">

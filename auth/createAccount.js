@@ -16,6 +16,7 @@ class createAccount {
             e.preventDefault();
             var error = 0;
             console.log(self.fields);
+            console.log(self.fields);
             self.fields.forEach((field) => {
                 const input = document.getElementById(`${field}`);
                 if (self.validateFields(input) == false){
@@ -31,6 +32,7 @@ class createAccount {
                     // @ts-ignore
                     password: document.getElementById(PASSWORD).value
                 }
+                console.log(data);
                 fetch("../API/auth/createAccount.php", {
                     method: 'POST',
                     body: JSON.stringify(data),

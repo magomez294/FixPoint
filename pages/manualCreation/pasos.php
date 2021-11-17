@@ -14,9 +14,9 @@
     <main>
       <div id="menu">
         <ul>
-          <li><a href="ficha.html">Ficha</a></li>
-          <li><a href="introduccion.html">Introducción</a></li>
-          <li><a href="detalles.html">Detalles</a></li>
+          <li><a href="ficha.php">Ficha</a></li>
+          <li><a href="introduccion.php">Introducción</a></li>
+          <li><a href="detalles.php">Detalles</a></li>
           <li><a href="#">Pasos guía</a></li>
         </ul>
       </div>

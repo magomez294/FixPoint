@@ -7,6 +7,7 @@
     <!-- <script defer src="../../../auth/adminAuth.js"></script> -->
     <link rel="stylesheet" href="../../../styles/menu.css">
     <link rel="stylesheet" href="../../../styles/pendingManuals.css">
+    <script src="../../../auth/logout.js"></script>
     <title>Manuales</title>
 </head>
 <body>
@@ -16,17 +17,29 @@
         <nav id="menu" class="hide">
             <img src="../../../images/hideMenu.png" alt="" id="hideMenu" onclick="showHideMenu('menu')">
             <ul>
-                <li> <a href="">Iniciar Sesión</a> </li>
-                <li> <a href="">Manuales</a> </li>
-                <li><a href="">Herramientas</a></li>
-                <li><a href="">Crear Cuenta</a></li>
+                <?php if(isset($_SESSION['loged']) && $_SESSION['loged'] == true){ ?>
+                    <li><a href="">Iniciar Sesión</a></li>
+                    <li><a href="">Crear Cuenta</a></li>
+                <?php } ?>
+                    <li> <a href="">Manuales</a> </li>
+                    <li><a href="./pages/herramientas/Herramientas.php">Herramientas</a></li>
+                <?php if(!isset($_SESSION['loged'])){ ?>
+                    <li><button onclick="logOut()">Cerrar sesión</button></li>
+                <?php } ?>
             </ul>
         </nav>
         <nav id="menuWeb2">
+        <?php if(isset($_SESSION['loged']) && $_SESSION['loged'] == true){ ?>
             <ul>
                 <li><a href="">Crear Cuenta</a></li>
                 <li><a href="">Iniciar Sesión</a></li>
             </ul>
+        <?php } ?>
+        <?php if(!isset($_SESSION['loged'])){ ?>
+            <ul>
+                <li><button onclick="logOut()">Cerrar sesión</button></li>
+            </ul>
+        <?php } ?>
         </nav>
     </header>
     <nav id="menuWeb">
@@ -65,7 +78,7 @@
                             <td><a href="../../../manuals/<?php echo $row['NomMan'] ?>.pdf"><?php echo $row['NomMan'] ?></a></td>
                             <td><?php echo $row['Autor'] ?></td>
                             <td><?php echo $row['Fecha'] ?></td>
-                            <td class="reject"onclick="reject()"><img src="../../../Images/cancelar.png"></td>
+                            <td class="reject"onclick="reject(<?php echo $row['ID_Manual'] ?>)"><img src="../../../Images/cancelar.png"></td>
                         </tr>
                     <?php
                         }

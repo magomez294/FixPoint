@@ -20,7 +20,7 @@
             </ul>
         </div>
         <div id="main">
-            <form action="../manualCreation/detalles.html" onsubmit="guardarIntroduccion()">
+            <form action="../manualCreation/detalles.php" onsubmit="guardarIntroduccion()">
             
                 <div id="introduccion">
                     <label>Introducción</label> <br>

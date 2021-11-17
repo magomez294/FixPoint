@@ -3,7 +3,7 @@
 
 class User extends DB{
     private const USERS = 'usuario';
-    private const EMAIL = 'email';
+    private const EMAIL = 'Email';
     private const ID = 'ID_Usuario';
     private const NAME = 'Nombre';
     private const PASSWORD = 'Contrasena';

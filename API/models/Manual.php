@@ -18,14 +18,14 @@ class Manual extends DB{
     }
 
     public function validate($id){
-        $result = $this->update(Manual::MANUALS, [Manual::VALIDATED=>1], "id='$id'");
+        $result = $this->update(Manual::MANUALS, [Manual::VALIDATED=>1], "".Manual::ID."='$id'");
         if($result){
             return true;
         }
         return false;
     }
     public function reject($id){
-        $result = $this->update(Manual::MANUALS, [Manual::VALIDATED=>0], "id='$id'");
+        $result = $this->delete(Manual::MANUALS, "".Manual::ID."='$id'");
         if($result){
             return true;
         }

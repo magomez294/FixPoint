@@ -15,6 +15,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <link rel="stylesheet" href="../../styles/crearHerramienta.css">
     <script defer src="../../auth/auth.js"></script>
     <script defer src="../../scripts/menu.js"></script>
+    <script src="../../auth/logout.js"></script>
     <title>Añadir Herramienta</title>
 </head>
 <body>
@@ -24,23 +25,35 @@ if (session_status() === PHP_SESSION_NONE) {
         <nav id="menu" class="hide">
             <img src="../../images/hideMenu.png" alt="" id="hideMenu" onclick="showHideMenu('menu')">
             <ul>
-                <li> <a href="">Iniciar Sesión</a> </li>
-                <li> <a href="">Manuales</a> </li>
-                <li><a href="">Herramientas</a></li>
-                <li><a href="">Crear Cuenta</a></li>
+                <?php if(isset($_SESSION['loged']) && $_SESSION['loged'] == true){ ?>
+                    <li><a href="">Iniciar Sesión</a></li>
+                    <li><a href="">Crear Cuenta</a></li>
+                <?php } ?>
+                    <li> <a href="">Manuales</a> </li>
+                    <li><a href="./pages/herramientas/Herramientas.php">Herramientas</a></li>
+                <?php if(!isset($_SESSION['loged'])){ ?>
+                    <li><button onclick="logOut()">Cerrar sesión</button></li>
+                <?php } ?>
             </ul>
         </nav>
         <nav id="menuWeb2">
+        <?php if(isset($_SESSION['loged']) && $_SESSION['loged'] == true){ ?>
             <ul>
                 <li><a href="">Crear Cuenta</a></li>
                 <li><a href="">Iniciar Sesión</a></li>
             </ul>
+        <?php } ?>
+        <?php if(!isset($_SESSION['loged'])){ ?>
+            <ul>
+                <li><button onclick="logOut()">Cerrar sesión</button></li>
+            </ul>
+        <?php } ?>
         </nav>
     </header>
     <nav id="menuWeb">
         <ul>
             <li> <a href="">Manuales</a> </li>
-            <li><a href="./pages/herramientas/Herramientas.php">Herramientas</a></li>
+            <li><a href="./Herramientas.php">Herramientas</a></li>
         </ul>
     </nav>
     <main>
@@ -59,7 +72,7 @@ if (session_status() === PHP_SESSION_NONE) {
             <div style="background-color: <?= $_SESSION['color'] ?>;">
                 <?= $_SESSION['message'] ?>
             </div>
-        <?php session_unset();} ?>
+        <?php unset($_SESSION['message']);} ?>
     </main>
 </body>
 </html>

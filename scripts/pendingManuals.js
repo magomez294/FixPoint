@@ -19,7 +19,7 @@ function validate(id) {
             )
         }else{
             Swal.fire(
-                'Hecho!',
+                'Error!',
                 `Ha habido un error al intentar validar el manual con id ${id}`,
                 'error'
             )
@@ -48,7 +48,7 @@ function reject(id) {
             )
         }else{
             Swal.fire(
-                'Hecho!',
+                'Error!',
                 `Ha habido un error al intentar rechazar el manual con id ${id}`,
                 'error'
             )

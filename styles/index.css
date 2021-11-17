@@ -1,475 +1,544 @@
-main {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
+/*IMPORTS*/
 
-main > div:first-child {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  /* background-color: blue; */
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 1fr;
-      grid-template-rows: 1fr;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  -webkit-column-gap: 10px;
-          column-gap: 10px;
-  row-gap: 0px;
-  margin-right: 5px;
-  margin-left: 5px;
-}
-
-@media screen and (min-width: 600px) {
-  main > div:first-child {
-    -ms-grid-columns: auto auto;
-        grid-template-columns: auto auto;
+@font-face {
+    font-family: 'slider';
+    src: url(./fonts/tipografia_Roboto.ttf);
   }
-}
-
-main > div:first-child > div {
-  margin-top: 10px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  -ms-grid-rows: auto auto auto;
-      grid-template-rows: auto auto auto;
-  -webkit-column-gap: 0px;
-          column-gap: 0px;
-  row-gap: 10px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-
-main > div:first-child > div:first-of-type article {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-
-main > div:first-child > div:first-of-type article:first-child {
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 20px;
-}
-
-main > div:first-child > div:first-of-type h1 {
-  margin: 0px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-
-main > div:first-child > div:first-of-type > div {
-  display: none;
-}
-
-@media screen and (min-width: 800px) {
-  main > div:first-child > div:first-of-type > div {
-    display: block;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: auto auto;
-        grid-template-columns: auto auto;
-    -ms-grid-rows: 1fr;
-        grid-template-rows: 1fr;
-    -webkit-column-gap: 10px;
-            column-gap: 10px;
+  
+  @font-face {
+    font-family: 'textos';
+    src: url(./fonts/tipografia_Patua.ttf);
   }
-  main > div:first-child > div:first-of-type > div h2 {
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin: 0px;
-    color: white;
-    background-color: black;
-    border-radius: 5px 5px 0px 0px;
-  }
-  main > div:first-child > div:first-of-type > div article {
-    margin-left: 5px;
-    margin-right: 5px;
-  }
-  main > div:first-child > div:first-of-type > div img {
-    margin-top: 20px;
-    width: 180px;
-    height: auto;
-  }
-}
-
-@media screen and (min-width: 800px) {
-  main > div:first-child > div:first-of-type {
-    -ms-grid-rows: auto auto auto auto;
+  
+  
+  @media screen and (min-width: 1020px) {
+    #slider {
+        grid-area: slider;
+        width: 100%;
+        height: fit-content;
+        display: inline-block;
+        position: relative;
+    }
+    #slider img {
+        width: 100%;
+    }
+    #slider p {
+        position: absolute;
+        font-family: 'slider';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 1.8em;
+        top: 45%;
+        width: 30%;
+        margin-left: 3%;
+        line-height: 100%;
+        color: #FFFFFF;
+    } 
+    #cuerpo {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: auto auto auto auto;
+        gap: 0px 0px;
+        grid-template-areas: "titulo titulo titulo" "subtitulo subtitulo subtitulo" "contenedor1 contenedor1 conocenos" "imgCuerpo contenedor2 conocenos";
+        grid-area: cuerpo;
+        background-image: url(../Images/fondo1.jpg);
+        height: fit-content;
+    }
+    #titCuerpo {
+        grid-area: titulo;
+        height: fit-content;
+        font-family: 'textos';
+        color: #EEC51F;
+        text-shadow: -1px 0 black, 0 3px black, 2px 0 black, 0 -1px black;
+        text-align: center;
+        font-size: 1.5em;
+    }
+    #subtitCuerpo {
+        grid-area: subtitulo;
+        height: fit-content;
+        font-family: 'textos';
+        color: #EEC51F;
+        text-shadow: -1px 0 black, 0 3px black, 2px 0 black, 0 -1px black;
+        text-align: center;
+        font-size: 1.2em;
+    }
+    #contenedor1 {
+        grid-area: contenedor1;
+        font-family: 'textos';
+        height: fit-content;
+        background-color: #111827;
+        color: white;
+        border-radius: 25px;
+        margin-left: 8%;
+        padding: 1% 1% 2% 1%;
+        width: 90%;
+    }
+    #contenedor1 p:last-child {
+        margin-left: 10%;
+        width: 80%;
+        font-size: 0.8em;
+    }
+    #contenedor1 p:first-child {
+        margin-left: 5%;
+        font-size: 1em;
+        width: 80%;
+    }
+    #imgCuerpo {
+        grid-area: imgCuerpo;
+        height: fit-content;
+    }
+    #imgCuerpo img{
+        width: 75%;
+        margin: 0 0 2% 20%;
+    }
+    #contenedor2 {
+        grid-area: contenedor2;
+        background-color: #111827;
+        font-family: 'textos';
+        color: white;
+        width: 90%;
+        padding: 2% 3% 3% 5%;
+        border-radius: 25px;
+        height: fit-content;
+        margin-top: 6%;
+        margin-bottom: 2%;
+        font-size: 0.8em;
+    }
+    #conocenos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 0px 0px;
+        grid-template-areas: "mision objetivos" "vision objetivos";
+        grid-area: conocenos;
+        
+    }
+    #titConocenos{
+        width: 25%;
+        width: 23%;
+        /* height: fit-content; */
+        border-radius: 25px;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        margin-left: 170%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2em;
+        background-color: #111827;
+        color: white;
+    }
+    #objetivos {
+        display: none;
+        grid-area: objetivos;
+    }
+    #mision {
+        display: none;
+        grid-area: mision;
+    }
+    #vision {
+        display: none;
+        grid-area: vision;
+    }
+    #imgConocenos{
+        display: none;
+    }
+    #contContacto {
+        display: none;
+    }
+    #piePagina {
+        grid-area: piePagina;
+        width: 100%;
+        height: fit-content;
+        background-color: #111827;
+    }
+    #datosLoc {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 0px 0px;
+        grid-template-areas: "mapa direccion horarios" "mapa telf horarios";
+    }
+    #direccion p:first-child, #telf p:first-child, #horarios p:first-child {
+        background-color: #EEC51F;
+        font-family: 'textos';
+        border-radius: 5px 5px 0 0;
+        font-size: 1em;
+        text-align: center; 
+    }
+    #direccion p:last-child, #telf p:last-child, #horarios p:last-child {
+        color: white;
+        font-family: 'textos';
+        border-radius: 5px 5px 0 0;
+        font-size: 1em;
+        text-align: center; 
+    }
+    #mapa {
+        grid-area: mapa;
+        height: 90%;
+        margin-top: 5%;
+        margin-left: 5%;
+        width: 90%;
+    }
+    #direccion {
+        grid-area: direccion;
+        width: 30%;
+        height: fit-content;
+        margin-left: 25%;
+    }
+    #telf {
+        grid-area: telf;
+        width: 30%;
+        height: fit-content;
+        margin-left: 25%;
+    }
+    #horarios {
+        grid-area: horarios;
+        width: 30%;
+        height: fit-content;
+    }
   }
-}
-
-main > div:first-child > div:nth-child(2) {
-  row-gap: 0px;
-}
-
-@media screen and (min-width: 600px) {
-  main > div:first-child > div:nth-child(2) {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
+  @media screen and (min-width: 700px) and (max-width: 1020px) {
+    #slider {
+        grid-area: slider;
+        width: 100%;
+        height: fit-content;
+        display: inline-block;
+        position: relative;
+    }
+    #slider img {
+        width: 100%;
+    }
+    #slider p {
+        position: absolute;
+        font-family: 'slider';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 1.2em;
+        top: 45%;
+        width: 30%;
+        margin-left: 3%;
+        line-height: 100%;
+        color: #FFFFFF;
+    } 
+    #cuerpo {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto auto auto;
+        gap: 0px 0px;
+        grid-template-areas: "titulo titulo titulo" "subtitulo subtitulo subtitulo" "contenedor1 contenedor1 conocenos" "imgCuerpo contenedor2 conocenos";
+        grid-area: cuerpo;
+        background-image: url(../Images/fondo1.jpg);
+        height: fit-content;
+    }
+    #titCuerpo {
+        grid-area: titulo;
+        height: fit-content;
+        font-family: 'textos';
+        color: #EEC51F;
+        text-shadow: -1px 0 black, 0 3px black, 2px 0 black, 0 -1px black;
+        text-align: center;
+        font-size: 1.5em;
+    }
+    #subtitCuerpo {
+        grid-area: subtitulo;
+        height: fit-content;
+        font-family: 'textos';
+        color: #EEC51F;
+        text-shadow: -1px 0 black, 0 3px black, 2px 0 black, 0 -1px black;
+        text-align: center;
+        font-size: 1.2em;
+    }
+    #contenedor1 {
+        grid-area: contenedor1;
+        font-family: 'textos';
+        height: fit-content;
+        background-color: #111827;
+        color: white;
+        border-radius: 25px;
+        margin-left: 8%;
+        padding: 1% 1% 2% 1%;
+        width: 90%;
+    }
+    #contenedor1 p:last-child {
+        margin-left: 10%;
+        width: 80%;
+        font-size: 0.8em;
+    }
+    #contenedor1 p:first-child {
+        margin-left: 5%;
+        font-size: 1em;
+        width: 80%;
+    }
+    #imgCuerpo {
+        grid-area: imgCuerpo;
+        height: fit-content;
+    }
+    #imgCuerpo img{
+        width: 75%;
+        margin: 20% 0 0 20%;
+    }
+    #contenedor2 {
+        grid-area: contenedor2;
+        background-color: #111827;
+        font-family: 'textos';
+        color: white;
+        width: 90%;
+        padding: 2% 3% 3% 5%;
+        border-radius: 25px;
+        height: fit-content;
+        margin-top: 5.5%;
+        margin-bottom: 2%;
+        font-size: 0.8em;
+    }
+    #conocenos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 0px 0px;
+        grid-template-areas: "mision objetivos" "vision objetivos";
+        grid-area: conocenos;
+        
+    }
+    #titConocenos{
+        width: 25%;
+        width: 23%;
+        /* height: fit-content; */
+        border-radius: 25px;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        margin-left: 170%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2em;
+        background-color: #111827;
+        color: white;
+    }
+    #objetivos {
+        display: none;
+        grid-area: objetivos;
+    }
+    #mision {
+        display: none;
+        grid-area: mision;
+    }
+    #vision {
+        display: none;
+        grid-area: vision;
+    }
+    #imgConocenos{
+        display: none;
+    }
+    #contContacto {
+        display: none;
+    }
+    #piePagina {
+        grid-area: piePagina;
+        width: 100%;
+        height: fit-content;
+        background-color: #111827;
+    }
+    #datosLoc {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 0px 0px;
+        grid-template-areas: "direccion horarios" "telf horarios";
+    }
+    #mapa {
+        display: none;
+    }
+    #direccion p:first-child, #telf p:first-child, #horarios p:first-child {
+        background-color: #EEC51F;
+        font-family: 'textos';
+        border-radius: 5px 5px 0 0;
+        font-size: 1em;
+        text-align: center; 
+    }
+    #direccion p:last-child, #telf p:last-child, #horarios p:last-child {
+        color: white;
+        font-family: 'textos';
+        border-radius: 5px 5px 0 0;
+        font-size: 1em;
+        text-align: center; 
+    }
+    #direccion {
+        grid-area: direccion;
+        width: 30%;
+        height: fit-content;
+        margin-left: 25%;
+    }
+    #telf {
+        grid-area: telf;
+        width: 30%;
+        height: fit-content;
+        margin-left: 25%;
+    }
+    #horarios {
+        grid-area: horarios;
+        width: 30%;
+        
+        height: fit-content;
+    }
   }
-}
-
-main > div:first-child > div:nth-child(2) > div {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  -ms-grid-rows: auto auto;
-      grid-template-rows: auto auto;
-  row-gap: 0px;
-}
-
-main > div:first-child > div:nth-child(2) > div h2 {
-  margin: 0px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: #eec51f;
-  border-radius: 5px 5px 0px 0px;
-}
-
-main > div:first-child > div:nth-child(2) > div aside {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-
-main > div:first-child > div:nth-child(2) > div aside > div {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-main > div:first-child > div:nth-child(2) > div aside > div span {
-  margin-left: 10px;
-  font-size: 10px;
-  display: inline-block;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-@media screen and (min-width: 600px) {
-  main > div:first-child > div:nth-child(2) > div aside > div span {
-    font-size: 20px;
+  
+  @media screen and (max-width: 700px) {
+    /*SLIDER*/
+    #slider {
+        grid-area: slider;
+        width: 100%;
+        height: fit-content;
+        display: inline-block;
+        position: relative;
+    }
+            #slider img {
+                width: 100%;
+            }
+            #slider p {
+                position: absolute;
+                font-family: 'slider';
+                font-style: normal;
+                font-weight: bold;
+                font-size: 1em;
+                top: 35%;
+                width: 30%;
+                margin-left: 3%;
+                line-height: 100%;
+                color: #FFFFFF;
+            } 
+  
+  
+    /*CUERPO*/   
+    #cuerpo {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto auto auto;
+        gap: 0px 0px;
+        grid-template-areas: "titCuerpo titCuerpo contContacto" "subtitCuerpo subtitCuerpo contContacto" "conocenos conocenos contenedor1" "conocenos conocenos contenedor1";
+        grid-area: cuerpo;
+        background-image: url(../Images/fondo1.jpg);
+        height: fit-content;
+    }
+            #titCuerpo {
+                grid-area: titCuerpo;
+                font-family: 'textos';
+                color: #EEC51F;
+                text-shadow: -1px 0 black, 0 3px black, 2px 0 black, 0 -1px black;
+                margin-left: 8%;
+                font-size: 1.5em;
+                height: fit-content;
+            }
+            #subtitCuerpo {
+                grid-area: subtitCuerpo;
+                font-family: 'textos';
+                color: #EEC51F;
+                text-shadow: -1px 0 black, 0 3px black, 2px 0 black, 0 -1px black;
+                width: 80%;
+                margin-left: 12%;
+                font-size: 1.2em;
+            }
+            #contContacto {
+                grid-area: contContacto;
+                margin-right: 15%;
+            }
+            #conDireccion p:first-child, #conTelf p:first-child, #conHorarios p:first-child {
+                background-color: #EEC51F;
+                font-family: 'textos';
+                border-radius: 5px 5px 0 0;
+                font-size: 1em;
+                text-align: center; 
+            }
+            #conDireccion p:last-child, #conTelf p:last-child, #conHorarios p:last-child {
+                background-color: #E4E4E4;
+                font-family: 'textos';
+                font-size: 0.7em;
+                text-align: center; 
+                padding: 5%;
+            }
+            #contenedor1 {
+                grid-area: contenedor1;
+                width: 80%;
+                height: fit-content;
+                font-family: 'textos';
+                background-color: #E4E4E4;
+                padding-left: 7%;
+                padding-right: 7%;
+  
+            }
+            #contenedor1 p:first-child {
+                font-size: 0.8em;
+            }
+            #contenedor1 p:last-child {             
+                font-size: 0.7em;
+                margin-left: 2%;
+            }
+            #contenedor2 {
+                display: none;
+            }
+            #conocenos {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                gap: 0px 0px;
+                grid-template-areas: "mision vision" "mision imgConocenos";
+                grid-area: conocenos;
+            }
+            #titConocenos {
+                display: none;
+            }
+            #mision {
+                grid-area: mision;
+                height: fit-content;
+                margin-right: 2%;
+                font-family: 'textos';
+            }
+            #titMision {
+                background-color: black;
+                color: white;
+                border-radius: 5px 5px 0 0;
+                text-align: center; 
+            }
+            #txtMision {
+                font-size: 0.8em;
+            }
+            #vision {
+                grid-area: vision;
+                width: 90%;
+                height: fit-content;               
+                font-family: 'textos';
+            }
+            #txtVision {
+                font-size: 0.8em;
+            }
+            #titVision {
+                background-color: black;
+                color: white;
+                border-radius: 5px 5px 0 0;
+                text-align: center; 
+            }
+  
+            #imgCuerpo {
+                display: none;
+            }
+            #imgConocenos {
+                grid-area: imgConocenos;
+                width: 90%;
+  
+            }
+            #imgConocenos img{
+                width: 100%;
+            }
+            #objetivos {
+                display: none;
+            }
+    #piePagina {
+        grid-area: piePagina;
+        width: 100%;
+        height: 70px;
+        background-color: #111827;
+    }
+    #datosLoc {
+        display: none;
+    }
   }
-}
-
-main > div:first-child > div:nth-child(2) > div aside > div span:first-child {
-  margin-top: 5px;
-}
-
-main > div:first-child > div:nth-child(2) > div aside > div span:last-child {
-  margin-bottom: 5px;
-}
-
-main > div:first-child > div:nth-child(2) > div:nth-child(2) > aside {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-main > div:nth-child(2) {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  margin-top: 10px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 1fr;
-      grid-template-rows: 1fr;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  -webkit-column-gap: 10px;
-          column-gap: 10px;
-  row-gap: 0px;
-  margin-right: 5px;
-  margin-left: 5px;
-}
-
-@media screen and (min-width: 800px) {
-  main > div:nth-child(2) {
-    display: none;
-  }
-}
-
-main > div:nth-child(2) > div {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-
-main > div:nth-child(2) > div:first-child {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  -ms-grid-rows: auto auto;
-      grid-template-rows: auto auto;
-}
-
-main > div:nth-child(2) > div h2 {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: 0px;
-  color: white;
-  background-color: black;
-  border-radius: 5px 5px 0px 0px;
-}
-
-main > div:nth-child(2) > div article {
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-main > div:nth-child(2) > div img {
-  margin-top: 20px;
-  width: 180px;
-  height: auto;
-}
-
-main > div:nth-child(3) {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  background-color: #e4e4e4;
-  margin-top: 10px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: auto auto;
-      grid-template-rows: auto auto;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  row-gap: 0px;
-}
-
-main > div:nth-child(3) h1 {
-  margin: 0px;
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-main > div:nth-child(3) article {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-main > div:nth-child(4) {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  margin-top: 10px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 1fr;
-      grid-template-rows: 1fr;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  margin-right: 5px;
-  margin-left: 5px;
-  -webkit-column-gap: 10px;
-          column-gap: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-main > div:nth-child(4) > div:first-child {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: auto auto auto;
-      grid-template-rows: auto auto auto;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-}
-
-main > div:nth-child(4) > div:first-child > h2 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: 0px;
-  background-color: #eec51f;
-  padding: 10px;
-  width: 100%;
-  border-radius: 5px 5px 0px 0px;
-}
-
-main > div:nth-child(4) > div:first-child > ul {
-  margin: 0px;
-  border: 1px solid #eec51f;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  row-gap: 0px;
-  -webkit-column-gap: 0px;
-          column-gap: 0px;
-  padding: 0px;
-  padding-left: 20px;
-  padding-right: 10px;
-}
-
-main > div:nth-child(4) > div:first-child > ul > li {
-  margin-top: 5px;
-}
-
-main > div:nth-child(4) > div:first-child > ul > li:last-child {
-  margin-bottom: 5px;
-}
-
-main > div:nth-child(4) > div:first-child > div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-main > div:nth-child(4) > div:first-child > div > img {
-  margin-top: 20px;
-  width: 150px;
-  height: auto;
-}
-
-main > div:nth-child(4) > div:last-child {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  background-color: #eec51f;
-  border-radius: 5px;
-}
-
-main > div:nth-child(4) > div:last-child article {
-  margin: 20px;
-}
-
-main > div:nth-child(5) {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 1fr;
-      grid-template-rows: 1fr;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  margin-top: 30px;
-}
-
-main > div:nth-child(5) > div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-main > div:nth-child(5) > div > img {
-  width: 150px;
-  height: auto;
-}
-
-footer {
-  background-color: #e4e4e4;
-  height: 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-footer > div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: white;
-  margin-left: auto;
-}
-
-footer > a {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  margin-left: auto;
-}
-
-footer > a > img {
-  height: 30px;
-  width: auto;
-  margin-right: 15px;
-}
-/*# sourceMappingURL=index.css.map */
