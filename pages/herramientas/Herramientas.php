@@ -42,7 +42,7 @@
     <nav id="menuWeb">
         <ul>
             <li> <a href="">Manuales</a> </li>
-            <li><a href="../pages/herramientas/Herramientas.php">Herramientas</a></li>
+            <li><a href="../../pages/herramientas/Herramientas.php">Herramientas</a></li>
         </ul>
     </nav>
     <nav id="toolsNab">

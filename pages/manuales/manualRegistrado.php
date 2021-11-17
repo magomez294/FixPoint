@@ -84,7 +84,7 @@
  
 
 <div id="formSubManual">
-  <form id="formContenedor" action="" method="POST">
+  <form id="formContenedor" action="../../API/CRUD/createManual.php" method="POST">
     <button id="btnCerrar" onclick="closeForm()"><img src="../../Images/hideMenu.png" alt=""></button>
     <div id="pdfUpdate">
         <img id="imgPDF" src="../../Images/filePDF.png" id="preview">
