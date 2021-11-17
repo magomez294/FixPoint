@@ -1,544 +1,667 @@
 /*IMPORTS*/
 
 @font-face {
+  font-family: 'slider';
+  src: url(../fonts/tipografia_Roboto.ttf);
+}
+
+@font-face {
+  font-family: 'textos';
+  src: url(../fonts/tipografia_Patua.ttf);
+}
+@media screen and (max-width: 700px) {
+  /*SLIDER*/
+  #slider {
+    grid-area: slider;
+    width: 100%;
+    height: fit-content;
+    display: inline-block;
+    position: relative;
+}
+        #slider img {
+            width: 100%;
+        }
+        #slider p {
+            position: absolute;
+            font-family: 'slider';
+            font-style: normal;
+            font-weight: bold;
+            font-size: 0.6em;
+            top: 35%;
+            width: 30%;
+            margin-left: 3%;
+            line-height: 100%;
+            color: #FFFFFF;
+        } 
+#btnConocenos {
+  display: none;
+} 
+#formContenedor {
+  display: none;
+} 
+#imgCuerpo {
+  display: none;
+}
+#contenedor2 {
+  display: none;
+}
+#piePagina {
+  grid-area: piePagina;
+  width: 100%;
+  height: 70px;
+  background-color: #111827;
+}
+#datosLoc {
+  display: none;
+}
+#imgConocenos {
+  grid-area: imgConocenos;
+  width: 90%;
+}
+#imgConocenos img{
+  width: 50%;
+}
+#cuerpo {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto auto;
+  gap: 0px 0px;
+  grid-template-areas: "titCuerpo titCuerpo contContacto" 
+  "subtitCuerpo subtitCuerpo contContacto" 
+  "conocenos2 conocenos2 contenedor1" 
+  "conocenos2 conocenos2 contenedor1";
+  background-image: url(../Images/fondo1.jpg);
+  height: fit-content;
+}
+#titCuerpo {
+  grid-area: titCuerpo;
+  font-family: 'textos';
+  color: #EEC51F;
+  text-shadow: -1px 0 black, 0 3px black, 2px 0 black, 0 -1px black;
+  margin-left: 8%;
+  font-size: 1.5em;
+  height: fit-content;
+}
+#subtitCuerpo {
+  grid-area: subtitCuerpo;
+  font-family: 'textos';
+  color: #EEC51F;
+  text-shadow: -1px 0 black, 0 3px black, 2px 0 black, 0 -1px black;
+  width: 80%;
+  margin-left: 12%;
+  font-size: 1.2em;
+}
+#contContacto {
+  grid-area: contContacto;
+  margin-right: 15%;
+}
+#conDireccion p:first-child, #conTelf p:first-child, #conHorarios p:first-child {
+  background-color: #EEC51F;
+  font-family: 'textos';
+  border-radius: 5px 5px 0 0;
+  font-size: 1em;
+  text-align: center; 
+}
+#conDireccion p:last-child, #conTelf p:last-child, #conHorarios p:last-child {
+  background-color: #E4E4E4;
+  font-family: 'textos';
+  font-size: 0.7em;
+  text-align: center; 
+  padding: 5%;
+}
+#contenedor1 {
+  grid-area: contenedor1;
+  width: 80%;
+  height: fit-content;
+  font-family: 'textos';
+  background-color: #E4E4E4;
+  padding-left: 7%;
+  padding-right: 7%;
+
+}
+#conocenos2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "mision vision" "mision imgConocenos";
+  grid-area: conocenos2;
+}
+#mision2 {
+  grid-area: mision;
+  height: fit-content;
+  margin-right: 2%;
+  font-family: 'textos';
+}
+#titMision2 {
+  background-color: black;
+  color: white;
+  border-radius: 5px 5px 0 0;
+  text-align: center; 
+}
+#txtMision2 {
+  font-size: 0.8em;
+}
+#vision2 {
+  grid-area: vision;
+  width: 90%;
+  height: fit-content;               
+  font-family: 'textos';
+}
+#txtVision2 {
+  font-size: 0.8em;
+}
+#titVision2 {
+  background-color: black;
+  color: white;
+  border-radius: 5px 5px 0 0;
+  text-align: center; 
+}
+}
+
+@media screen and (min-width: 700px) and (max-width: 1020px) {
+  #slider {
+    grid-area: slider;
+    width: 100%;
+    height: fit-content;
+    display: inline-block;
+    position: relative;
+  }
+  #slider img {
+    width: 100%;
+  }
+  #slider p {
+    position: absolute;
     font-family: 'slider';
-    src: url(./fonts/tipografia_Roboto.ttf);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.2em;
+    top: 45%;
+    width: 30%;
+    margin-left: 3%;
+    line-height: 100%;
+    color: #FFFFFF;
+  } 
+  #cuerpo{
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.4fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 0px 0px;
+    grid-template-areas: 
+    "titulo titulo titulo" 
+    "subtitulo subtitulo subtitulo" 
+    "contenedor1 contenedor1 conocenos" 
+    "imgCuerpo contenedor2 conocenos";
+    grid-area: cuerpo;
+    background-image: url(../Images/fondo1.jpg);
+    height: fit-content;
   }
-  
-  @font-face {
+  #titCuerpo {
+    grid-area: titulo;
+    height: fit-content;
     font-family: 'textos';
-    src: url(./fonts/tipografia_Patua.ttf);
+    color: #EEC51F;
+    text-shadow: -1px 0 black, 0 3px black, 2px 0 black, 0 -1px black;
+    text-align: center;
+    font-size: 1.5em;
+  }
+  #subtitCuerpo {
+    grid-area: subtitulo;
+    height: fit-content;
+    font-family: 'textos';
+    color: #EEC51F;
+    text-shadow: -1px 0 black, 0 3px black, 2px 0 black, 0 -1px black;
+    text-align: center;
+    font-size: 1.2em;
+  }
+  #contenedor1{
+    grid-area: contenedor1;
+    background-color: #111827;
+    color: white;
+    border-radius: 25px;
+    margin-left: 8%;
+    padding: 1% 1% 2% 1%;
+    width: 90%;
+    font-family: 'textos';
+    height: fit-content;
+  }
+  #contenedor1 p:last-child {
+    margin-left: 10%;
+    width: 80%;
+    font-size: 0.8em;
+  }
+  #contenedor1 p:first-child {
+    margin-left: 5%;
+    font-size: 1em;
+    width: 80%;
+  }
+  #contenedor2{
+    grid-area: contenedor2;
+    background-color: #111827;
+    font-family: 'textos';
+    color: white;
+    width: 90%;
+    padding: 2% 3% 3% 5%;
+    border-radius: 25px;
+    height: fit-content;
+    margin-top: 6%;
+    margin-bottom: 2%;
+    font-size: 0.8em;
+  }
+  #imgCuerpo {
+    grid-area: imgCuerpo;
+    height: fit-content;
+  }
+  #imgCuerpo img{
+    width: 75%;
+    margin: 5% 0 2% 20%;
   }
   
-  
-  @media screen and (min-width: 1020px) {
-    #slider {
-        grid-area: slider;
-        width: 100%;
-        height: fit-content;
-        display: inline-block;
-        position: relative;
-    }
-    #slider img {
-        width: 100%;
-    }
-    #slider p {
-        position: absolute;
-        font-family: 'slider';
-        font-style: normal;
-        font-weight: bold;
-        font-size: 1.8em;
-        top: 45%;
-        width: 30%;
-        margin-left: 3%;
-        line-height: 100%;
-        color: #FFFFFF;
-    } 
-    #cuerpo {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: auto auto auto auto;
-        gap: 0px 0px;
-        grid-template-areas: "titulo titulo titulo" "subtitulo subtitulo subtitulo" "contenedor1 contenedor1 conocenos" "imgCuerpo contenedor2 conocenos";
-        grid-area: cuerpo;
-        background-image: url(../Images/fondo1.jpg);
-        height: fit-content;
-    }
-    #titCuerpo {
-        grid-area: titulo;
-        height: fit-content;
-        font-family: 'textos';
-        color: #EEC51F;
-        text-shadow: -1px 0 black, 0 3px black, 2px 0 black, 0 -1px black;
-        text-align: center;
-        font-size: 1.5em;
-    }
-    #subtitCuerpo {
-        grid-area: subtitulo;
-        height: fit-content;
-        font-family: 'textos';
-        color: #EEC51F;
-        text-shadow: -1px 0 black, 0 3px black, 2px 0 black, 0 -1px black;
-        text-align: center;
-        font-size: 1.2em;
-    }
-    #contenedor1 {
-        grid-area: contenedor1;
-        font-family: 'textos';
-        height: fit-content;
-        background-color: #111827;
-        color: white;
-        border-radius: 25px;
-        margin-left: 8%;
-        padding: 1% 1% 2% 1%;
-        width: 90%;
-    }
-    #contenedor1 p:last-child {
-        margin-left: 10%;
-        width: 80%;
-        font-size: 0.8em;
-    }
-    #contenedor1 p:first-child {
-        margin-left: 5%;
-        font-size: 1em;
-        width: 80%;
-    }
-    #imgCuerpo {
-        grid-area: imgCuerpo;
-        height: fit-content;
-    }
-    #imgCuerpo img{
-        width: 75%;
-        margin: 0 0 2% 20%;
-    }
-    #contenedor2 {
-        grid-area: contenedor2;
-        background-color: #111827;
-        font-family: 'textos';
-        color: white;
-        width: 90%;
-        padding: 2% 3% 3% 5%;
-        border-radius: 25px;
-        height: fit-content;
-        margin-top: 6%;
-        margin-bottom: 2%;
-        font-size: 0.8em;
-    }
-    #conocenos {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        gap: 0px 0px;
-        grid-template-areas: "mision objetivos" "vision objetivos";
-        grid-area: conocenos;
-        
-    }
-    #titConocenos{
-        width: 25%;
-        width: 23%;
-        /* height: fit-content; */
-        border-radius: 25px;
-        writing-mode: vertical-rl;
-        text-orientation: upright;
-        margin-left: 170%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.2em;
-        background-color: #111827;
-        color: white;
-    }
-    #objetivos {
-        display: none;
-        grid-area: objetivos;
-    }
-    #mision {
-        display: none;
-        grid-area: mision;
-    }
-    #vision {
-        display: none;
-        grid-area: vision;
-    }
-    #imgConocenos{
-        display: none;
-    }
-    #contContacto {
-        display: none;
-    }
-    #piePagina {
-        grid-area: piePagina;
-        width: 100%;
-        height: fit-content;
-        background-color: #111827;
-    }
-    #datosLoc {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        gap: 0px 0px;
-        grid-template-areas: "mapa direccion horarios" "mapa telf horarios";
-    }
-    #direccion p:first-child, #telf p:first-child, #horarios p:first-child {
-        background-color: #EEC51F;
-        font-family: 'textos';
-        border-radius: 5px 5px 0 0;
-        font-size: 1em;
-        text-align: center; 
-    }
-    #direccion p:last-child, #telf p:last-child, #horarios p:last-child {
-        color: white;
-        font-family: 'textos';
-        border-radius: 5px 5px 0 0;
-        font-size: 1em;
-        text-align: center; 
-    }
-    #mapa {
-        grid-area: mapa;
-        height: 90%;
-        margin-top: 5%;
-        margin-left: 5%;
-        width: 90%;
-    }
-    #direccion {
-        grid-area: direccion;
-        width: 30%;
-        height: fit-content;
-        margin-left: 25%;
-    }
-    #telf {
-        grid-area: telf;
-        width: 30%;
-        height: fit-content;
-        margin-left: 25%;
-    }
-    #horarios {
-        grid-area: horarios;
-        width: 30%;
-        height: fit-content;
-    }
-  }
-  @media screen and (min-width: 700px) and (max-width: 1020px) {
-    #slider {
-        grid-area: slider;
-        width: 100%;
-        height: fit-content;
-        display: inline-block;
-        position: relative;
-    }
-    #slider img {
-        width: 100%;
-    }
-    #slider p {
-        position: absolute;
-        font-family: 'slider';
-        font-style: normal;
-        font-weight: bold;
-        font-size: 1.2em;
-        top: 45%;
-        width: 30%;
-        margin-left: 3%;
-        line-height: 100%;
-        color: #FFFFFF;
-    } 
-    #cuerpo {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: auto auto auto auto;
-        gap: 0px 0px;
-        grid-template-areas: "titulo titulo titulo" "subtitulo subtitulo subtitulo" "contenedor1 contenedor1 conocenos" "imgCuerpo contenedor2 conocenos";
-        grid-area: cuerpo;
-        background-image: url(../Images/fondo1.jpg);
-        height: fit-content;
-    }
-    #titCuerpo {
-        grid-area: titulo;
-        height: fit-content;
-        font-family: 'textos';
-        color: #EEC51F;
-        text-shadow: -1px 0 black, 0 3px black, 2px 0 black, 0 -1px black;
-        text-align: center;
-        font-size: 1.5em;
-    }
-    #subtitCuerpo {
-        grid-area: subtitulo;
-        height: fit-content;
-        font-family: 'textos';
-        color: #EEC51F;
-        text-shadow: -1px 0 black, 0 3px black, 2px 0 black, 0 -1px black;
-        text-align: center;
-        font-size: 1.2em;
-    }
-    #contenedor1 {
-        grid-area: contenedor1;
-        font-family: 'textos';
-        height: fit-content;
-        background-color: #111827;
-        color: white;
-        border-radius: 25px;
-        margin-left: 8%;
-        padding: 1% 1% 2% 1%;
-        width: 90%;
-    }
-    #contenedor1 p:last-child {
-        margin-left: 10%;
-        width: 80%;
-        font-size: 0.8em;
-    }
-    #contenedor1 p:first-child {
-        margin-left: 5%;
-        font-size: 1em;
-        width: 80%;
-    }
-    #imgCuerpo {
-        grid-area: imgCuerpo;
-        height: fit-content;
-    }
-    #imgCuerpo img{
-        width: 75%;
-        margin: 20% 0 0 20%;
-    }
-    #contenedor2 {
-        grid-area: contenedor2;
-        background-color: #111827;
-        font-family: 'textos';
-        color: white;
-        width: 90%;
-        padding: 2% 3% 3% 5%;
-        border-radius: 25px;
-        height: fit-content;
-        margin-top: 5.5%;
-        margin-bottom: 2%;
-        font-size: 0.8em;
-    }
-    #conocenos {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        gap: 0px 0px;
-        grid-template-areas: "mision objetivos" "vision objetivos";
-        grid-area: conocenos;
-        
-    }
-    #titConocenos{
-        width: 25%;
-        width: 23%;
-        /* height: fit-content; */
-        border-radius: 25px;
-        writing-mode: vertical-rl;
-        text-orientation: upright;
-        margin-left: 170%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.2em;
-        background-color: #111827;
-        color: white;
-    }
-    #objetivos {
-        display: none;
-        grid-area: objetivos;
-    }
-    #mision {
-        display: none;
-        grid-area: mision;
-    }
-    #vision {
-        display: none;
-        grid-area: vision;
-    }
-    #imgConocenos{
-        display: none;
-    }
-    #contContacto {
-        display: none;
-    }
-    #piePagina {
-        grid-area: piePagina;
-        width: 100%;
-        height: fit-content;
-        background-color: #111827;
-    }
-    #datosLoc {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        gap: 0px 0px;
-        grid-template-areas: "direccion horarios" "telf horarios";
-    }
-    #mapa {
-        display: none;
-    }
-    #direccion p:first-child, #telf p:first-child, #horarios p:first-child {
-        background-color: #EEC51F;
-        font-family: 'textos';
-        border-radius: 5px 5px 0 0;
-        font-size: 1em;
-        text-align: center; 
-    }
-    #direccion p:last-child, #telf p:last-child, #horarios p:last-child {
-        color: white;
-        font-family: 'textos';
-        border-radius: 5px 5px 0 0;
-        font-size: 1em;
-        text-align: center; 
-    }
-    #direccion {
-        grid-area: direccion;
-        width: 30%;
-        height: fit-content;
-        margin-left: 25%;
-    }
-    #telf {
-        grid-area: telf;
-        width: 30%;
-        height: fit-content;
-        margin-left: 25%;
-    }
-    #horarios {
-        grid-area: horarios;
-        width: 30%;
-        
-        height: fit-content;
-    }
+  #conocenos{
+    display: none;
+    position: fixed;
+    top: 50%;
+    width: 100%;
+    z-index: 9;
   }
   
-  @media screen and (max-width: 700px) {
-    /*SLIDER*/
-    #slider {
-        grid-area: slider;
-        width: 100%;
-        height: fit-content;
-        display: inline-block;
-        position: relative;
-    }
-            #slider img {
-                width: 100%;
-            }
-            #slider p {
-                position: absolute;
-                font-family: 'slider';
-                font-style: normal;
-                font-weight: bold;
-                font-size: 1em;
-                top: 35%;
-                width: 30%;
-                margin-left: 3%;
-                line-height: 100%;
-                color: #FFFFFF;
-            } 
-  
-  
-    /*CUERPO*/   
-    #cuerpo {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: auto auto auto auto;
-        gap: 0px 0px;
-        grid-template-areas: "titCuerpo titCuerpo contContacto" "subtitCuerpo subtitCuerpo contContacto" "conocenos conocenos contenedor1" "conocenos conocenos contenedor1";
-        grid-area: cuerpo;
-        background-image: url(../Images/fondo1.jpg);
-        height: fit-content;
-    }
-            #titCuerpo {
-                grid-area: titCuerpo;
-                font-family: 'textos';
-                color: #EEC51F;
-                text-shadow: -1px 0 black, 0 3px black, 2px 0 black, 0 -1px black;
-                margin-left: 8%;
-                font-size: 1.5em;
-                height: fit-content;
-            }
-            #subtitCuerpo {
-                grid-area: subtitCuerpo;
-                font-family: 'textos';
-                color: #EEC51F;
-                text-shadow: -1px 0 black, 0 3px black, 2px 0 black, 0 -1px black;
-                width: 80%;
-                margin-left: 12%;
-                font-size: 1.2em;
-            }
-            #contContacto {
-                grid-area: contContacto;
-                margin-right: 15%;
-            }
-            #conDireccion p:first-child, #conTelf p:first-child, #conHorarios p:first-child {
-                background-color: #EEC51F;
-                font-family: 'textos';
-                border-radius: 5px 5px 0 0;
-                font-size: 1em;
-                text-align: center; 
-            }
-            #conDireccion p:last-child, #conTelf p:last-child, #conHorarios p:last-child {
-                background-color: #E4E4E4;
-                font-family: 'textos';
-                font-size: 0.7em;
-                text-align: center; 
-                padding: 5%;
-            }
-            #contenedor1 {
-                grid-area: contenedor1;
-                width: 80%;
-                height: fit-content;
-                font-family: 'textos';
-                background-color: #E4E4E4;
-                padding-left: 7%;
-                padding-right: 7%;
-  
-            }
-            #contenedor1 p:first-child {
-                font-size: 0.8em;
-            }
-            #contenedor1 p:last-child {             
-                font-size: 0.7em;
-                margin-left: 2%;
-            }
-            #contenedor2 {
-                display: none;
-            }
-            #conocenos {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: 1fr 1fr;
-                gap: 0px 0px;
-                grid-template-areas: "mision vision" "mision imgConocenos";
-                grid-area: conocenos;
-            }
-            #titConocenos {
-                display: none;
-            }
-            #mision {
-                grid-area: mision;
-                height: fit-content;
-                margin-right: 2%;
-                font-family: 'textos';
-            }
-            #titMision {
-                background-color: black;
-                color: white;
-                border-radius: 5px 5px 0 0;
-                text-align: center; 
-            }
-            #txtMision {
-                font-size: 0.8em;
-            }
-            #vision {
-                grid-area: vision;
-                width: 90%;
-                height: fit-content;               
-                font-family: 'textos';
-            }
-            #txtVision {
-                font-size: 0.8em;
-            }
-            #titVision {
-                background-color: black;
-                color: white;
-                border-radius: 5px 5px 0 0;
-                text-align: center; 
-            }
-  
-            #imgCuerpo {
-                display: none;
-            }
-            #imgConocenos {
-                grid-area: imgConocenos;
-                width: 90%;
-  
-            }
-            #imgConocenos img{
-                width: 100%;
-            }
-            #objetivos {
-                display: none;
-            }
-    #piePagina {
-        grid-area: piePagina;
-        width: 100%;
-        height: 70px;
-        background-color: #111827;
-    }
-    #datosLoc {
-        display: none;
-    }
+  #formContenedor {
+    font-family: 'textos';
+    position: fixed;
+    color: white;
+    width: 90%;
+    margin-left: 2%;
+    padding: 2%;
+    background-color: #111827;
+    display: grid; 
+          grid-auto-columns: 1fr; 
+          grid-template-columns: 1fr 1fr; 
+          grid-template-rows: auto auto auto; 
+          gap: 0px 0px; 
+          grid-template-areas: 
+              "btnCerrar btnCerrar"
+              "mision objetivos"
+              "vision objetivos"; 
   }
+  
+  #btnCerrar img {
+    width: 50%;
+  }
+  #btnCer {
+    grid-area: btnCerrar;
+    
+  }
+  #btnCerrar {
+    background-color: transparent;
+    float: right;
+    width: 50px;
+    height: 50px;
+    border: 0px;
+    
+  }
+  #objetivos {
+    grid-area: objetivos;
+    border: 2px solid #EEC51F;
+    width: 80%;
+    height: fit-content;
+  }
+  #titObjetivos {
+    padding: 1%;
+    background-color: #EEC51F;
+    font-size: 1.5em;
+    color: black;
+  }
+  #mision {
+    grid-area: mision;
+  }
+  #titMision, #titVision {
+    color: black;
+    background-color: #EEC51F;
+    border-radius: 2px;
+    width: 30%;
+    font-size: 1.5em;
+    text-align: center; 
+  }
+  #vision {
+    grid-area: vision;
+  }
+  #txtMision, #txtVision {
+    font-size: 0.8em;
+  }
+  #txtObjetivos{
+    font-size: 1em;
+  }
+  
+  #btnConocenos {
+      border-radius: 25px;
+      font-family: 'textos';
+      font-size: 1.7em;
+      padding: 5% 0 5% 0;
+      float: right;
+      width: 30%;
+      height: fit-content;
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      background-color: #111827;
+      color: white;
+      cursor: pointer;
+      border: none;
+  }
+  #btnConocenos:hover {
+    color: #EEC51F;
+  }
+  #btnCon {
+    grid-area: conocenos;
+    margin-bottom: 20%;
+  }
+  #piePagina {
+    grid-area: piePagina;
+    width: 100%;
+    height: fit-content;
+    background-color: #111827;
+  }
+  #datosLoc {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "direccion horarios" "telf horarios";
+}
+#contContacto {
+  display: none;
+}
+#imgConocenos{
+  display: none;
+}
+#conocenos2{
+  display: none;
+}
+#mapa {
+    display: none;
+}
+#direccion p:first-child, #telf p:first-child, #horarios p:first-child {
+    background-color: #EEC51F;
+    font-family: 'textos';
+    border-radius: 5px 5px 0 0;
+    font-size: 1em;
+    text-align: center; 
+}
+#direccion p:last-child, #telf p:last-child, #horarios p:last-child {
+    color: white;
+    font-family: 'textos';
+    border-radius: 5px 5px 0 0;
+    font-size: 1em;
+    text-align: center; 
+}
+#direccion {
+    grid-area: direccion;
+    width: 30%;
+    height: fit-content;
+    margin-left: 25%;
+}
+#telf {
+    grid-area: telf;
+    width: 30%;
+    height: fit-content;
+    margin-left: 25%;
+}
+#horarios {
+    grid-area: horarios;
+    width: 30%;
+    height: fit-content;
+}
+
+  }
+@media screen and (min-width: 1020px) {
+#slider {
+  grid-area: slider;
+  width: 100%;
+  height: fit-content;
+  display: inline-block;
+  position: relative;
+}
+#slider img {
+  width: 100%;
+}
+#slider p {
+  position: absolute;
+  font-family: 'slider';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.8em;
+  top: 45%;
+  width: 30%;
+  margin-left: 3%;
+  line-height: 100%;
+  color: #FFFFFF;
+} 
+#cuerpo{
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.4fr;
+  grid-template-rows: auto auto auto auto;
+  gap: 0px 0px;
+  grid-template-areas: 
+  "titulo titulo titulo" 
+  "subtitulo subtitulo subtitulo" 
+  "contenedor1 contenedor1 conocenos" 
+  "imgCuerpo contenedor2 conocenos";
+  grid-area: cuerpo;
+  background-image: url(../Images/fondo1.jpg);
+  height: fit-content;
+}
+#titCuerpo {
+  grid-area: titulo;
+  height: fit-content;
+  font-family: 'textos';
+  color: #EEC51F;
+  text-shadow: -1px 0 black, 0 3px black, 2px 0 black, 0 -1px black;
+  text-align: center;
+  font-size: 1.5em;
+}
+#subtitCuerpo {
+  grid-area: subtitulo;
+  height: fit-content;
+  font-family: 'textos';
+  color: #EEC51F;
+  text-shadow: -1px 0 black, 0 3px black, 2px 0 black, 0 -1px black;
+  text-align: center;
+  font-size: 1.2em;
+}
+#contenedor1{
+  grid-area: contenedor1;
+  background-color: #111827;
+  color: white;
+  border-radius: 25px;
+  margin-left: 8%;
+  padding: 1% 1% 2% 1%;
+  width: 90%;
+  font-family: 'textos';
+  height: fit-content;
+}
+#contenedor1 p:last-child {
+  margin-left: 10%;
+  width: 80%;
+  font-size: 0.8em;
+}
+#contenedor1 p:first-child {
+  margin-left: 5%;
+  font-size: 1em;
+  width: 80%;
+}
+#contenedor2{
+  grid-area: contenedor2;
+  background-color: #111827;
+  font-family: 'textos';
+  color: white;
+  width: 90%;
+  padding: 2% 3% 3% 5%;
+  border-radius: 25px;
+  height: fit-content;
+  margin-top: 6%;
+  margin-bottom: 2%;
+  font-size: 0.8em;
+}
+#imgCuerpo {
+  grid-area: imgCuerpo;
+  height: fit-content;
+}
+#imgCuerpo img{
+  width: 75%;
+  margin: 0 0 2% 20%;
+}
+#imgConocenos{
+  display: none;
+}
+#contContacto {
+  display: none;
+}
+#conocenos2{
+  display: none;
+}
+#conocenos{
+  display: none;
+  position: fixed;
+  top: 15%;
+  width: 100%;
+  z-index: 9;
+}
+
+#formContenedor {
+  font-family: 'textos';
+  position: fixed;
+  color: white;
+  width: 90%;
+  margin-left: 2%;
+  padding: 2%;
+  background-color: #111827;
+  display: grid; 
+        grid-auto-columns: 1fr; 
+        grid-template-columns: 1fr 1fr; 
+        grid-template-rows: auto auto auto; 
+        gap: 0px 0px; 
+        grid-template-areas: 
+            "btnCerrar btnCerrar"
+            "mision objetivos"
+            "vision objetivos"; 
+}
+
+#btnCerrar img {
+  width: 50%;
+}
+#btnCer {
+  grid-area: btnCerrar;
+  
+}
+#btnCerrar {
+  background-color: transparent;
+  float: right;
+  width: 50px;
+  height: 50px;
+  border: 0px;
+  
+}
+#objetivos {
+  grid-area: objetivos;
+  border: 2px solid #EEC51F;
+  width: 80%;
+}
+#titObjetivos {
+  padding: 1%;
+  background-color: #EEC51F;
+  font-size: 2em;
+  color: black;
+}
+#mision {
+  grid-area: mision;
+}
+#titMision, #titVision {
+  color: black;
+  background-color: #EEC51F;
+  border-radius: 2px;
+  width: 30%;
+  font-size: 1.5em;
+  text-align: center; 
+}
+#vision {
+  grid-area: vision;
+}
+#txtMision, #txtVision {
+  font-size: 0.8em;
+}
+#txtObjetivos{
+  font-size: 1.3em;
+}
+
+#btnConocenos {
+    border-radius: 25px;
+    font-family: 'textos';
+    font-size: 2em;
+    float: right;
+    width: 30%;
+    height: 100%;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    background-color: #111827;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+#btnConocenos:hover {
+  color: #EEC51F;
+}
+#btnCon {
+  grid-area: conocenos;
+  margin-bottom: 20%;
+}
+#piePagina {
+  grid-area: piePagina;
+  width: 100%;
+  height: fit-content;
+  background-color: #111827;
+}
+#datosLoc {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "mapa direccion horarios" "mapa telf horarios";
+}
+#direccion p:first-child, #telf p:first-child, #horarios p:first-child {
+  background-color: #EEC51F;
+  font-family: 'textos';
+  border-radius: 5px 5px 0 0;
+  font-size: 1em;
+  text-align: center; 
+}
+#direccion p:last-child, #telf p:last-child, #horarios p:last-child {
+  color: white;
+  font-family: 'textos';
+  border-radius: 5px 5px 0 0;
+  font-size: 1em;
+  text-align: center; 
+}
+#mapa {
+  grid-area: mapa;
+  height: 90%;
+  margin-top: 5%;
+  margin-left: 5%;
+  width: 90%;
+}
+#direccion {
+  grid-area: direccion;
+  width: 30%;
+  height: fit-content;
+  margin-left: 25%;
+}
+#telf {
+  grid-area: telf;
+  width: 30%;
+  height: fit-content;
+  margin-left: 25%;
+}
+#horarios {
+  grid-area: horarios;
+  width: 30%;
+  height: fit-content;
+}
+}

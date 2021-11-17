@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/menu.css">
     <link rel="stylesheet" href="./styles/index.css">
-    <script src="./auth/logout.js"></script>
     <title>fixpoint</title>
 </head>
 <body>
-    <header>
+<header>
         <img id="logo" src="./images/Logo.png" alt="">
         <img id="logoMenu" src="./images/menu.png" alt="" onclick="showHideMenu('menu')">
         <nav id="menu" class="hide">
@@ -47,19 +46,19 @@
             <li><a href="./pages/herramientas/Herramientas.php">Herramientas</a></li>
         </ul>
     </nav>
-    <main>
-       <!--SLIDER-->
+<main>
+    <!--SLIDER-->
     <section id="slider">
-        <!--IMAGEN-->
-        <div id="imgSlider">
-            <img src="./Images/slider.jpg" alt="">
-        </div>
-        <div id="txtSlider">
-            <p>
-                ¡Volvemos a la carga con muchas ganas y con las debidas precauciones!
-                Date de alta como usuario y colabora con este proyecto. 
-            </p>
-        </div>
+            <!--IMAGEN-->
+            <div id="imgSlider">
+                <img src="./Images/slider.jpg" alt="">
+            </div>
+            <div id="txtSlider">
+                <p>
+                    ¡Volvemos a la carga con muchas ganas y con las debidas precauciones!
+                    Date de alta como usuario y colabora con este proyecto. 
+                </p>
+            </div>
     </section>
 
     <!--CUERPO-->
@@ -68,103 +67,130 @@
         <div id="titCuerpo">
             <p>FixPoint es una iniciativa circular sostenible.</p>
         </div>
+
         <!--SUBTITULO-->
         <div id="subtitCuerpo">
             <p>Actualmente disponible para alumnos y profesionales del C.I.F.P Pico Frentes de Soria .</p>
         </div>
-        <!--CONOCENOS-->
-        <div id="conocenos">
-                <p id="titConocenos">CONOCENOS</p>
-            <!--MISION-->
-            <div id="mision">
-                <div id="titMision">
-                    <p>Misión</p>
-                </div>
-                <p id="txtMision">Como una comunidad de ávidos manitas, deportistas al aire libre y personas con conciencia ambiental, la Biblioteca de herramientas FixPoint, quiere provocar un cambio en el sistema de sobreproducción e ineficiencia resultante, la contaminación ambiental y la desigualdad (social). La misión de FixPoint es transformar la mentalidad en la sociedad, en la que la propiedad se elige sobre el acceso. Queremos hacer esto inspirando a la población y organizaciones a abrir una Biblioteca FixPoint en su vecindario para que la gente tenga acceso a cosas que solo necesitan de vez en cuando,en lugar de posesión.</p>
 
-            </div>
-            <!--VISION-->
-            <div id="vision">
-                <div id="titVision">
-                    <p>Visión</p>
-                </div>
-                <p id="txtVision">FixPoint es un proyecto que lucha por una economía circular. Esto significa que creemos en un sistema cerrado de materias primas, en el que los productores seguirán siendo los propietarios de las materias primas contenidas en los productos en el futuro. Para lograr esto, sin embargo, debemos facilitar que 'acceder a' sea más fácil, más barato y más divertido que 'poseer'. </p>
-            </div>
-
-            <!--OBJETIVOS-->
-            <div id="objetivos">
-                <div id="titObjetivos">
-                    <p>
-                        -Promover las habilidades de   bricolaje, fabricación y reparación mediante el intercambio de herramientas
-                        
-                        -Hacer de Soria una ciudad más sostenible
-                        
-                        -Crear oportunidades de aprendizaje y desarrollo
-                    </p>
-                </div>
-                <p>Como una comunidad de ávidos manitas, deportistas al aire libre y personas con conciencia ambiental, la Biblioteca de herramientas FixPoint, quiere provocar un cambio en el sistema de sobreproducción e ineficiencia resultante, la contaminación ambiental y la desigualdad (social). La misión de FixPoint es transformar la mentalidad en la sociedad, en la que la propiedad se elige sobre el acceso. Queremos hacer esto inspirando a la población y organizaciones a abrir una Biblioteca FixPoint en su vecindario para que la gente tenga acceso a cosas que solo necesitan de vez en cuando,en lugar de posesión.</p>
-
-            </div>
-            <div id="imgConocenos">
-                <img src="./Images/fotoIndex.jpg" alt="">
-            </div>
+         <!--CONTENDOR-->
+        <div id="contenedor1">
+            <p>¿Que es una Biblioteca de herramientas?</p>
+            <p>FixPoint es la primera Biblioteca de préstamo de España. Las Bibliotecas de herramientas funcionan como cualquier otra Biblioteca. Te conviertes en miembro y luego puedes tomar prestadas herramientas. <br><br> No tenemos fines de lucro y buscamos ser una organización benéfica.</p>
+        </div>
+        <div id="contenedor2">
+            <p>Se planea tener un taller comunitario abierto a los miembros (en un principio, alumnos del Pico Frentes), un espacio para trabajar en sus propios proyectos y aprender nuevas habilidades.
+            El Taller dispondrá de herramientas y equipos fijos más grandes, disponibles para que los miembros lo usen. En el futuro, esperamos impartir clases de bricolaje, fabricación, construcción y uso seguro de herramientas.
+            </p>
         </div>
 
         <!--IMAGEN CUERPO-->
         <div id="imgCuerpo">
             <img src="./Images/fotoIndex.jpg" alt="">
         </div>
+
+        <!--CONOCENOS-->
+        <div id="btnCon">
+            <button onclick="openForm()" id="btnConocenos">Conocenos</button>
+        </div>
+
+        <section id="conocenos">
+            <div id="formContenedor">
+                <div id="btnCer">
+                    <button id="btnCerrar" onclick="closeForm()"><img src="./Images/hideMenu.png" alt=""></button>
+                </div>
+
+                <!--MISION-->
+                    <div id="mision">
+                        <div id="titMision">
+                            <p>Misión</p>
+                        </div>
+                        <p id="txtMision">Como una comunidad de ávidos manitas, deportistas al aire libre y personas con conciencia ambiental, la Biblioteca de herramientas FixPoint, quiere provocar un cambio en el sistema de sobreproducción e ineficiencia resultante, la contaminación ambiental y la desigualdad (social). La misión de FixPoint es transformar la mentalidad en la sociedad, en la que la propiedad se elige sobre el acceso. Queremos hacer esto inspirando a la población y organizaciones a abrir una Biblioteca FixPoint en su vecindario para que la gente tenga acceso a cosas que solo necesitan de vez en cuando,en lugar de posesión.</p>
+
+                    </div>
+
+                <!--VISION-->
+                    <div id="vision">
+                        <div id="titVision">
+                            <p>Visión</p>
+                        </div>
+                        <p id="txtVision">FixPoint es un proyecto que lucha por una economía circular. Esto significa que creemos en un sistema cerrado de materias primas, en el que los productores seguirán siendo los propietarios de las materias primas contenidas en los productos en el futuro. Para lograr esto, sin embargo, debemos facilitar que 'acceder a' sea más fácil, más barato y más divertido que 'poseer'. </p>
+                    </div>
+
+                <!--OBJETIVOS-->
+                <div id="objetivos">
+                        <div id="titObjetivos">
+                            <p>Los objetivos son simples:</p>
+                        </div>
+                        <ul id="txtObjetivos">
+                            <li>Promover las habilidades de   bricolaje, fabricación y reparación mediante el intercambio de herramientas.</li>
+                            <li>Hacer de Soria una ciudad más sostenible.</li>
+                            <li>Crear oportunidades de aprendizaje y desarrollo.</li>
+                        </ul>
+                </div>
+            </div>
+        </section>
+        <section id="conocenos2">
+            <!--MISION-->
+            <div id="mision2">
+                        <div id="titMision2">
+                            <p>Misión</p>
+                        </div>
+                        <p id="txtMision2">Como una comunidad de ávidos manitas, deportistas al aire libre y personas con conciencia ambiental, la Biblioteca de herramientas FixPoint, quiere provocar un cambio en el sistema de sobreproducción e ineficiencia resultante, la contaminación ambiental y la desigualdad (social). La misión de FixPoint es transformar la mentalidad en la sociedad, en la que la propiedad se elige sobre el acceso. Queremos hacer esto inspirando a la población y organizaciones a abrir una Biblioteca FixPoint en su vecindario para que la gente tenga acceso a cosas que solo necesitan de vez en cuando,en lugar de posesión.</p>
+
+                    </div>
+
+                <!--VISION-->
+                    <div id="vision2">
+                        <div id="titVision2">
+                            <p>Visión</p>
+                        </div>
+                        <p id="txtVision2">FixPoint es un proyecto que lucha por una economía circular. Esto significa que creemos en un sistema cerrado de materias primas, en el que los productores seguirán siendo los propietarios de las materias primas contenidas en los productos en el futuro. Para lograr esto, sin embargo, debemos facilitar que 'acceder a' sea más fácil, más barato y más divertido que 'poseer'. </p>
+                    </div>
+        </section>
         <!--CONTACTO-->
         <div id="contContacto">
-        
-            <!--DIRECCION-->
-            <div id="conDireccion">
-                <p>Dirección</p>
-                <p>
-                C.I.F.P Pico Frentes
-                Gervasio Manrique de Lara s/n
-                Soria, 42004
-                Spain 
-                </p>    
+                
+                <!--DIRECCION-->
+                <div id="conDireccion">
+                    <p>Dirección</p>
+                    <p>
+                    C.I.F.P Pico Frentes
+                    Gervasio Manrique de Lara s/n
+                    Soria, 42004
+                    Spain 
+                    </p>    
 
-            </div>
-            <!--TELEFONO-->
-            <div id="conTelf">
-                <p>Contacto</p>
-                <p>975 23 94 43</p>
-            </div>
-            <!--HORARIOS-->
-            <div id="conHorarios">
-                <p>Horario</p>
-                <p>
-                    Lunes 10:00–15:00 <br>
-                    Martes 10:00–14:05 <br>
-                    Miércoles Closed <br>
-                    Jueves 10:00–14:05 <br>
-                    Viernes 10:00–14:05 <br>
-                    Sábado Closed <br>
-                    Domingo Closed <br>
-                </p>
+                </div>
+                <!--TELEFONO-->
+                <div id="conTelf">
+                    <p>Contacto</p>
+                    <p>975 23 94 43</p>
+                </div>
+                <!--HORARIOS-->
+                <div id="conHorarios">
+                    <p>Horario</p>
+                    <p>
+                        Lunes 10:00–15:00 <br>
+                        Martes 10:00–14:05 <br>
+                        Miércoles Closed <br>
+                        Jueves 10:00–14:05 <br>
+                        Viernes 10:00–14:05 <br>
+                        Sábado Closed <br>
+                        Domingo Closed <br>
+                    </p>
 
-            </div>
-
-        </div>
-        <!--CONTENDOR-->
-        <div id="contenedor1">
-            <p>¿Que es una Biblioteca de herramientas?</p>
-            <p>FixPoint es la primera Biblioteca de préstamo de España. Las Bibliotecas de herramientas funcionan como cualquier otra Biblioteca. Te conviertes en miembro y luego puedes tomar prestadas herramientas. <br><br> No tenemos fines de lucro y buscamos ser una organización benéfica.
-            </p>
-        </div>
-
-        <div id="contenedor2">
-            <p>Se planea tener un taller comunitario abierto a los miembros (en un principio, alumnos del Pico Frentes), un espacio para trabajar en sus propios proyectos y aprender nuevas habilidades.
-            El Taller dispondrá de herramientas y equipos fijos más grandes, disponibles para que los miembros lo usen. En el futuro, esperamos impartir clases de bricolaje, fabricación, construcción y uso seguro de herramientas.
-            </p>
+                </div>
 
         </div>
+        <div id="imgConocenos">
+            <img src="./Images/fotoIndex.jpg" alt="">
+        </div>
+
     </section>
-
-    <!--FOOTER-->
+    
+</main>
+<!--FOOTER-->
     <footer id="piePagina">
         <div id="datosLoc">
             <!--MAPA-->
@@ -202,6 +228,18 @@
         </div>
 
     </footer>
-    <script src="./scripts/menu.js"></script>
+
+
+
+
+    
+<script>
+function openForm() {
+  document.getElementById("conocenos").style.display = "block";
+}
+function closeForm() {
+  document.getElementById("conocenos").style.display = "none";
+}
+</script>
 </body>
 </html>

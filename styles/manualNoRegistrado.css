@@ -1,0 +1,254 @@
+/*IMPORTS*/
+
+@font-face {
+    font-family: 'slider';
+    src: url(../fonts/tipografia_Roboto.ttf);
+  }
+  
+  @font-face {
+    font-family: 'textos';
+    src: url(../fonts/tipografia_Patua.ttf);
+  }
+
+  
+
+  
+ 
+  @media screen and (max-width: 700px) {
+    body {
+      display: grid; 
+      grid-auto-columns: 1fr; 
+      grid-template-columns: 1fr; 
+      grid-template-rows: 0.1fr 0.1fr 1fr 1fr 1fr 1fr; 
+      gap: 0px 0px; 
+      grid-template-areas: 
+        "cabecera"
+        "slider"
+        "botones"
+        "busqueda"
+        "cuerpo"
+        "footer";
+        height: fit-content;
+    }
+    main {
+      background-image: url(../Images/fondo1.jpg);
+    }
+    #slider {
+      grid-area: slider;
+      width: 100%;
+      height: fit-content;
+      display: inline-block;
+      position: relative;
+  }
+          #slider img {
+              width: 100%;
+          }
+          #slider p {
+              position: absolute;
+              font-family: 'textos';
+              font-size: 2em;
+              top: 35%;
+              left: 35%;
+              margin: auto;
+              color: black;
+              text-shadow: -1px 0 #EEC51F, 0 3px #EEC51F, 2px 0 #EEC51F, 0 -1px #EEC51F;
+          } 
+    
+
+#btnNuevoManual, #btnSubirManual  {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  -webkit-box-shadow: 1px 1px 5px black;
+          box-shadow: 1px 1px 5px black;
+  margin-left: 20px;
+}
+
+#toolSearch {
+  text-align: center;
+  border: none;
+}
+
+#toolSearch #toolSearchInput {
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+#manuales {
+  width: auto;
+  height: 300px;
+  background-color: #111827;
+  margin-top: 20px;
+}
+
+footer {
+  height: 50px;
+  background: #111827;
+}
+
+
+}
+@media screen and (min-width: 700px) and (max-width: 1020px) {
+  body {
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: 0.1fr 0.1fr 1fr 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "cabecera"
+      "slider"
+      "botones"
+      "busqueda"
+      "cuerpo"
+      "footer";
+      height: fit-content;
+  }
+  main {
+    background-image: url(../Images/fondo1.jpg);
+  }
+  #slider {
+    grid-area: slider;
+    width: 100%;
+    height: fit-content;
+    display: inline-block;
+    position: relative;
+}
+        #slider img {
+            width: 100%;
+        }
+        #slider p {
+            position: absolute;
+            font-family: 'textos';
+            font-size: 2em;
+            top: 40%;
+            left: 45%;
+            margin: auto;
+            color: black;
+            text-shadow: -1px 0 #EEC51F, 0 3px #EEC51F, 2px 0 #EEC51F, 0 -1px #EEC51F;
+        } 
+  
+
+#btnNuevoManual, #btnSubirManual  {
+padding: 0px;
+margin: 0px;
+list-style: none;
+border: 1px solid black;
+border-radius: 10px;
+padding: 10px;
+-webkit-box-shadow: 1px 1px 5px black;
+        box-shadow: 1px 1px 5px black;
+margin-left: 20px;
+}
+
+#toolSearch {
+text-align: center;
+border: none;
+}
+
+#toolSearch #toolSearchInput {
+  width: 50%;
+height: 35px;
+border-radius: 5px;
+border: 1px solid black;
+}
+
+#manuales {
+width: auto;
+height: 300px;
+background-color: #111827;
+margin-top: 20px;
+}
+
+footer {
+height: 50px;
+background: #111827;
+margin-top: 50px;
+}
+
+
+}
+@media screen and (min-width: 1020px) {
+  body {
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: 0.1fr 0.1fr 1fr 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "cabecera"
+      "slider"
+      "botones"
+      "busqueda"
+      "cuerpo"
+      "footer";
+      height: fit-content;
+  }
+  main {
+    background-image: url(../Images/fondo1.jpg);
+  }
+  #slider {
+    grid-area: slider;
+    width: 100%;
+    height: fit-content;
+    display: inline-block;
+    position: relative;
+}
+        #slider img {
+            width: 100%;
+        }
+        #slider p {
+            position: absolute;
+            font-family: 'textos';
+            font-size: 3.5em;
+            top: 40%;
+            left: 45%;
+            margin: auto;
+            color: black;
+            text-shadow: -1px 0 #EEC51F, 0 3px #EEC51F, 2px 0 #EEC51F, 0 -1px #EEC51F;
+        } 
+  
+
+#btnNuevoManual, #btnSubirManual  {
+padding: 0px;
+margin: 0px;
+list-style: none;
+border: 1px solid black;
+border-radius: 10px;
+padding: 10px;
+-webkit-box-shadow: 1px 1px 5px black;
+        box-shadow: 1px 1px 5px black;
+margin-left: 20px;
+}
+
+#toolSearch {
+text-align: center;
+border: none;
+}
+
+#toolSearch #toolSearchInput {
+width: 60%;
+height: 35px;
+border-radius: 5px;
+border: 1px solid black;
+}
+
+#manuales {
+width: auto;
+height: 300px;
+background-color: #111827;
+margin-top: 20px;
+}
+
+footer {
+height: 50px;
+background: #111827;
+margin-top: 50px;
+}
+
+
+}
