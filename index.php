@@ -23,7 +23,7 @@
                     <li><a href="">Iniciar Sesión</a></li>
                     <li><a href="">Crear Cuenta</a></li>
                 <?php } ?>
-                    <li> <a href="">Manuales</a> </li>
+                    <li> <a href="./pages/manuales/manualRegistrado.php">Manuales</a> </li>
                     <li><a href="./pages/herramientas/Herramientas.php">Herramientas</a></li>
                 <?php if(isset($_SESSION['loged'])){ ?>
                     <li><button onclick="logOut()">Cerrar sesión</button></li>
@@ -46,7 +46,7 @@
     </header>
     <nav id="menuWeb">
         <ul>
-            <li> <a href="">Manuales</a> </li>
+            <li> <a href="./pages/manuales/manualRegistrado.php">Manuales</a> </li>
             <li><a href="./pages/herramientas/Herramientas.php">Herramientas</a></li>
         </ul>
     </nav>

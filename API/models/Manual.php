@@ -33,27 +33,23 @@ class Manual extends DB{
     }
     public function create($title, $autor, $pdf){
 
-        
-        
         $result = $this->insert(Manual::MANUALS, [Manual::NAME=>$title, Manual::AUTOR=>$autor]);
-        
-        $pdfId = $this->connection->insert_id;
-        
-        if(!$result){
-            echo $result;
+        if (!$result) {
+            $_SESSION['message'] = 'Error al intentar subir el manual';
+            $_SESSION['color'] = 'red';
             return false;
         }
+        $pdfId = $this->connection->insert_id;
+        
         $result = $this->update(Manual::MANUALS,[Manual::PDF=>$pdfId.".pdf"], "".Manual::ID."='$pdfId'");
-        if(!$result){
+        if (!$result) {
+            $_SESSION['message'] = 'Error al intentar subir el manual';
+            $_SESSION['color'] = 'red';
             return false;
         }
         
         $pdfName = $pdfId.".pdf";
-        if (move_uploaded_file($pdf, $this->pdfDirectory.$pdfName)){
-
-        }else{
-            return false;
-        }
+        move_uploaded_file($pdf['tmp_name'], $this->pdfDirectory.$pdfName);
         return true;
     }
 }

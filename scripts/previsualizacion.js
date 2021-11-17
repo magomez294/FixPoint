@@ -1,8 +1,7 @@
 
-
-/* var fecha = localStorage.getItem("fecManual").split('-'); */
-/* document.getElementById("fecCreacion").innerHTML = `${fecha[2]}/${fecha[1]}/${fecha[0]}`; */
-/* document.getElementById("datosPersona").innerHTML = localStorage.getItem("nomPersona");
+var fecha = localStorage.getItem("fecManual").split('-');
+document.getElementById("fecCreacion").innerHTML = `${fecha[2]}/${fecha[1]}/${fecha[0]}`;
+document.getElementById("datosPersona").innerHTML = localStorage.getItem("nomPersona");
 document.getElementById("datosEstudios").innerHTML = localStorage.getItem("estudioActual");
 document.getElementById("datosLugar").innerHTML = localStorage.getItem("lugar");
 document.getElementById("datosTelf").innerHTML = localStorage.getItem("numTelf");
@@ -42,7 +41,7 @@ for (let index = 1; index <= localStorage.getItem("numeropasos"); index++) {
     listaPasos.appendChild(newDiv);
     document.getElementById("imagen"+index).show; 
 
-} */
+}
 
 async function saveManual(){
     
@@ -70,8 +69,8 @@ async function saveManual(){
                 orientation: 'portrait'
             }
         })
-        .from(element)
-        .toPdf().output('datauristring').then(function (pdfBase64) {
+        .from(element).save();
+        /* .toPdf().output('datauristring').then(function (pdfBase64) {
             // You have access to the jsPDF object and can use it as desired.
             pdf = pdfBase64;
             const file = new File(
@@ -92,7 +91,7 @@ async function saveManual(){
               .catch(error => {
                 console.error('Error:', error);
               });
-        });
+        }); */
        /*  console.log(pdf)
         var formData = new FormData();
         formData.append('pdf', pdf)
