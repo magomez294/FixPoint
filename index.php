@@ -151,6 +151,9 @@
                         </div>
                         <p id="txtVision2">FixPoint es un proyecto que lucha por una economía circular. Esto significa que creemos en un sistema cerrado de materias primas, en el que los productores seguirán siendo los propietarios de las materias primas contenidas en los productos en el futuro. Para lograr esto, sin embargo, debemos facilitar que 'acceder a' sea más fácil, más barato y más divertido que 'poseer'. </p>
                     </div>
+                    <div id="imgConocenos">
+                        <img src="./Images/fotoIndex.jpg" alt="">
+                    </div>
         </section>
         <!--CONTACTO-->
         <div id="contContacto">
@@ -187,9 +190,7 @@
                 </div>
 
         </div>
-        <div id="imgConocenos">
-            <img src="./Images/fotoIndex.jpg" alt="">
-        </div>
+        
 
     </section>
     
