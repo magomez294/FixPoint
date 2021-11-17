@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../../styles/menu.css">
     <link rel="stylesheet" href="../../styles/manualRegistrado.css"> 
     <script src="../../scripts/menu.js"></script>
+    <script defer src="../../auth/auth.js"></script>
     <title>Manuales - FixPoint</title>
 </head>
 
@@ -33,7 +34,7 @@
     <nav id="menuWeb">
         <ul>
             <li> <a href="">Manuales</a> </li>
-            <li><a href="./pages/herramientas/Herramientas.php">Herramientas</a></li>
+            <li><a href="../herramientas/Herramientas.php">Herramientas</a></li>
         </ul>
     </nav>
     <main>
