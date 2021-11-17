@@ -83,26 +83,28 @@
  
 
 <div id="formSubManual">
-  <form id="formContenedor">
+  <form id="formContenedor" action="" method="POST">
     <button id="btnCerrar" onclick="closeForm()"><img src="../../Images/hideMenu.png" alt=""></button>
     <div id="pdfUpdate">
         <img id="imgPDF" src="../../Images/filePDF.png" id="preview">
-        <input type="file" accept="application/pdf" required>
+        <input type="file" name="pdf" accept="application/pdf" required>
     </div>
 
-    <label>Nombre y apellidos</label>
-    <input type="text" placeholder="Introduce tu nombre y apellidos" required>
+    <label for="name">Nombre y apellidos</label>
+    <input type="text" name="name" placeholder="Introduce tu nombre y apellidos" required>
 
-    <label>Titulo</label>
-    <input type="text" placeholder="Introduce el titulo del manual" required>
+    <label for="title">Titulo</label>
+    <input type="text" name="title" placeholder="Introduce el titulo del manual" required>
 
-    <button type="submit" id="btnGuardar">Guardar</button>
-
+    <button type="submit" name="save_manual" id="btnGuardar">Guardar</button>
+    <?php if(isset($_SESSION['message'])){ ?>
+            <div style="background-color: <?= $_SESSION['color'] ?>;">
+                <?= $_SESSION['message'] ?>
+            </div>
+    <?php unset($_SESSION['message']);} ?>
   </form>
 </div>
 </main>
-<footer>
-</footer>
 <script>
 function openForm() {
   document.getElementById("formSubManual").style.display = "block";
