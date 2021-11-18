@@ -88,10 +88,13 @@
                     $direction = '../../../manuals/';
                     if ($result) {
                         while ($row = mysqli_fetch_array($result)) {
+                            $userId = $row['Autor'];
+                            $user = $db->select("usuario", "*", "ID_USUARIO = ".$userId);
+                            $user = mysqli_fetch_array($user);
                     ?>
                         <tr>
                             <td><a href="../../../manuals/<?php echo $row['NomMan'] ?>.pdf"><?php echo $row['NomMan'] ?></a></td>
-                            <td><?php echo $row['Autor'] ?></td>
+                            <td><?php echo $user['Nombre'] ?></td>
                             <td><?php echo $row['Fecha'] ?></td>
                         </tr>
                     <?php
@@ -104,15 +107,12 @@
     </section>
  <!--DESPLEGABLE SUBIR MANUAL-->
  <div id="formSubManual">
-        <form id="formContenedor" action="../../API/CRUD/createManual.php" method="POST">
+        <form id="formContenedor" action="../../API/CRUD/createManual.php" method="POST" enctype="multipart/form-data">
             <button id="btnCerrar" onclick="closeForm()"><img src="../../Images/hideMenu.png" alt=""></button>
             <div id="pdfUpdate">
                 <img id="imgPDF" src="../../Images/filePDF.png" id="preview">
-                <input type="file" name="pdf" accept="application/pdf" required>
+                <input type="file" name="file" accept="application/pdf" required>
             </div>
-
-            <label for="name">Nombre y apellidos</label>
-            <input type="text" name="name" placeholder="Introduce tu nombre y apellidos" required>
 
             <label for="title">Titulo</label>
             <input type="text" name="title" placeholder="Introduce el titulo del manual" required>

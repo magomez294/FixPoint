@@ -31,9 +31,9 @@ class Manual extends DB{
         }
         return false;
     }
-    public function create($title, $autor, $pdf){
+    public function create($title,$pdf){
 
-        $result = $this->insert(Manual::MANUALS, [Manual::NAME=>$title, Manual::AUTOR=>$autor]);
+        $result = $this->insert(Manual::MANUALS, [Manual::NAME=>$title, Manual::AUTOR=>$_SESSION['userId']]);
         if (!$result) {
             $_SESSION['message'] = 'Error al intentar subir el manual';
             $_SESSION['color'] = 'red';

@@ -53,7 +53,7 @@ class Tool extends DB{
     //funcion que valida, inserta y en caso de que ya exista la herramienta la updatea
     function createTool(){
         if ($this->validateImage()) {
-            $result = $this->insert(Tool::TOOLS, [Tool::NAME=>$this->name, Tool::DESCRIPTION=>$this->description]);
+            $result = $this->insert(Tool::TOOLS, [Tool::NAME=>$this->name, Tool::DESCRIPTION=>$this->description, 'Donante'=>$_SESSION['userId']]);
             $this->imageId = $this->connection->insert_id;
             if (!$result) {
                 $_SESSION['message'] = 'Error al intentar guardar la herramienta';
@@ -80,7 +80,7 @@ class Tool extends DB{
     }
     function createToolAdmin(){
         if ($this->validateImage()) {
-            $result = $this->insert(Tool::TOOLS, [Tool::NAME=>$this->name, Tool::DESCRIPTION=>$this->description]);
+            $result = $this->insert(Tool::TOOLS, [Tool::NAME=>$this->name, Tool::DESCRIPTION=>$this->description, 'Donante'=>$_SESSION['userId']]);
             $this->imageId = $this->connection->insert_id;
             if (!$result) {
                 $_SESSION['message'] = 'Error al intentar guardar la herramienta';

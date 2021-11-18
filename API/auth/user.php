@@ -23,6 +23,7 @@ class User extends DB{
                     $json['id'] = $row[User::ID];
                     $json['username'] = $row[User::NAME];
                     $json['email'] = $row[User::EMAIL];
+                    $_SESSION['userId'] = $row[User::ID];
                     if($row[User::IS_ADMIN] == 1){
                         if (session_status() === PHP_SESSION_NONE) {
                             session_start();

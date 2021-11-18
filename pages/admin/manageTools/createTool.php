@@ -11,10 +11,10 @@ if (session_status() === PHP_SESSION_NONE) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../styles/menu.css">
-    <link rel="stylesheet" href="../../styles/crearHerramienta.css">
-    <script defer src="../../auth/auth.js"></script>
-    <script defer src="../../scripts/menu.js"></script>
+    <link rel="stylesheet" href="../../../styles/menu.css">
+    <link rel="stylesheet" href="../../../styles/crearHerramienta.css">
+    <script defer src="../../../auth/auth.js"></script>
+    <script defer src="../../../scripts/menu.js"></script>
     <script src="../../../auth/logout.js"></script>
     <title>Añadir Herramienta</title>
 </head>
@@ -25,25 +25,19 @@ if (session_status() === PHP_SESSION_NONE) {
         <nav id="menu" class="hide">
             <img src="../../../images/hideMenu.png" alt="" id="hideMenu" onclick="showHideMenu('menu')">
             <ul>
-                <?php if(isset($_SESSION['loged']) && $_SESSION['loged'] == true){ ?>
+                <?php if(!isset($_SESSION['loged'])){ ?>
                     <li><a href="">Iniciar Sesión</a></li>
                     <li><a href="">Crear Cuenta</a></li>
                 <?php } ?>
                     <li> <a href="">Manuales</a> </li>
                     <li><a href="./pages/herramientas/Herramientas.php">Herramientas</a></li>
-                <?php if(!isset($_SESSION['loged'])){ ?>
+                <?php if(isset($_SESSION['loged'])){ ?>
                     <li><a onclick="logOut()">Cerrar sesión</a></li>
                 <?php } ?>
             </ul>
         </nav>
         <nav id="menuWeb2">
-        <?php if(isset($_SESSION['loged']) && $_SESSION['loged'] == true){ ?>
-            <ul>
-                <li><a href="">Crear Cuenta</a></li>
-                <li><a href="">Iniciar Sesión</a></li>
-            </ul>
-        <?php } ?>
-        <?php if(!isset($_SESSION['loged'])){ ?>
+        <?php if(isset($_SESSION['loged'])){ ?>
             <ul>
                 <li><a onclick="logOut()">Cerrar sesión</a></li>
             </ul>
@@ -52,7 +46,7 @@ if (session_status() === PHP_SESSION_NONE) {
     </header>
     <nav id="menuWeb">
         <ul>
-            <li> <a href="">Manuales</a> </li>
+            <li> <a href="../../manuales/manualRegistrado.php">Manuales</a> </li>
             <li><a href="../../herramientas/Herramientas.php">Herramientas</a></li>
         </ul>
     </nav>

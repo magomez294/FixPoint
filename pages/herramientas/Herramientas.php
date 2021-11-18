@@ -1,4 +1,6 @@
-
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +50,13 @@
     <nav id="toolsNab">
         <ul>
             <li><a href="">Herramientas</a></li>
-            <li><a href="./CrearHerramienta.php">Donar</a></li>
+            <?php if(isset($_SESSION['loged']) && isset($_SESSION['admin'])){ ?>
+                <li><a href="../admin/manageTools/createTool.php">Donar</a></li>
+            <?php } ?>
+            <?php if(isset($_SESSION['loged']) && !isset($_SESSION['admin'])){ ?>
+                <li><a href="./CrearHerramienta.php">Donar</a></li>
+            <?php } ?>
+            
         </ul>
     </nav>
     
