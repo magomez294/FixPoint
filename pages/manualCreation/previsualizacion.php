@@ -62,7 +62,6 @@
 </div>
 <div id="contenedor">
 
-    <h1>Prueba</h1>
 
     <div id="titFec">
         <p id="titulo">Nombre reparacion</p>
@@ -127,7 +126,7 @@
         <img src="" alt="">
         </div>
         <p>Texto</p>
-    </div> -->
+    </div>
     
     
 </div>

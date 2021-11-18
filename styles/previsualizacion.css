@@ -12,7 +12,6 @@
     src: url(../tipografia/tipografia_Patua.ttf);
 }
 body {
-    /* background-color: #EEC51F; */
     border: 18px solid #000000;
     border-radius: 6px;
     margin: 0;
@@ -124,6 +123,10 @@ tr, td {
 }
 #pasos {
     grid-area: pasos;
+}
+
+#getPDF {
+    background-color: #EEC51F;
 }
 
 

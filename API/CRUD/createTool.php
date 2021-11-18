@@ -1,7 +1,7 @@
 <?php
 
 require_once('../models/Tool.php');
-
+//comprueba si se ha submiteado la herramienta con su imagen y si es asi lo crea
     if (isset($_POST['save_tool']) && isset($_FILES['image'])) {
         /* echo 'entra'; */
         $name = $_POST['name'];

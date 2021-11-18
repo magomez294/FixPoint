@@ -50,7 +50,7 @@ function eliminar(paso){
 };
 
 var crear = document.getElementById('nuevo');
-
+//genera un nuevo div con todos los componentes de pasos, y le da funcionalidad a los botones
 crear.onclick = function(){
     var todosPasos =document.getElementsByClassName("paso");
     var newDiv = document.createElement("div");
@@ -101,7 +101,7 @@ crear.onclick = function(){
     console.log(imagenes);
 };
 
-
+//funcion que comprueba la validez de s imagenes subidas y las previsualiza
 function readURL(input) {
     //var input = document.getElementById(id);
     //console.log(id);

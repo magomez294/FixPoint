@@ -41,7 +41,7 @@
     </header>
     <nav id="menuWeb">
         <ul>
-            <li> <a href="">Manuales</a> </li>
+            <li> <a href="../../pages/manuales/manualRegistrado.php">Manuales</a> </li>
             <li><a href="../../pages/herramientas/Herramientas.php">Herramientas</a></li>
         </ul>
     </nav>
@@ -63,6 +63,7 @@
             $direction = '../../Images/Tools/';
             if ($result) {
                 while ($row = mysqli_fetch_array($result)) {
+                    //llama a base de datos y muestra todas las herramientas
                     ?>
                     <li>
                         <h2><?php echo $row['NomHer'] ?></h2>
@@ -103,5 +104,7 @@
         
          
     </div> 
+<footer>
+<footer>
 </body>
 </html>

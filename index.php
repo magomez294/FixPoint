@@ -19,6 +19,7 @@
         <nav id="menu" class="hide">
             <img src="./images/hideMenu.png" alt="" id="hideMenu" onclick="showHideMenu('menu')">
             <ul>
+                <!--Se combrueba si se ha iniciado sesion para mostrar los botones de iniciar sesion/crear cuenta o de cerrar sesion -->
                 <?php if(!isset($_SESSION['loged'])){ ?>
                     <li><a href="">Iniciar Sesión</a></li>
                     <li><a href="">Crear Cuenta</a></li>
@@ -31,6 +32,7 @@
             </ul>
         </nav>
         <nav id="menuWeb2">
+            <!--Se combrueba si se ha iniciado sesion para mostrar los botones de iniciar sesion/crear cuenta o de cerrar sesion -->
         <?php if(!isset($_SESSION['loged'])){ ?>
             <ul>
                 <li><a href="./pages/createAccount.html">Crear Cuenta</a></li>
@@ -237,7 +239,7 @@
 
 
 
-    
+<!--SCRIPT PARA QUE SE DESPLIEGUE EL DE CONOCENOS EN TABLET Y PC-->  
 <script>
 function openForm() {
   document.getElementById("conocenos").style.display = "block";

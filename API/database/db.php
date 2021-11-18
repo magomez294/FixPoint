@@ -1,5 +1,5 @@
 <?php
-
+//aqui creamos la conexion a base de datos y las funciones basicas, select, insert,set y delete
 class DB{
     /* private const host='fixpointg2.cruetabggvum.us-east-1.rds.amazonaws.com'; */
     private const host = 'localhost';

@@ -1,3 +1,4 @@
+//esta clase es para controlar que sea necesario iniciar sesion para ciertas acciones
 class Auth{
     constructor(admin){
         this.display = document.querySelector('body').style.display;

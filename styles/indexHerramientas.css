@@ -1,3 +1,5 @@
+
+
 #toolsNab > ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -62,6 +64,10 @@
     -ms-grid-columns: auto auto;
         grid-template-columns: auto auto;
   }
+  footer {
+    background-color: #111827;
+    height: 30px;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -69,12 +75,20 @@
     -ms-grid-columns: auto auto auto;
         grid-template-columns: auto auto auto;
   }
+  footer {
+    background-color: #111827;
+    height: 30px;
+  }
 }
 
 @media screen and (min-width: 1400px) {
   #tools {
     -ms-grid-columns: auto auto auto auto;
         grid-template-columns: auto auto auto auto;
+  }
+  footer {
+    background-color: #111827;
+    height: 30px;
   }
 }
 

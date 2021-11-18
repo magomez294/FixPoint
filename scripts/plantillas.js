@@ -1,4 +1,4 @@
-
+//funciones que guardan todos los datos del manual
 function guardar () {
     window.history.forward();
     localStorage.setItem('fecManual', document.getElementById("fecManual").value);
@@ -37,7 +37,7 @@ function guardarPasos() {
         localStorage.setItem('imagen'+(index+1), imagenes[index]);
     }
 }
-
+//funcion que comprueba la validez de la imagen subida y la previsualiza
 function previsualizar() {
     document.getElementById("imgPrincipal").onchange = function () {
         var reader = new FileReader();

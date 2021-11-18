@@ -20,7 +20,7 @@ if(isset($data)){
     $username = $data -> username;
     $password = $data -> password;
 }
-
+//comprueba si el login es correcto y si es asi inicia sesion
 http_response_code(200);
 if($username && $password){
     $user = new User();

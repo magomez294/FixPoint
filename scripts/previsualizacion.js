@@ -1,4 +1,4 @@
-
+//recoge todos los datos del local storage y genera un html que luego convertiremos en pdf
 var fecha = localStorage.getItem("fecManual").split('-');
 document.getElementById("fecCreacion").innerHTML = `${fecha[2]}/${fecha[1]}/${fecha[0]}`;
 document.getElementById("datosPersona").innerHTML = localStorage.getItem("nomPersona");

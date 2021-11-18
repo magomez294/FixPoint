@@ -9,7 +9,11 @@
   font-family: 'textos';
   src: url(../fonts/tipografia_Patua.ttf);
 }
+
+/*RESPONSIVE MOVIL*/
 @media screen and (max-width: 700px) {
+  /*SLIDER*/
+
   #slider {
     width: 100%;
     height: fit-content;
@@ -31,6 +35,9 @@
     line-height: 100%;
     color: #FFFFFF;
   } 
+
+  /*CUERPO*/
+
   #cuerpo{
     display: grid; 
     grid-auto-columns: 1fr; 
@@ -44,6 +51,8 @@
     "conocenos2 conocenos2 contenedor1";  
     background-image: url(../Images/fondo1.jpg);
   }
+  /*TITULOS CUERPO*/
+  
    #titCuerpo {
     grid-area: titulo; 
     font-family: 'textos';
@@ -63,6 +72,9 @@
     text-align: center;
     font-size: 1.2em;
   }
+
+  /*CONTENDOR QUE ES UNA BIBLIOTECA DE HERRAMIENTAS*/
+
   #contenedor1 { 
     grid-area: contenedor1; 
     background-color: #111827;
@@ -82,9 +94,15 @@
     font-size: 0.7em;
     margin-left: 2%;
 }
+
+  /*CONTENEDOR INFORMACION RELEVANTE*/
+
   #contenedor2 { 
     display: none;
   }
+
+  /*DESPLEGABLE CONOCENOS*/
+
   #btnCon{
     display: none;
   }
@@ -94,6 +112,8 @@
   #imgCuerpo {
     display: none;
 }
+  /*CONTENDOR CONTACTO MOVIL*/
+
 #contContacto {
   grid-area: contContacto;
 }
@@ -122,6 +142,9 @@
   text-align: center; 
   padding: 5%;
 }
+
+  /* A  diferencia del resto de dispositivos, en movil no hay desplegable y los datos de conocenos estan sueltos*/
+
 #mision2 { 
   height: fit-content;
   margin-right: 2%;
@@ -150,6 +173,9 @@
 #imgConocenos img{
   width: 100%;
 }
+
+  /*FOOTER*/
+
 #piePagina {
   grid-area: piePagina;
   width: 100%;
@@ -162,20 +188,12 @@
 #conocenos {
   display: none;
 }
-  /*
-  #vision { 
-    grid-area: vision2; 
-  }
-  #contenedor1 { 
-    grid-area: contenedor1; 
-  }
-  
-  #contContacto { 
-    grid-area: contContacto; 
-  } */
 }
 
+
+/*RESPONSIVE TABLET*/
 @media screen and (min-width: 700px) and (max-width: 1020px) {
+  /*SLIDER*/
   #slider {
     grid-area: slider;
     width: 100%;
@@ -198,6 +216,8 @@
     line-height: 100%;
     color: #FFFFFF;
   } 
+
+  /*CUERPO*/
   #cuerpo{
     display: grid;
     grid-template-columns: 1fr 1fr 0.4fr;
@@ -212,6 +232,8 @@
     background-image: url(../Images/fondo1.jpg);
     height: fit-content;
   }
+
+  /*TITULOS CUERPO*/
   #titCuerpo {
     grid-area: titulo;
     height: fit-content;
@@ -230,6 +252,8 @@
     text-align: center;
     font-size: 1.2em;
   }
+
+  /*CONTENDOR QUE ES UNA BIBLIOTECA DE HERRAMIENTAS*/
   #contenedor1{
     grid-area: contenedor1;
     background-color: #111827;
@@ -251,6 +275,8 @@
     font-size: 1em;
     width: 80%;
   }
+
+  /*CONTENEDOR INFORMACION RELEVANTE*/
   #contenedor2{
     grid-area: contenedor2;
     background-color: #111827;
@@ -264,6 +290,7 @@
     margin-bottom: 2%;
     font-size: 0.8em;
   }
+
   #imgCuerpo {
     grid-area: imgCuerpo;
     height: fit-content;
@@ -273,6 +300,7 @@
     margin: 5% 0 2% 20%;
   }
   
+  /*DESPLEGABLE CONOCENOS*/
   #conocenos{
     display: none;
     position: fixed;
@@ -280,7 +308,7 @@
     width: 100%;
     z-index: 9;
   }
-  
+  /*CONTENDOR CON LA INFORMACION DE CONOCENOS PARA TABLET Y PC*/
   #formContenedor {
     font-family: 'textos';
     position: fixed;
@@ -348,6 +376,7 @@
     font-size: 1em;
   }
   
+  /*BOTON VISIBLE DEL DESPLEGABLE CONOCENOS*/
   #btnConocenos {
       border-radius: 25px;
       font-family: 'textos';
@@ -383,6 +412,8 @@
     gap: 0px 0px;
     grid-template-areas: "direccion horarios" "telf horarios";
 }
+
+/*CONTENDOR CONTACTO MOVIL*/
 #contContacto {
   display: none;
 }
@@ -392,6 +423,8 @@
 #conocenos2{
   display: none;
 }
+
+/*FOOTER*/
 #mapa {
     display: none;
 }
@@ -428,7 +461,10 @@
 }
 
   }
+
+/*RESPONSIVE ORDENADOR*/
 @media screen and (min-width: 1020px) {
+  /*SLIDER*/
 #slider {
   grid-area: slider;
   width: 100%;
@@ -451,6 +487,8 @@
   line-height: 100%;
   color: #FFFFFF;
 } 
+
+/*CUERPO*/
 #cuerpo{
   display: grid;
   grid-template-columns: 1fr 1fr 0.4fr;
@@ -465,6 +503,8 @@
   background-image: url(../Images/fondo1.jpg);
   height: fit-content;
 }
+
+/*TITULOS CUERPO*/
 #titCuerpo {
   grid-area: titulo;
   height: fit-content;
@@ -483,6 +523,8 @@
   text-align: center;
   font-size: 1.2em;
 }
+
+/*CONTENDOR QUE ES UNA BIBLIOTECA DE HERRAMIENTAS*/
 #contenedor1{
   grid-area: contenedor1;
   background-color: #111827;
@@ -504,6 +546,8 @@
   font-size: 1em;
   width: 80%;
 }
+
+/*CONTENEDOR INFORMACION RELEVANTE*/
 #contenedor2{
   grid-area: contenedor2;
   background-color: #111827;
@@ -528,6 +572,8 @@
 #imgConocenos{
   display: none;
 }
+
+/*CONTENDOR CONTACTO MOVIL*/
 #contContacto {
   display: none;
 }
@@ -542,6 +588,8 @@
   z-index: 9;
 }
 
+
+/*CONTENDOR CON LA INFORMACION DE CONOCENOS PARA TABLET Y PC*/
 #formContenedor {
   font-family: 'textos';
   position: fixed;
@@ -629,6 +677,8 @@
   grid-area: conocenos;
   margin-bottom: 20%;
 }
+
+/*FOOTER*/
 #piePagina {
   grid-area: piePagina;
   width: 100%;

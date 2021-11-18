@@ -16,7 +16,7 @@ class Manual extends DB{
         $this->pdfDirectory = $_SERVER['DOCUMENT_ROOT'].'/manuals/';  
         
     }
-
+    //llama a las funciones de db.php con parametros recibidos de la web
     public function validate($id){
         $result = $this->update(Manual::MANUALS, [Manual::VALIDATED=>1], "".Manual::ID."='$id'");
         if($result){

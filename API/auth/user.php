@@ -12,7 +12,7 @@ class User extends DB{
     public function __construct(){
         parent::__construct(); 
     }
-
+    //busca en la base de datos los nombres y contraseñas y las guarda para poder usarlas en login.php
     public function login($username, $password){
         $json = [];
         $result = $this->connection->query("SELECT ".User::ID.", ".User::NAME.", ".User::PASSWORD.", ".User::IS_ADMIN." FROM ".User::USERS." WHERE Nombre='$username'");
@@ -33,7 +33,7 @@ class User extends DB{
         
         return false;
     }
-
+    //crea un usuario en la bd con la info de createAcount.php, ademas guarda la sesion
     public function createAccount($username, $email, $password){
         $json = [];
         /* $encryptPassword = password_hash($password,PASSWORD_BCRYPT); */

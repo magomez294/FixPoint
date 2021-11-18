@@ -1,6 +1,8 @@
+<!--PARA QUE NOS PIDA SIEMPRE LOGUEARNOS-->
 <?php 
     session_start();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,11 +16,11 @@
     <script src="../../auth/logout.js"></script>
     <title>Manuales - FixPoint</title>
 </head>
-
 <body>
-    <header>
+<!--CABECERA-->
+<header>
         <a href="../../index.php"><img id="logo" src="../../Images/Logo.png" alt=""></a>
-        <img id="logoMenu" src="../../Images/menu.png" alt="" onclick="showHideMenu('menu')">
+        <a href="../../index.php"><img id="logoMenu" src="../../Images/menu.png" alt="" onclick="showHideMenu('menu')"></a>
         <nav id="menu" class="hide">
             <img src="../../Images/hideMenu.png" alt="" id="hideMenu" onclick="showHideMenu('menu')">
             <ul>
@@ -28,6 +30,7 @@
                 <li><a href="">Crear Cuenta</a></li>
             </ul>
         </nav>
+        <!--BOTONES LOGIN-->
         <nav id="menuWeb2">
         <?php if(!isset($_SESSION['loged'])){ ?>
             <ul>
@@ -41,27 +44,34 @@
             </ul>
         <?php } ?>
         </nav>
-    </header>
-    <nav id="menuWeb">
+</header>
+<!--MENU NAVEGACION-->
+<nav id="menuWeb">
         <ul>
             <li> <a href="">Manuales</a> </li>
             <li><a href="../herramientas/Herramientas.php">Herramientas</a></li>
         </ul>
-    </nav>
-    <main>
-    <!--SLIDER-->
-    <section id="slider">
+</nav>
+<main>
+<!--SLIDER-->
+<section id="slider">
         <img id="imgSlider" src="../../Images/sliderManuales.jpg" alt="">
         <p id="txtSlider">Manuales</p>
-    </section>
-    <section id="botones">
-        <button onclick="window.location.href='../manualCreation/ficha.php'" id="btnNuevoManual">Crear manual</button>
-        <button onclick="openForm()" id="btnSubirManual">Subir manual</button>
-    </section>
-    <section id="toolSearch">
-        <input type="text" id="toolSearchInput" onkeyup="searchTool()" placeholder="Buscar herramienta..">
-    </section>
-    <section id="manuales">
+</section>
+
+<!--BOTONES MENU MANUALES-->
+<section id="botones">
+    <button onclick="window.location.href='../manualCreation/ficha.php'" id="btnNuevoManual">Crear manual</button>
+    <button onclick="openForm()" id="btnSubirManual">Subir manual</button>
+</section>
+
+<!--BARRA DE BUSQUEDA-->
+<section id="toolSearch">
+    <input type="text" id="toolSearchInput" onkeyup="searchTool()" placeholder="Buscar herramienta..">
+</section>
+
+<!--CONTENEDOR MANUALES-->
+<section id="manuales">
         <table>
                 <thead>
                     <tr>
@@ -92,31 +102,35 @@
                 </tbody>                  
             </table>
     </section>
- 
-
-<div id="formSubManual">
-  <form id="formContenedor" action="../../API/CRUD/createManual.php" method="POST">
-    <button id="btnCerrar" onclick="closeForm()"><img src="../../Images/hideMenu.png" alt=""></button>
-    <div id="pdfUpdate">
-        <img id="imgPDF" src="../../Images/filePDF.png" id="preview">
-        <input type="file" name="pdf" accept="application/pdf" required>
-    </div>
-
-    <label for="name">Nombre y apellidos</label>
-    <input type="text" name="name" placeholder="Introduce tu nombre y apellidos" required>
-
-    <label for="title">Titulo</label>
-    <input type="text" name="title" placeholder="Introduce el titulo del manual" required>
-
-    <button type="submit" name="save_manual" id="btnGuardar">Guardar</button>
-    <?php if(isset($_SESSION['message'])){ ?>
-            <div style="background-color: <?= $_SESSION['color'] ?>;">
-                <?= $_SESSION['message'] ?>
+ <!--DESPLEGABLE SUBIR MANUAL-->
+ <div id="formSubManual">
+        <form id="formContenedor" action="../../API/CRUD/createManual.php" method="POST">
+            <button id="btnCerrar" onclick="closeForm()"><img src="../../Images/hideMenu.png" alt=""></button>
+            <div id="pdfUpdate">
+                <img id="imgPDF" src="../../Images/filePDF.png" id="preview">
+                <input type="file" name="pdf" accept="application/pdf" required>
             </div>
-    <?php unset($_SESSION['message']);} ?>
-  </form>
-</div>
-</main>
+
+            <label for="name">Nombre y apellidos</label>
+            <input type="text" name="name" placeholder="Introduce tu nombre y apellidos" required>
+
+            <label for="title">Titulo</label>
+            <input type="text" name="title" placeholder="Introduce el titulo del manual" required>
+
+            <button type="submit" name="save_manual" id="btnGuardar">Guardar</button>
+            <?php if(isset($_SESSION['message'])){ ?>
+                    <div style="background-color: <?= $_SESSION['color'] ?>;">
+                        <?= $_SESSION['message'] ?>
+                    </div>
+            <?php unset($_SESSION['message']);} ?>
+        </form>
+        </div>
+<main>
+<!--FOOTER-->
+<footer id="piePagina">
+    
+</footer>
+<!--SCRIPT DESPLEGABLE SUBIR MANUAL-->
 <script>
 function openForm() {
   document.getElementById("formSubManual").style.display = "block";

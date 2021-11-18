@@ -17,7 +17,7 @@ if(isset($data)){
     $email = $data -> email;
     $password = $data -> password;
 }
-
+//si está toda la informacion necesaria crea la cuenta
 http_response_code(200);
 if ($username && $email && $password) {
     $user = new User();

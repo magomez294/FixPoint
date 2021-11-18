@@ -31,7 +31,7 @@ class Tool extends DB{
         /* echo 'entra'; */
         $this->imageDirectory = $_SERVER['DOCUMENT_ROOT'].'/Images/Tools/';
     }
-
+    //valida la imagen comprobando si el sufijo y el tamaño de la misma son correctos
     private function validateImage(){
         $imagePath = pathinfo($this->image['name']);
 
@@ -50,7 +50,7 @@ class Tool extends DB{
         }
         return true;
     }
-
+    //funcion que valida, inserta y en caso de que ya exista la herramienta la updatea
     function createTool(){
         if ($this->validateImage()) {
             $result = $this->insert(Tool::TOOLS, [Tool::NAME=>$this->name, Tool::DESCRIPTION=>$this->description]);
@@ -106,7 +106,7 @@ class Tool extends DB{
         }
         
     }
-
+    //funciones que cambian la disponibilidad de la herramienta
     function rent($id){
         $result = $this->update(Tool::TOOLS, [Tool::REQUESTED=>0, Tool::AVAILABLE=>0], "".Tool::ID."='$id'");
         if(!$result){

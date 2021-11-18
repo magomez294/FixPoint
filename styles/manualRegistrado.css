@@ -1,60 +1,62 @@
 /*IMPORTS*/
 
 @font-face {
-    font-family: 'slider';
-    src: url(../fonts/tipografia_Roboto.ttf);
-  }
-  
-  @font-face {
-    font-family: 'textos';
-    src: url(../fonts/tipografia_Patua.ttf);
-  }
+  font-family: 'slider';
+  src: url(../fonts/tipografia_Roboto.ttf);
+}
 
-  
+@font-face {
+  font-family: 'textos';
+  src: url(../fonts/tipografia_Patua.ttf);
+}
 
-  
- 
-  @media screen and (max-width: 700px) {
-    body {
-      display: grid; 
-      grid-auto-columns: 1fr; 
-      grid-template-columns: 1fr; 
-      grid-template-rows: 0.1fr 0.1fr 1fr 1fr 1fr 1fr; 
-      gap: 0px 0px; 
-      grid-template-areas: 
-        "cabecera"
-        "slider"
-        "botones"
-        "busqueda"
-        "cuerpo"
-        "footer";
-        height: fit-content;
-    }
-    main {
-      background-image: url(../Images/fondo1.jpg);
-    }
-    #slider {
-      grid-area: slider;
-      width: 100%;
-      height: fit-content;
-      display: inline-block;
-      position: relative;
+ /*RESPONSIVE MOVIL*/
+ @media screen and (max-width: 700px) {
+  body {
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto auto auto auto auto auto; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "cabecera"
+      "slider"
+      "botones"
+      "busqueda"
+      "cuerpo"
+      "footer";
+    height: auto;
   }
-          #slider img {
-              width: 100%;
-          }
-          #slider p {
-              position: absolute;
-              font-family: 'textos';
-              font-size: 2em;
-              top: 35%;
-              left: 35%;
-              margin: auto;
-              color: black;
-              text-shadow: -1px 0 #EEC51F, 0 3px #EEC51F, 2px 0 #EEC51F, 0 -1px #EEC51F;
-          } 
-    
+  main {
+    background-image: url(../Images/fondo1.jpg);
+  }
+/*CABECERA*/
+header {
+  grid-area: cabecera;
+}
 
+/*SLIDER*/
+#slider {
+  grid-area: slider;
+  width: 100%;
+  height: fit-content;
+  display: inline-block;
+  position: relative;
+}
+#slider img {
+  width: 100%;
+}
+#slider p {
+  position: absolute;
+  font-family: 'textos';
+  font-size: 2em;
+  top: 35%;
+  left: 35%;
+  margin: auto;
+  color: black;
+  text-shadow: -1px 0 #EEC51F, 0 3px #EEC51F, 2px 0 #EEC51F, 0 -1px #EEC51F;
+} 
+/*BOTONES*/
 #btnNuevoManual, #btnSubirManual  {
   padding: 0px;
   margin: 0px;
@@ -65,86 +67,77 @@
   -webkit-box-shadow: 1px 1px 5px black;
           box-shadow: 1px 1px 5px black;
   margin-left: 20px;
+  margin-top: 5%;
+  background-color: black;
+  color: white;
+  font-family: 'textos';
+  font-size: 1em;
+}
+#btnNuevoManual:hover, #btnSubirManual:hover  {
+  background-color: #EEC51F;
+  color: black;
 }
 
+#botones {
+  grid-area: botones;
+}
+/*BARRA BÚSQUEDA*/
 #toolSearch {
   margin-top: 30px;
   margin-left: 20px;
   border: none;
+  grid-area: busqueda;
 }
-
 #toolSearch #toolSearchInput {
   height: 30px;
+  width: 80%;
   border-radius: 5px;
   border: 1px solid black;
 }
-
+/*CUERPO*/
 #manuales {
   width: auto;
   height: 300px;
   background-color: #111827;
-  margin-top: 20px;
+  margin: 5% 15% 0 15%;
+  border-radius: 25px;
+  padding: 5% 5% 5% 5%;
+  color: white;
+  font-family: 'textos';
 }
-  
-  /* The popup form - hidden by default */
-  #formSubManual{
-    display: none;
-    position: fixed;
-    /* border: 3px solid #f1f1f1; */
-    top: 35%;
-    z-index: 9;
-  }
-  
-  /* Add styles to the form container */
-  #formContenedor {
-    width: 90%;
-    padding: 10px;
-    background-color: white;
-  }
-  
-  /* Full-width input fields */
-  #formContenedor input[type=text]{
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    border: none;
-    background: #f1f1f1;
-  }
-  
-  /* When the inputs get focus, do something */
-  #formContenedor input[type=text]:focus {
-    background-color: #ddd;
-    outline: none;
-  }
-  
-  /* Set a style for the submit/login button */
-  #btnGuardar {
-    background-color: #04AA6D;
-    color: white;
-    padding: 16px 20px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    margin-bottom:10px;
-    opacity: 0.8;
-  }
-  #btnCerrar img {
-    width: 50%;
-  }
-  #btnCerrar {
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
-    border: 0px;
-    float: right;
-  }
-  
-  
-  /* Add some hover effects to buttons */
-  #formContenedor .btn:hover, .open-button:hover {
-    opacity: 1;
-  }
+th {
+  border-bottom: 2px solid #EEC51F;
+}
+td a {
+  text-decoration: none;
+  color: white;
+}
+/*DESPLEGABLE SUBIR NUEVO MANUAL*/
+ #formSubManual{
+  display: none;
+  position: fixed;
+  top: 32%;
+  z-index: 9;
+  color: white;
+  font-family: 'textos';
+}
+#formContenedor {
+  width: 90%;
+  padding: 10px;
+  background-color: #111827;
+  margin-left: 5%;
+}
+#formContenedor input[type=text]{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: white;
+}
 
+#formContenedor input[type=text]:focus {
+  border: 5px green;
+}
 #imgPDF {
   width: 50%;
 }
@@ -156,123 +149,11 @@
 #pdfUpdate input[type=file] {
   margin-top: 10%;
 }
-footer {
-  height: 50px;
-  background: #111827;
-}
-
-
-}
-@media screen and (min-width: 700px) and (max-width: 1020px) {
-  body {
-    display: grid; 
-    grid-auto-columns: 1fr; 
-    grid-template-columns: 1fr; 
-    grid-template-rows: 0.1fr 0.1fr 1fr 1fr 1fr 1fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-      "cabecera"
-      "slider"
-      "botones"
-      "busqueda"
-      "cuerpo"
-      "footer";
-      height: fit-content;
-  }
-  main {
-    background-image: url(../Images/fondo1.jpg);
-  }
-  #slider {
-    grid-area: slider;
-    width: 100%;
-    height: fit-content;
-    display: inline-block;
-    position: relative;
-}
-        #slider img {
-            width: 100%;
-        }
-        #slider p {
-            position: absolute;
-            font-family: 'textos';
-            font-size: 2em;
-            top: 40%;
-            left: 45%;
-            margin: auto;
-            color: black;
-            text-shadow: -1px 0 #EEC51F, 0 3px #EEC51F, 2px 0 #EEC51F, 0 -1px #EEC51F;
-        } 
-  
-
-#btnNuevoManual, #btnSubirManual  {
-padding: 0px;
-margin: 0px;
-list-style: none;
-border: 1px solid black;
-border-radius: 10px;
-padding: 10px;
--webkit-box-shadow: 1px 1px 5px black;
-        box-shadow: 1px 1px 5px black;
-margin-left: 20px;
-}
-
-#toolSearch {
-margin-top: 30px;
-margin-left: 20px;
-border: none;
-}
-
-#toolSearch #toolSearchInput {
-height: 30px;
-border-radius: 5px;
-border: 1px solid black;
-}
-
-#manuales {
-width: auto;
-height: 300px;
-background-color: #111827;
-margin-top: 20px;
-}
-
-
-
-/* The popup form - hidden by default */
-#formSubManual{
-  display: none;
-  position: fixed;
-  /* border: 3px solid #f1f1f1; */
-  top: 47%;
-  width: 100%;
-  z-index: 9;
-}
-
-/* Add styles to the form container */
-#formContenedor {
-  width: 90%;
-  padding: 10px;
-  background-color: white;
-}
-
-/* Full-width input fields */
-#formContenedor input[type=text]{
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  border: none;
-  background: #f1f1f1;
-}
-
-/* When the inputs get focus, do something */
-#formContenedor input[type=text]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-/* Set a style for the submit/login button */
+/*BOTONES DESPLEGABLE*/
 #btnGuardar {
-  background-color: #04AA6D;
-  color: white;
+  background-color: #EEC51F;
+  color: black;
+  font-family: 'textos';
   padding: 16px 20px;
   border: none;
   cursor: pointer;
@@ -280,7 +161,6 @@ margin-top: 20px;
   margin-bottom:10px;
   opacity: 0.8;
 }
-
 #btnCerrar img {
   width: 50%;
 }
@@ -292,35 +172,193 @@ margin-top: 20px;
   float: right;
 }
 
-/* Add some hover effects to buttons */
-#formContenedor .btn:hover, .open-button:hover {
-  opacity: 1;
+/*FOOTER*/
+footer {
+grid-area: footer;
+height: 50px;
+margin-top:5%;
+background: #111827;
+}
 }
 
+
+ /*RESPONSIVE TABLET*/
+@media screen and (min-width: 700px) and (max-width: 1020px) {
+  body {
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto auto auto auto auto auto; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "cabecera"
+      "slider"
+      "botones"
+      "busqueda"
+      "cuerpo"
+      "footer";
+    height: 0;
+  }
+  main {
+    background-image: url(../Images/fondo1.jpg);
+  }
+/*CABECERA*/
+header {
+  grid-area: cabecera;
+}
+
+/*SLIDER*/
+#slider {
+  grid-area: slider;
+  width: 100%;
+  height: fit-content;
+  display: inline-block;
+  position: relative;
+}
+#slider img {
+  width: 100%;
+}
+#slider p {
+  position: absolute;
+  font-family: 'textos';
+  font-size: 3.5em;
+  top: 40%;
+  left: 40%;
+  margin: auto;
+  color: black;
+  text-shadow: -1px 0 #EEC51F, 0 3px #EEC51F, 2px 0 #EEC51F, 0 -1px #EEC51F;
+} 
+/*BOTONES*/
+#btnNuevoManual, #btnSubirManual  {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  -webkit-box-shadow: 1px 1px 5px black;
+          box-shadow: 1px 1px 5px black;
+  margin-left: 20px;
+  margin-top: 5%;
+  background-color: black;
+  color: white;
+  font-family: 'textos';
+  font-size: 1em;
+}
+#btnNuevoManual:hover, #btnSubirManual:hover  {
+  background-color: #EEC51F;
+  color: black;
+}
+
+#botones {
+  grid-area: botones;
+}
+/*BARRA BÚSQUEDA*/
+#toolSearch {
+  margin-top: 30px;
+  margin-left: 20px;
+  border: none;
+  grid-area: busqueda;
+}
+#toolSearch #toolSearchInput {
+  height: 30px;
+  width: 80%;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+/*CUERPO*/
+#manuales {
+  width: auto;
+  height: 300px;
+  background-color: #111827;
+  margin: 5% 15% 0 15%;
+  border-radius: 25px;
+  padding: 5% 5% 5% 5%;
+  color: white;
+  font-family: 'textos';
+}
+
+th {
+  border-bottom: 2px solid #EEC51F;
+}
+td a {
+  text-decoration: none;
+  color: white;
+}
+/*DESPLEGABLE SUBIR NUEVO MANUAL*/
+ #formSubManual{
+  display: none;
+  position: fixed;
+  top: 32%;
+  z-index: 9;
+  color: white;
+  font-family: 'textos';
+}
+#formContenedor {
+  width: 90%;
+  padding: 10px;
+  background-color: #111827;
+  margin-left: 5%;
+}
+#formContenedor input[type=text]{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: white;
+}
+
+#formContenedor input[type=text]:focus {
+  border: 5px green;
+}
 #imgPDF {
-width: 90px;
+  width: 15%;
 }
 
 #pdfUpdate {
-display: flex;
+  display: flex;
+  margin-top: 6%;
 }
 #pdfUpdate input[type=file] {
-margin-top: 5%;
+  margin-top: 8%;
 }
+/*BOTONES DESPLEGABLE*/
+#btnGuardar {
+  background-color: #EEC51F;
+  color: black;
+  font-family: 'textos';
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+#btnCerrar img {
+  width: 50%;
+}
+#btnCerrar {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border: 0px;
+  float: right;
+}
+
+/*FOOTER*/
 footer {
+grid-area: footer;
 height: 50px;
+margin-top:5%;
 background: #111827;
-margin-top: 50px;
 }
-
-
 }
 @media screen and (min-width: 1020px) {
   body {
     display: grid; 
     grid-auto-columns: 1fr; 
     grid-template-columns: 1fr; 
-    grid-template-rows: 0.1fr 0.1fr 1fr 1fr 1fr 1fr; 
+    grid-template-rows: auto auto auto auto auto auto; 
     gap: 0px 0px; 
     grid-template-areas: 
       "cabecera"
@@ -329,102 +367,137 @@ margin-top: 50px;
       "busqueda"
       "cuerpo"
       "footer";
-      height: fit-content;
+    height: 0;
   }
   main {
     background-image: url(../Images/fondo1.jpg);
   }
-  #slider {
-    grid-area: slider;
-    width: 100%;
-    height: fit-content;
-    display: inline-block;
-    position: relative;
+/*CABECERA*/
+header {
+  grid-area: cabecera;
 }
-        #slider img {
-            width: 100%;
-        }
-        #slider p {
-            position: absolute;
-            font-family: 'textos';
-            font-size: 3.5em;
-            top: 40%;
-            left: 45%;
-            margin: auto;
-            color: black;
-            text-shadow: -1px 0 #EEC51F, 0 3px #EEC51F, 2px 0 #EEC51F, 0 -1px #EEC51F;
-        } 
-  
 
+/*SLIDER*/
+#slider {
+  grid-area: slider;
+  width: 100%;
+  height: fit-content;
+  display: inline-block;
+  position: relative;
+}
+#slider img {
+  width: 100%;
+}
+#slider p {
+  position: absolute;
+  font-family: 'textos';
+  font-size: 3.5em;
+  top: 40%;
+  left: 40%;
+  margin: auto;
+  color: black;
+  text-shadow: -1px 0 #EEC51F, 0 3px #EEC51F, 2px 0 #EEC51F, 0 -1px #EEC51F;
+} 
+/*BOTONES*/
 #btnNuevoManual, #btnSubirManual  {
-padding: 0px;
-margin: 0px;
-list-style: none;
-border: 1px solid black;
-border-radius: 10px;
-padding: 10px;
--webkit-box-shadow: 1px 1px 5px black;
-        box-shadow: 1px 1px 5px black;
-margin-left: 20px;
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  -webkit-box-shadow: 1px 1px 5px black;
+          box-shadow: 1px 1px 5px black;
+  margin-left: 20px;
+  margin-top: 5%;
+  background-color: black;
+  color: white;
+  font-family: 'textos';
+  font-size: 1em;
+}
+#btnNuevoManual:hover, #btnSubirManual:hover  {
+  background-color: #EEC51F;
+  color: black;
 }
 
+#botones {
+  grid-area: botones;
+}
+/*BARRA BÚSQUEDA*/
 #toolSearch {
-margin-top: 30px;
-margin-left: 20px;
-border: none;
+  margin-top: 30px;
+  margin-left: 20px;
+  border: none;
+  grid-area: busqueda;
 }
-
 #toolSearch #toolSearchInput {
-height: 30px;
-border-radius: 5px;
-border: 1px solid black;
+  height: 30px;
+  width: 80%;
+  border-radius: 5px;
+  border: 1px solid black;
+  text-align: center;
 }
-
+/*CUERPO*/
 #manuales {
-width: auto;
-height: 300px;
-background-color: #111827;
-margin-top: 20px;
+  width: auto;
+  height: 300px;
+  background-color: #111827;
+  margin: 5% 15% 0 15%;
+  border-radius: 25px;
+  padding: 5% 5% 5% 5%;
+  color: white;
+  font-family: 'textos';
 }
 
-
-
-/* The popup form - hidden by default */
-#formSubManual{
+th {
+  border-bottom: 2px solid #EEC51F;
+}
+td a {
+  text-decoration: none;
+  color: white;
+}
+/*DESPLEGABLE SUBIR NUEVO MANUAL*/
+ #formSubManual{
   display: none;
   position: fixed;
-  /* border: 3px solid #f1f1f1; */
-  top: 25%;
-  width: 100%;
+  top: 32%;
   z-index: 9;
+  color: white;
+  font-family: 'textos';
 }
-
-/* Add styles to the form container */
 #formContenedor {
   width: 90%;
   padding: 10px;
-  background-color: white;
+  background-color: #111827;
+  margin-left: 5%;
 }
-
-/* Full-width input fields */
 #formContenedor input[type=text]{
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
   border: none;
-  background: #f1f1f1;
+  background: white;
 }
 
-/* When the inputs get focus, do something */
 #formContenedor input[type=text]:focus {
-  background-color: #ddd;
-  outline: none;
+  border: 5px green;
+}
+#imgPDF {
+  width: 15%;
 }
 
-/* Set a style for the submit/login button */
+#pdfUpdate {
+  display: flex;
+  margin-top: 6%;
+}
+#pdfUpdate input[type=file] {
+  margin-top: 8%;
+}
+/*BOTONES DESPLEGABLE*/
 #btnGuardar {
-  background-color: #04AA6D;
-  color: white;
+  background-color: #EEC51F;
+  color: black;
+  font-family: 'textos';
   padding: 16px 20px;
   border: none;
   cursor: pointer;
@@ -443,26 +516,12 @@ margin-top: 20px;
   float: right;
 }
 
-/* Add some hover effects to buttons */
-#formContenedor .btn:hover, .open-button:hover {
-  opacity: 1;
-}
-
-#imgPDF {
-width: 90px;
-}
-
-#pdfUpdate {
-display: flex;
-}
-#pdfUpdate input[type=file] {
-margin-top: 3%;
-}
+/*FOOTER*/
 footer {
+grid-area: footer;
 height: 50px;
+margin-top:5%;
 background: #111827;
-margin-top: 50px;
 }
-
 
 }
