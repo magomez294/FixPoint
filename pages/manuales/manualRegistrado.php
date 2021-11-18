@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +11,7 @@
     <link rel="stylesheet" href="../../styles/manualRegistrado.css"> 
     <script src="../../scripts/menu.js"></script>
     <script defer src="../../auth/auth.js"></script>
+    <script src="../../auth/logout.js"></script>
     <title>Manuales - FixPoint</title>
 </head>
 
@@ -25,10 +29,17 @@
             </ul>
         </nav>
         <nav id="menuWeb2">
+        <?php if(!isset($_SESSION['loged'])){ ?>
             <ul>
-                <li><a href="">Crear Cuenta</a></li>
-                <li><a href="./login.html">Iniciar Sesión</a></li>
+                <li><a href="../createAccount.html">Crear Cuenta</a></li>
+                <li><a href="../../login.html">Iniciar Sesión</a></li>
             </ul>
+        <?php } ?>
+        <?php if(isset($_SESSION['loged'])){ ?>
+            <ul>
+                <li><button onclick="logOut()">Cerrar sesión</button></li>
+            </ul>
+        <?php } ?>
         </nav>
     </header>
     <nav id="menuWeb">
