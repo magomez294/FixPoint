@@ -18,7 +18,8 @@ class User extends DB{
         $result = $this->connection->query("SELECT ".User::ID.", ".User::NAME.", ".User::PASSWORD.", ".User::IS_ADMIN." FROM ".User::USERS." WHERE Nombre='$username'");
         if ($result) {
             while ($row = mysqli_fetch_array($result)) {
-                if (password_verify($password, $row[User::PASSWORD])) {
+                /* password_verify($password, $row[User::PASSWORD] */
+                if ($password == $row[User::PASSWORD]) {
                     $json['id'] = $row[User::ID];
                     $json['username'] = $row[User::NAME];
                     if($row[User::IS_ADMIN] == 1){
@@ -35,8 +36,8 @@ class User extends DB{
 
     public function createAccount($username, $email, $password){
         $json = [];
-        $encryptPassword = password_hash($password,PASSWORD_BCRYPT);
-        $result = $this->insert(User::USERS,[User::NAME=>$username, User::EMAIL=>$email, User::PASSWORD=>$encryptPassword]);
+        /* $encryptPassword = password_hash($password,PASSWORD_BCRYPT); */
+        $result = $this->insert(User::USERS,[User::NAME=>$username, User::EMAIL=>$email, User::PASSWORD=>$password]);
         if($result){
             $result = $this->select(User::USERS,"*");
             if($result){

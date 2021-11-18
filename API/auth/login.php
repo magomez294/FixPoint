@@ -16,8 +16,6 @@ $data = json_decode(file_get_contents('php://input'));
 $username = '';
 $password = '';
 
-echo 'entra';
-
 if(isset($data)){
     $username = $data -> username;
     $password = $data -> password;

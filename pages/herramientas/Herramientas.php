@@ -70,7 +70,7 @@
                             if($row['Descripcion']) echo $row['Descripcion'] 
                         ?></p>
                         <div>
-                            <img src="<?php echo $direction.$row['Imagen'] ?>" width="100" height="100" >
+                            <img src="<?php echo $direction.$row['Imagen']?>.png" width="100" height="100" >
                         </div>
                         <div>
                             <p 
