@@ -40,7 +40,7 @@
         <?php } ?>
         <?php if(isset($_SESSION['loged'])){ ?>
             <ul>
-                <li><button onclick="logOut()">Cerrar sesión</button></li>
+                <li><a onclick="logOut()">Cerrar sesión</a></li>
             </ul>
         <?php } ?>
         </nav>

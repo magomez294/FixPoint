@@ -32,7 +32,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     <li> <a href="">Manuales</a> </li>
                     <li><a href="./pages/herramientas/Herramientas.php">Herramientas</a></li>
                 <?php if(!isset($_SESSION['loged'])){ ?>
-                    <li><button onclick="logOut()">Cerrar sesión</button></li>
+                    <li><a onclick="logOut()">Cerrar sesión</a></li>
                 <?php } ?>
             </ul>
         </nav>
@@ -45,7 +45,7 @@ if (session_status() === PHP_SESSION_NONE) {
         <?php } ?>
         <?php if(!isset($_SESSION['loged'])){ ?>
             <ul>
-                <li><button onclick="logOut()">Cerrar sesión</button></li>
+                <li><a onclick="logOut()">Cerrar sesión</a></li>
             </ul>
         <?php } ?>
         </nav>

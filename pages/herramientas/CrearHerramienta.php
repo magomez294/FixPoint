@@ -32,27 +32,27 @@ if (session_status() === PHP_SESSION_NONE) {
                     <li> <a href="">Manuales</a> </li>
                     <li><a href="./pages/herramientas/Herramientas.php">Herramientas</a></li>
                 <?php if(!isset($_SESSION['loged'])){ ?>
-                    <li><button onclick="logOut()">Cerrar sesión</button></li>
+                    <li><a onclick="logOut()">Cerrar sesión</a></li>
                 <?php } ?>
             </ul>
         </nav>
         <nav id="menuWeb2">
-        <?php if(isset($_SESSION['loged']) && $_SESSION['loged'] == true){ ?>
-            <ul>
-                <li><a href="">Crear Cuenta</a></li>
-                <li><a href="">Iniciar Sesión</a></li>
-            </ul>
-        <?php } ?>
         <?php if(!isset($_SESSION['loged'])){ ?>
             <ul>
-                <li><button onclick="logOut()">Cerrar sesión</button></li>
+                <li><a href="./pages/createAccount.html">Crear Cuenta</a></li>
+                <li><a href="./login.html">Iniciar Sesión</a></li>
+            </ul>
+        <?php } ?>
+        <?php if(isset($_SESSION['loged'])){ ?>
+            <ul>
+                <li><a onclick="logOut()">Cerrar sesión</a></li>
             </ul>
         <?php } ?>
         </nav>
     </header>
     <nav id="menuWeb">
         <ul>
-            <li> <a href="">Manuales</a> </li>
+            <li> <a href="../manuales/manualRegistrado.php">Manuales</a> </li>
             <li><a href="./Herramientas.php">Herramientas</a></li>
         </ul>
     </nav>

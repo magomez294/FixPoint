@@ -30,20 +30,14 @@
                     <li> <a href="">Manuales</a> </li>
                     <li><a href="./pages/herramientas/Herramientas.php">Herramientas</a></li>
                 <?php if(!isset($_SESSION['loged'])){ ?>
-                    <li><button onclick="logOut()">Cerrar sesión</button></li>
+                    <li><a onclick="logOut()">Cerrar sesión</a></li>
                 <?php } ?>
             </ul>
         </nav>
         <nav id="menuWeb2">
-        <?php if(isset($_SESSION['loged']) && $_SESSION['loged'] == true){ ?>
-            <ul>
-                <li><a href="">Crear Cuenta</a></li>
-                <li><a href="">Iniciar Sesión</a></li>
-            </ul>
-        <?php } ?>
         <?php if(!isset($_SESSION['loged'])){ ?>
             <ul>
-                <li><button onclick="logOut()">Cerrar sesión</button></li>
+                <li><a onclick="logOut()">Cerrar sesión</a></li>
             </ul>
         <?php } ?>
         </nav>
@@ -57,8 +51,8 @@
     <main>
         <nav>
             <ul>
-                <li><a href="./pendingManuals.php">Peticiones de herramientas</a></li>
-                <li><a href="">Herramientas en uso</a></li>
+                <li><a href="">Peticiones de herramientas</a></li>
+                <li><a href="./toolsInUse.php">Herramientas en uso</a></li>
             </ul>
         </nav>
         <div>
@@ -77,21 +71,25 @@
                     <?php
                     include("../../../API/database/db.php");
                     $db = new DB();
-                    $result = $db->select("herramienta", "*", "Solicitado = 1 AND Disponible = 1 Validado = 1");
+                    $result = $db->select("herramienta", "*", "Solicitado = 1 AND Disponible = 1 AND Validado = 1");
                     
                     if ($result) {
                         while ($row = mysqli_fetch_array($result)) {
                     ?>
                     <?php $toolid = $row['ID_Herramienta'] ?>
-                    <?php $rent =  $db->select("alquila", "*", "ID_Herramienta = ".$toolid);?>
+                    <?php $rent =  $db->select("alquila", "*", "ID_Herramienta = ".$toolid);
+                            $rent = mysqli_fetch_array($rent);
+                    ?>
                     
                     <?php $userid = $rent['ID_Usuario'] ?>
-                    <?php $user = $db->select("usuario", "*", "ID_Usuario = ".$userid) ?>
+                    <?php $user = $db->select("usuario", "*", "ID_Usuario = ".$userid);
+                            $user = mysqli_fetch_array($user);
+                    ?>
                         <tr>
-                            <td><?php echo $row['NomHER'] ?></td>
+                            <td><?php echo $row['NomHer'] ?></td>
                             <td><?php echo $user['Nombre'] ?></td>
-                            <td><?php echo $user['email'] ?></td>
-                            <td><?php echo $rent['fechaSolicitud'] ?></td>
+                            <td><?php echo $user['Email'] ?></td>
+                            <td><?php echo $rent['FechaSolicitud'] ?></td>
                             <td class="validate" onclick="rent(<?php $toolid ?>)"><img src="../../../Images/cheque.png"></td>
                             <td class="reject"onclick="notRent(<?php $toolid ?>)"><img src="../../../Images/cancelar.png"></td>
                         </tr>

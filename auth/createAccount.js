@@ -47,10 +47,7 @@ class createAccount {
                         document.getElementById('error-message-all').style.display = 'block';
                     }else{
                         document.getElementById('error-message-all').style.display = 'none';
-                        const now = new Date()
-                        const actualTime = now.getTime();
-                        localStorage.setItem('auth', JSON.stringify({value: 1, expiry: actualTime + 36000000}));
-                        /* data.expiry = actualTime + 36000000; */
+                        localStorage.setItem('auth', '1');
                         localStorage.setItem('user', JSON.stringify(data));
                         this.form.submit();
                     }

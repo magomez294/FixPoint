@@ -42,12 +42,7 @@ class Login {
                         document.getElementById('error-message-all').style.display = 'none';
                         const now = new Date()
                         const actualTime = now.getTime();
-                        if(data.admin){
-                            localStorage.setItem('auth', JSON.stringify({value: 2, expiry: actualTime + 36000000}));
-                        }else{
-                            localStorage.setItem('auth', JSON.stringify({value: 1, expiry: actualTime + 36000000}));
-                        }
-                        /* data.expiry = actualTime + 36000000; */
+                        localStorage.setItem('auth', JSON.stringify({value: 1}));
                         localStorage.setItem('user', JSON.stringify(data));
                         this.form.submit();
                     }

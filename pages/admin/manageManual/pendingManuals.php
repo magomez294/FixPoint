@@ -30,27 +30,21 @@
                     <li> <a href="">Manuales</a> </li>
                     <li><a href="./pages/herramientas/Herramientas.php">Herramientas</a></li>
                 <?php if(!isset($_SESSION['loged'])){ ?>
-                    <li><button onclick="logOut()">Cerrar sesión</button></li>
+                    <li><a onclick="logOut()">Cerrar sesión</a></li>
                 <?php } ?>
             </ul>
         </nav>
         <nav id="menuWeb2">
-        <?php if(isset($_SESSION['loged']) && $_SESSION['loged'] == true){ ?>
-            <ul>
-                <li><a href="">Crear Cuenta</a></li>
-                <li><a href="">Iniciar Sesión</a></li>
-            </ul>
-        <?php } ?>
         <?php if(!isset($_SESSION['loged'])){ ?>
             <ul>
-                <li><button onclick="logOut()">Cerrar sesión</button></li>
+                <li><a onclick="logOut()">Cerrar sesión</a></li>
             </ul>
         <?php } ?>
         </nav>
     </header>
     <nav id="menuWeb">
         <ul>
-            <li> <a href="">Manuales</a> </li>
+            <li> <a href="../../manuales/manualRegistrado.php">Manuales</a> </li>
             <li><a href="../../herramientas/Herramientas.php">Herramientas</a></li>
         </ul>
     </nav>
@@ -58,7 +52,7 @@
         <nav>
             <ul>
                 <li><a href="./pendingManuals.php">Manuales pendientes de validar</a></li>
-                <li><a href="">Manuales validados</a></li>
+                <li><a href="./validatedManuals.php">Manuales validados</a></li>
             </ul>
         </nav>
         <div>
@@ -80,10 +74,13 @@
                     $direction = '../../../manuals/';
                     if ($result) {
                         while ($row = mysqli_fetch_array($result)) {
+                        $userId = $row['Autor'];
+                        $user = $db->select("usuario", "*", "ID_USUARIO = ".$userId);
+                        $user = mysqli_fetch_array($user);
                     ?>
                         <tr>
                             <td><a href="../../../manuals/<?php echo $row['NomMan'] ?>.pdf"><?php echo $row['NomMan'] ?></a></td>
-                            <td><?php echo $row['Autor'] ?></td>
+                            <td><?php echo $user['Nombre'] ?></td>
                             <td><?php echo $row['Fecha'] ?></td>
                             <td class="validate" onclick="validate(<?php echo $row['ID_Manual'] ?>)"><img src="../../../Images/cheque.png"></td>
                             <td class="reject"onclick="reject(<?php echo $row['ID_Manual'] ?>)"><img src="../../../Images/cancelar.png"></td>

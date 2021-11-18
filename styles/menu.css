@@ -146,6 +146,7 @@ header #menuWeb2 {
     padding: 5px 10px 5px 10px;
     border-radius: 5px;
     border: 2px solid black;
+    cursor: pointer;
   }
   header #menuWeb2 > ul > li:last-of-type {
     margin-right: 30px;
@@ -154,6 +155,7 @@ header #menuWeb2 {
     text-decoration: none;
     color: black;
     font-size: 15px;
+    cursor: pointer;
   }
 }
 

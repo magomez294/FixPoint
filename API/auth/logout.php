@@ -9,6 +9,7 @@ header('Content-type: application/json; charset=UTF-8');
 
 session_start();
 unset($_SESSION['loged']);
+unset($_SESSION['admin']);
 
 ?>
 

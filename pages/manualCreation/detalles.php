@@ -28,7 +28,7 @@
                     <li> <a href="">Manuales</a> </li>
                     <li><a href="./pages/herramientas/Herramientas.php">Herramientas</a></li>
                 <?php if(!isset($_SESSION['loged'])){ ?>
-                    <li><button onclick="logOut()">Cerrar sesión</button></li>
+                    <li><a onclick="logOut()">Cerrar sesión</a></li>
                 <?php } ?>
             </ul>
         </nav>
@@ -41,7 +41,7 @@
         <?php } ?>
         <?php if(isset($_SESSION['loged'])){ ?>
             <ul>
-                <li><button onclick="logOut()">Cerrar sesión</button></li>
+                <li><a onclick="logOut()">Cerrar sesión</a></li>
             </ul>
         <?php } ?>
         </nav>

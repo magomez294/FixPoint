@@ -7,7 +7,7 @@
     <!-- <script defer src="../../../auth/adminAuth.js"></script> -->
     <link rel="stylesheet" href="../../../styles/menu.css">
     <link rel="stylesheet" href="../../../styles/pendingManuals.css">
-    <script src="../../../auth/logout.js"></script>
+    <script defer src="../../../auth/logout.js"></script>
     <title>Manuales</title>
 </head>
 <body>
@@ -24,27 +24,21 @@
                     <li> <a href="">Manuales</a> </li>
                     <li><a href="./pages/herramientas/Herramientas.php">Herramientas</a></li>
                 <?php if(!isset($_SESSION['loged'])){ ?>
-                    <li><button onclick="logOut()">Cerrar sesión</button></li>
+                    <li><a onclick="logOut()">Cerrar sesión</a></li>
                 <?php } ?>
             </ul>
         </nav>
         <nav id="menuWeb2">
-        <?php if(isset($_SESSION['loged']) && $_SESSION['loged'] == true){ ?>
-            <ul>
-                <li><a href="">Crear Cuenta</a></li>
-                <li><a href="">Iniciar Sesión</a></li>
-            </ul>
-        <?php } ?>
         <?php if(!isset($_SESSION['loged'])){ ?>
             <ul>
-                <li><button onclick="logOut()">Cerrar sesión</button></li>
+                <li><a onclick="logOut()">Cerrar sesión</a></li>
             </ul>
         <?php } ?>
         </nav>
     </header>
     <nav id="menuWeb">
         <ul>
-            <li> <a href="">Manuales</a> </li>
+            <li> <a href="../../manuales/manualRegistrado.php"">Manuales</a> </li>
             <li><a href="../../herramientas/Herramientas.php">Herramientas</a></li>
         </ul>
     </nav>
@@ -69,14 +63,17 @@
                     <?php
                     include("../../../API/database/db.php");
                     $db = new DB();
-                    $result = $db->select("manual", "*", "Aceptado = 0");
+                    $result = $db->select("manual", "*", "Aceptado = 1");
                     $direction = '../../../manuals/';
                     if ($result) {
                         while ($row = mysqli_fetch_array($result)) {
+                            $userId = $row['Autor'];
+                        $user = $db->select("usuario", "*", "ID_USUARIO = ".$userId);
+                        $user = mysqli_fetch_array($user);
                     ?>
                         <tr>
                             <td><a href="../../../manuals/<?php echo $row['NomMan'] ?>.pdf"><?php echo $row['NomMan'] ?></a></td>
-                            <td><?php echo $row['Autor'] ?></td>
+                            <td><?php echo $user['Nombre']?></td>
                             <td><?php echo $row['Fecha'] ?></td>
                             <td class="reject"onclick="reject(<?php echo $row['ID_Manual'] ?>)"><img src="../../../Images/cancelar.png"></td>
                         </tr>

@@ -4,6 +4,6 @@ async function logOut(){
         method: 'POST',
     });
     window.location.replace("/");
-        console.log('entra');
+    console.log('entra');
     
 }

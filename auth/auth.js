@@ -9,15 +9,13 @@ class Auth{
     validateAuth(auth, admin) {
         if (auth) {
             auth = JSON.parse(auth);
-            const now = new Date()
-            const actualTime = now.getTime();
             var value;
             if(admin){
                 value = 2;
             }else{
                 value = 1;
             }
-            if(auth.value != value || actualTime > auth.expiry){
+            if(auth.value != value){
                 console.log('Entra');
                 window.location.replace("/login.html");
                 console.log(auth);
