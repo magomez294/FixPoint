@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./styles/menu.css">
     <link rel="stylesheet" href="./styles/index.css">
     <script src="./auth/logout.js"></script>
+    <script src="./scripts/menu.js"></script>
     <title>fixpoint</title>
 </head>
 <body>

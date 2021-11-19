@@ -50,6 +50,7 @@ header #logoMenu {
 
 header #menu {
   position: absolute;
+  z-index: 2;
   top: 0;
   right: 0;
   border-radius: 0px 0px 5px 5px;
