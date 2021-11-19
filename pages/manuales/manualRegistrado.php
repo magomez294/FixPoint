@@ -14,6 +14,7 @@
     <script src="../../scripts/menu.js"></script>
     <script defer src="../../auth/auth.js"></script>
     <script src="../../auth/logout.js"></script>
+    <script src="../../scripts/manualRegistrado.js"></script>
     <title>Manuales - FixPoint</title>
 </head>
 <body>
@@ -66,8 +67,8 @@
 </section>
 
 <!--BARRA DE BUSQUEDA-->
-<section id="toolSearch">
-    <input type="text" id="toolSearchInput" onkeyup="searchTool()" placeholder="Buscar herramienta..">
+<section id="manualSearch">
+    <input type="text" id="manualSearchInput" onkeyup="searchManual()" placeholder="Buscar herramienta..">
 </section>
 
 <!--CONTENEDOR MANUALES-->
@@ -80,7 +81,7 @@
                         <th>Fecha</th>
                     </tr>
                 </thead> 
-                <tbody>
+                <tbody id="manuals">
                     <?php
                     include("../../API/database/db.php");
                     $db = new DB();
@@ -92,8 +93,8 @@
                             $user = $db->select("usuario", "*", "ID_USUARIO = ".$userId);
                             $user = mysqli_fetch_array($user);
                     ?>
-                        <tr>
-                            <td><a href="../../../manuals/<?php echo $row['NomMan'] ?>.pdf"><?php echo $row['NomMan'] ?></a></td>
+                        <tr id="manual">
+                            <td id="name"><a href="../../../manuals/<?php echo $row['NomMan'] ?>.pdf"><?php echo $row['NomMan'] ?></a></td>
                             <td><?php echo $user['Nombre'] ?></td>
                             <td><?php echo $row['Fecha'] ?></td>
                         </tr>
@@ -118,12 +119,12 @@
             <input type="text" name="title" placeholder="Introduce el titulo del manual" required>
 
             <button type="submit" name="save_manual" id="btnGuardar">Guardar</button>
-            <?php if(isset($_SESSION['message'])){ ?>
+        </form>
+        <?php if(isset($_SESSION['message'])){ ?>
                     <div style="background-color: <?= $_SESSION['color'] ?>;">
                         <?= $_SESSION['message'] ?>
                     </div>
             <?php unset($_SESSION['message']);} ?>
-        </form>
         </div>
 <main>
 <!--FOOTER-->

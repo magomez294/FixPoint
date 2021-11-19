@@ -2,7 +2,7 @@ function rent(id) {
     var data = {
         id: id
     }
-    fetch("../API/CRUD/rentTool.php",{
+    fetch("/API/CRUD/rentTool.php",{
         method: 'PUT',
         body: JSON.stringify(data),
         headers: {
@@ -16,7 +16,9 @@ function rent(id) {
                 'Hecho!',
                 `El alquiler de la herramienta a sido validado`,
                 'success'
-            )
+            ).then(()=>{
+                window.location.replace("/pages/admin/manageTools/requestedTools.php");
+            }); 
         }else{
             Swal.fire(
                 'Error!',
@@ -31,7 +33,7 @@ function notRent(id) {
     var data = {
         id: id
     }
-    fetch("../API/CRUD/rejectTool.php",{
+    fetch("/API/CRUD/rejectTool.php",{
         method: 'PUT',
         body: JSON.stringify(data),
         headers: {
@@ -45,7 +47,9 @@ function notRent(id) {
                 'Hecho!',
                 `El alquiler de la herramienta a sido rechazada`,
                 'success'
-            )
+            ).then(()=>{
+                window.location.replace("/pages/admin/manageTools/requestedTools.php");
+            });
         }else{
             Swal.fire(
                 'Error!',

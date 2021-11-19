@@ -21,7 +21,7 @@ function request(id){
         idTool: id,
         idUser: userData.id
     }
-    fetch("../API/CRUD/requestTool.php",{
+    fetch("/API/CRUD/requestTool.php",{
         method: 'PUT',
         body: JSON.stringify(data),
         headers: {

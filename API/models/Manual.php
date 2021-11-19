@@ -50,6 +50,8 @@ class Manual extends DB{
         
         $pdfName = $pdfId.".pdf";
         move_uploaded_file($pdf['tmp_name'], $this->pdfDirectory.$pdfName);
+        $_SESSION['message'] = 'Herramienta añadida';
+        $_SESSION['color'] = 'green';
         return true;
     }
 }

@@ -2,7 +2,7 @@ function reject(id){
     var data = {
         id: id
     }
-    fetch("../API/CRUD/rejectTool.php",{
+    fetch("/API/CRUD/rejectTool.php",{
         method: 'PUT',
         body: JSON.stringify(data),
         headers: {
@@ -31,7 +31,7 @@ function validate(id){
     var data = {
         id: id
     }
-    fetch("../API/CRUD/validateTool.php",{
+    fetch("/API/CRUD/validateTool.php",{
         method: 'PUT',
         body: JSON.stringify(data),
         headers: {

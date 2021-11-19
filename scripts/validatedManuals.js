@@ -1,8 +1,8 @@
-function finishRent(id){
+function reject(id) {
     var data = {
         id: id
     }
-    fetch("/API/CRUD/finishRentTool.php",{
+    fetch("/API/CRUD/rejectManual.php",{
         method: 'PUT',
         body: JSON.stringify(data),
         headers: {
@@ -14,15 +14,16 @@ function finishRent(id){
         if(data){
             Swal.fire(
                 'Hecho!',
-                `El alquiler de la herramienta a sido finalizado`,
+                `El manual con id ${id} a sido rechazado`,
                 'success'
             ).then(()=>{
-                window.location.replace("/pages/admin/manageTools/toolsInUse.php");
+                window.location.replace("/pages/admin/manageManual/validatedManuals.php")
             });
+            
         }else{
             Swal.fire(
                 'Error!',
-                `Ha habido un error al finalizar el alquiler de la herramienta`,
+                `Ha habido un error al intentar rechazar el manual con id ${id}`,
                 'error'
             )
         }

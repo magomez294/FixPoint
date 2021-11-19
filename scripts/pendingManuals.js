@@ -1,8 +1,9 @@
 function validate(id) {
+    console.log(id)
     var data = {
         id: id
     }
-    fetch("../API/CRUD/validateManual.php",{
+    fetch("/API/CRUD/validateManual.php",{
         method: 'PUT',
         body: JSON.stringify(data),
         headers: {
@@ -16,7 +17,9 @@ function validate(id) {
                 'Hecho!',
                 `El manual con id ${id} a sido validado`,
                 'success'
-            )
+            ).then(()=>{
+                window.location.replace("/pages/admin/manageManual/pendingManuals.php");
+            }); 
         }else{
             Swal.fire(
                 'Error!',
@@ -31,7 +34,7 @@ function reject(id) {
     var data = {
         id: id
     }
-    fetch("../API/CRUD/rejectManual.php",{
+    fetch("/API/CRUD/rejectManual.php",{
         method: 'PUT',
         body: JSON.stringify(data),
         headers: {
@@ -45,7 +48,9 @@ function reject(id) {
                 'Hecho!',
                 `El manual con id ${id} a sido rechazado`,
                 'success'
-            )
+            ).then(()=>{
+                window.location.replace("/pages/admin/manageManual/pendingManuals.php");
+            }); 
         }else{
             Swal.fire(
                 'Error!',

@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <script defer src="../../../auth/adminAuth.js"></script> -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="../../../styles/menu.css">
     <link rel="stylesheet" href="../../../styles/pendingManuals.css">
     <script defer src="../../../auth/logout.js"></script>
+    <script src="../../../scripts/validatedManuals.js"></script>
     <title>Manuales</title>
 </head>
 <body>

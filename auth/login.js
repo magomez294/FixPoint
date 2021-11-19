@@ -25,7 +25,7 @@ class Login {
                     // @ts-ignore
                     password: document.getElementById(PASSWORD).value
                 }
-                fetch("./API/auth/login.php", {
+                fetch("/API/auth/login.php", {
                     method: 'POST',
                     body: JSON.stringify(data),
                     headers: {

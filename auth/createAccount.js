@@ -33,7 +33,7 @@ class createAccount {
                     password: document.getElementById(PASSWORD).value
                 }
                 console.log(data);
-                fetch("../API/auth/createAccount.php", {
+                fetch("/API/auth/createAccount.php", {
                     method: 'POST',
                     body: JSON.stringify(data),
                     headers: {

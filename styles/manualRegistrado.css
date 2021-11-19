@@ -82,13 +82,13 @@ header {
   grid-area: botones;
 }
 /*BARRA BÚSQUEDA*/
-#toolSearch {
+#manualSearch {
   margin-top: 30px;
   margin-left: 20px;
   border: none;
   grid-area: busqueda;
 }
-#toolSearch #toolSearchInput {
+#manualSearch #manualSearchInput {
   height: 30px;
   width: 80%;
   border-radius: 5px;
@@ -254,13 +254,13 @@ header {
   grid-area: botones;
 }
 /*BARRA BÚSQUEDA*/
-#toolSearch {
+#manualSearch {
   margin-top: 30px;
   margin-left: 20px;
   border: none;
   grid-area: busqueda;
 }
-#toolSearch #toolSearchInput {
+#manualSearch #manualSearchInput {
   height: 30px;
   width: 80%;
   border-radius: 5px;
@@ -424,13 +424,13 @@ header {
   grid-area: botones;
 }
 /*BARRA BÚSQUEDA*/
-#toolSearch {
+#manualSearch {
   margin-top: 30px;
   margin-left: 20px;
   border: none;
   grid-area: busqueda;
 }
-#toolSearch #toolSearchInput {
+#manualSearch #manualSearchInput {
   height: 30px;
   width: 80%;
   border-radius: 5px;
