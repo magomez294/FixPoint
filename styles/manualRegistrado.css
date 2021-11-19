@@ -1,0 +1,527 @@
+/*IMPORTS*/
+
+@font-face {
+  font-family: 'slider';
+  src: url(../fonts/tipografia_Roboto.ttf);
+}
+
+@font-face {
+  font-family: 'textos';
+  src: url(../fonts/tipografia_Patua.ttf);
+}
+
+ /*RESPONSIVE MOVIL*/
+ @media screen and (max-width: 700px) {
+  body {
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto auto auto auto auto auto; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "cabecera"
+      "slider"
+      "botones"
+      "busqueda"
+      "cuerpo"
+      "footer";
+    height: auto;
+  }
+  main {
+    background-image: url(../Images/fondo1.jpg);
+  }
+/*CABECERA*/
+header {
+  grid-area: cabecera;
+}
+
+/*SLIDER*/
+#slider {
+  grid-area: slider;
+  width: 100%;
+  height: fit-content;
+  display: inline-block;
+  position: relative;
+}
+#slider img {
+  width: 100%;
+}
+#slider p {
+  position: absolute;
+  font-family: 'textos';
+  font-size: 2em;
+  top: 35%;
+  left: 35%;
+  margin: auto;
+  color: black;
+  text-shadow: -1px 0 #EEC51F, 0 3px #EEC51F, 2px 0 #EEC51F, 0 -1px #EEC51F;
+} 
+/*BOTONES*/
+#btnNuevoManual, #btnSubirManual  {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  -webkit-box-shadow: 1px 1px 5px black;
+          box-shadow: 1px 1px 5px black;
+  margin-left: 20px;
+  margin-top: 5%;
+  background-color: black;
+  color: white;
+  font-family: 'textos';
+  font-size: 1em;
+}
+#btnNuevoManual:hover, #btnSubirManual:hover  {
+  background-color: #EEC51F;
+  color: black;
+}
+
+#botones {
+  grid-area: botones;
+}
+/*BARRA BÚSQUEDA*/
+#manualSearch {
+  margin-top: 30px;
+  margin-left: 20px;
+  border: none;
+  grid-area: busqueda;
+}
+#manualSearch #manualSearchInput {
+  height: 30px;
+  width: 80%;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+/*CUERPO*/
+#manuales {
+  width: auto;
+  height: 300px;
+  background-color: #111827;
+  margin: 5% 15% 0 15%;
+  border-radius: 25px;
+  padding: 5% 5% 5% 5%;
+  color: white;
+  font-family: 'textos';
+}
+th {
+  border-bottom: 2px solid #EEC51F;
+}
+td a {
+  text-decoration: none;
+  color: white;
+}
+/*DESPLEGABLE SUBIR NUEVO MANUAL*/
+ #formSubManual{
+  display: none;
+  position: fixed;
+  top: 32%;
+  z-index: 9;
+  color: white;
+  font-family: 'textos';
+}
+#formContenedor {
+  width: 90%;
+  padding: 10px;
+  background-color: #111827;
+  margin-left: 5%;
+}
+#formContenedor input[type=text]{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: white;
+}
+
+#formContenedor input[type=text]:focus {
+  border: 5px green;
+}
+#imgPDF {
+  width: 50%;
+}
+
+#pdfUpdate {
+  display: flex;
+  margin-top: 6%;
+}
+#pdfUpdate input[type=file] {
+  margin-top: 10%;
+}
+/*BOTONES DESPLEGABLE*/
+#btnGuardar {
+  background-color: #EEC51F;
+  color: black;
+  font-family: 'textos';
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+#btnCerrar img {
+  width: 50%;
+}
+#btnCerrar {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border: 0px;
+  float: right;
+}
+
+/*FOOTER*/
+footer {
+grid-area: footer;
+height: 50px;
+margin-top:5%;
+background: #111827;
+}
+}
+
+
+ /*RESPONSIVE TABLET*/
+@media screen and (min-width: 700px) and (max-width: 1020px) {
+  body {
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto auto auto auto auto auto; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "cabecera"
+      "slider"
+      "botones"
+      "busqueda"
+      "cuerpo"
+      "footer";
+    height: 0;
+  }
+  main {
+    background-image: url(../Images/fondo1.jpg);
+  }
+/*CABECERA*/
+header {
+  grid-area: cabecera;
+}
+
+/*SLIDER*/
+#slider {
+  grid-area: slider;
+  width: 100%;
+  height: fit-content;
+  display: inline-block;
+  position: relative;
+}
+#slider img {
+  width: 100%;
+}
+#slider p {
+  position: absolute;
+  font-family: 'textos';
+  font-size: 3.5em;
+  top: 40%;
+  left: 40%;
+  margin: auto;
+  color: black;
+  text-shadow: -1px 0 #EEC51F, 0 3px #EEC51F, 2px 0 #EEC51F, 0 -1px #EEC51F;
+} 
+/*BOTONES*/
+#btnNuevoManual, #btnSubirManual  {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  -webkit-box-shadow: 1px 1px 5px black;
+          box-shadow: 1px 1px 5px black;
+  margin-left: 20px;
+  margin-top: 5%;
+  background-color: black;
+  color: white;
+  font-family: 'textos';
+  font-size: 1em;
+}
+#btnNuevoManual:hover, #btnSubirManual:hover  {
+  background-color: #EEC51F;
+  color: black;
+}
+
+#botones {
+  grid-area: botones;
+}
+/*BARRA BÚSQUEDA*/
+#manualSearch {
+  margin-top: 30px;
+  margin-left: 20px;
+  border: none;
+  grid-area: busqueda;
+}
+#manualSearch #manualSearchInput {
+  height: 30px;
+  width: 80%;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+/*CUERPO*/
+#manuales {
+  width: auto;
+  height: 300px;
+  background-color: #111827;
+  margin: 5% 15% 0 15%;
+  border-radius: 25px;
+  padding: 5% 5% 5% 5%;
+  color: white;
+  font-family: 'textos';
+}
+
+th {
+  border-bottom: 2px solid #EEC51F;
+}
+td a {
+  text-decoration: none;
+  color: white;
+}
+/*DESPLEGABLE SUBIR NUEVO MANUAL*/
+ #formSubManual{
+  display: none;
+  position: fixed;
+  top: 32%;
+  z-index: 9;
+  color: white;
+  font-family: 'textos';
+}
+#formContenedor {
+  width: 90%;
+  padding: 10px;
+  background-color: #111827;
+  margin-left: 5%;
+}
+#formContenedor input[type=text]{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: white;
+}
+
+#formContenedor input[type=text]:focus {
+  border: 5px green;
+}
+#imgPDF {
+  width: 15%;
+}
+
+#pdfUpdate {
+  display: flex;
+  margin-top: 6%;
+}
+#pdfUpdate input[type=file] {
+  margin-top: 8%;
+}
+/*BOTONES DESPLEGABLE*/
+#btnGuardar {
+  background-color: #EEC51F;
+  color: black;
+  font-family: 'textos';
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+#btnCerrar img {
+  width: 50%;
+}
+#btnCerrar {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border: 0px;
+  float: right;
+}
+
+/*FOOTER*/
+footer {
+grid-area: footer;
+height: 50px;
+margin-top:5%;
+background: #111827;
+}
+}
+@media screen and (min-width: 1020px) {
+  body {
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto auto auto auto auto auto; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "cabecera"
+      "slider"
+      "botones"
+      "busqueda"
+      "cuerpo"
+      "footer";
+    height: 0;
+  }
+  main {
+    background-image: url(../Images/fondo1.jpg);
+  }
+/*CABECERA*/
+header {
+  grid-area: cabecera;
+}
+
+/*SLIDER*/
+#slider {
+  grid-area: slider;
+  width: 100%;
+  height: fit-content;
+  display: inline-block;
+  position: relative;
+}
+#slider img {
+  width: 100%;
+}
+#slider p {
+  position: absolute;
+  font-family: 'textos';
+  font-size: 3.5em;
+  top: 40%;
+  left: 40%;
+  margin: auto;
+  color: black;
+  text-shadow: -1px 0 #EEC51F, 0 3px #EEC51F, 2px 0 #EEC51F, 0 -1px #EEC51F;
+} 
+/*BOTONES*/
+#btnNuevoManual, #btnSubirManual  {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  -webkit-box-shadow: 1px 1px 5px black;
+          box-shadow: 1px 1px 5px black;
+  margin-left: 20px;
+  margin-top: 5%;
+  background-color: black;
+  color: white;
+  font-family: 'textos';
+  font-size: 1em;
+}
+#btnNuevoManual:hover, #btnSubirManual:hover  {
+  background-color: #EEC51F;
+  color: black;
+}
+
+#botones {
+  grid-area: botones;
+}
+/*BARRA BÚSQUEDA*/
+#manualSearch {
+  margin-top: 30px;
+  margin-left: 20px;
+  border: none;
+  grid-area: busqueda;
+}
+#manualSearch #manualSearchInput {
+  height: 30px;
+  width: 80%;
+  border-radius: 5px;
+  border: 1px solid black;
+  text-align: center;
+}
+/*CUERPO*/
+#manuales {
+  width: auto;
+  height: 300px;
+  background-color: #111827;
+  margin: 5% 15% 0 15%;
+  border-radius: 25px;
+  padding: 5% 5% 5% 5%;
+  color: white;
+  font-family: 'textos';
+}
+
+th {
+  border-bottom: 2px solid #EEC51F;
+}
+td a {
+  text-decoration: none;
+  color: white;
+}
+/*DESPLEGABLE SUBIR NUEVO MANUAL*/
+ #formSubManual{
+  display: none;
+  position: fixed;
+  top: 32%;
+  z-index: 9;
+  color: white;
+  font-family: 'textos';
+}
+#formContenedor {
+  width: 90%;
+  padding: 10px;
+  background-color: #111827;
+  margin-left: 5%;
+}
+#formContenedor input[type=text]{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: white;
+}
+
+#formContenedor input[type=text]:focus {
+  border: 5px green;
+}
+#imgPDF {
+  width: 15%;
+}
+
+#pdfUpdate {
+  display: flex;
+  margin-top: 6%;
+}
+#pdfUpdate input[type=file] {
+  margin-top: 8%;
+}
+/*BOTONES DESPLEGABLE*/
+#btnGuardar {
+  background-color: #EEC51F;
+  color: black;
+  font-family: 'textos';
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+#btnCerrar img {
+  width: 50%;
+}
+#btnCerrar {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border: 0px;
+  float: right;
+}
+
+/*FOOTER*/
+footer {
+grid-area: footer;
+height: 50px;
+margin-top:5%;
+background: #111827;
+}
+
+}

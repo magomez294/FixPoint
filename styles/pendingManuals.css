@@ -1,0 +1,76 @@
+main > nav {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+main > nav > ul {
+  padding: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+main > nav > ul > li {
+  list-style: none;
+  margin-left: 30px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+main > nav > ul > li > a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 5px 15px 5px 15px;
+}
+
+main > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main > div > table {
+  background-color: white;
+}
+
+main > div > table > thead > tr > th {
+  font-size: 40px;
+  color: white;
+  background-color: black;
+  border: 1px solid black;
+}
+
+main > div > table > tbody > tr > td {
+  font-size: 30px;
+  color: white;
+  background-color: black;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+main > div > table > tbody > tr .validate, main > div > table > tbody > tr .reject {
+  cursor: pointer;
+  background-color: black;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+main > div > table > tbody > tr .validate > img, main > div > table > tbody > tr .reject > img {
+  width: 40px;
+  height: auto;
+}
+/*# sourceMappingURL=pendingManuals.css.map */

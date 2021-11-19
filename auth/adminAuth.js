@@ -1,0 +1,1 @@
+const adminAuth = new Auth(true);

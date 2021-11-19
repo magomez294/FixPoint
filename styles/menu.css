@@ -1,0 +1,207 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  /* background-color: red; */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+header img {
+  height: auto;
+}
+
+header #logo {
+  width: 150px;
+  margin-left: 5px;
+}
+
+@media screen and (min-width: 600px) {
+  header #logo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+header #logoMenu {
+  width: 50px;
+  margin-left: auto;
+  margin-right: 5px;
+}
+
+@media screen and (min-width: 600px) {
+  header #logoMenu {
+    display: none;
+  }
+}
+
+header #menu {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  border-radius: 0px 0px 5px 5px;
+  background-color: black;
+  -webkit-transition-property: visibility, opacity;
+  transition-property: visibility, opacity;
+  -webkit-transition-duration: 0, 1s;
+          transition-duration: 0, 1s;
+}
+
+@media screen and (min-width: 600px) {
+  header #menu {
+    display: none;
+  }
+}
+
+header #menu.hide {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition-property: opacity, visibility;
+  transition-property: opacity, visibility;
+  -webkit-transition-duration: 1s, 0;
+          transition-duration: 1s, 0;
+  -webkit-transition-delay: 0, 1s;
+          transition-delay: 0, 1s;
+}
+
+header #menu > img {
+  width: 25px;
+  height: auto;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+header #menu > ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+header #menu > ul > li:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+
+header #menu > ul > li > a {
+  font-size: 20px;
+  color: #eec51f;
+  text-decoration: none;
+}
+
+header #menuWeb2 {
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  header #menuWeb2 {
+    display: block;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin-left: auto;
+  }
+  header #menuWeb2 > ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 0px;
+    padding: 0px;
+  }
+  header #menuWeb2 > ul > li {
+    background-color: #fff;
+    display: block;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-left: 30px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    border: 2px solid black;
+    cursor: pointer;
+  }
+  header #menuWeb2 > ul > li:last-of-type {
+    margin-right: 30px;
+  }
+  header #menuWeb2 > ul > li > a {
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    cursor: pointer;
+  }
+}
+
+#menuWeb {
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  #menuWeb {
+    display: block;
+    background-color: black;
+    height: 50px;
+    margin: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #menuWeb ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 0px;
+    padding: 0px;
+  }
+  #menuWeb ul > li {
+    background-color: #fff;
+    display: block;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-left: 30px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+  }
+  #menuWeb ul > li a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+  }
+}
+/*# sourceMappingURL=menu.css.map */

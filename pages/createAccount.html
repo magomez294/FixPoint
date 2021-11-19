@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/createAccount.css">
+    <script defer src="../auth/createAccount.js"></script>
+    <title>Document</title>
+</head>
+<body class="createAccount">
+    <div class="container">
+        <h2 class="text-center">Crear Cuenta</h2>
+        <br>
+        <form action="../index.php" class="createAccountForm">
+            <div id="error-message-all"></div>
+            <div class="input-group">
+                <label for="username" class="label">Nombre de usuario</label>
+                <input type="text" id="username" class="input">
+                <span class="error-message"></span>
+            </div>
+            <br>
+            <div class="input-group">
+                <label for="email" class="label">Email</label>
+                <input type="email" id="email" class="input">
+                <span class="error-message"></span>
+            </div>
+            <br>
+            <div class="input-group">
+                <label for="password" class="label">Contraseña</label>
+                <input type="password" id="password" class="input">
+                <span class="error-message"></span>
+            </div>
+            <br>
+            <div class="input-group">
+                <label for="passwordCopy" class="label">Confirmar Contraseña</label>
+                <input type="password" id="passwordCopy" class="input">
+                <span class="error-message"></span>
+            </div>
+            <br>
+            <button class="button" type="submit">Crear</button>
+        </form>
+    </div>
+</body>
+</html>
